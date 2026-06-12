@@ -1,0 +1,98 @@
+{
+  "DEI": [
+    {
+      "id": 1,
+      "title": "2025 Policy",
+      "image": "/images/Policy_images/Diversity-Equity-and-Inclusion(DEI)-Policy–IIT Madras.jpg",
+      "alt": "Diversity-Equity-and-Inclusion(DEI)-Policy–IIT Madras",
+      "file_path": "https://sustainability.iitm.ac.in/policy-documents/new/Diversity-Equity-and-Inclusion(DEI)-Policy%E2%80%93IIT%20Madras.pdf"
+    },
+    {
+      "id": 2,
+      "title": "2024 Policy",
+      "image": "/images/Policy_images/DEI-Policy-IITM-Final-20July.jpg",
+      "alt": "DEI-Policy-IITM-Final-20July",
+      "file_path": "https://sustainability.iitm.ac.in/policy-documents/old/DEI-Policy-IITM-Final-20July.pdf"
+    }
+  ],
+  "purchase": [
+    {
+      "id": 1,
+      "title": "2025 Policy",
+      "image": "/images/Policy_images/Sustainable-Purchases-policy.jpg",
+      "alt": "Sustainable-Purchases-policy",
+      "file_path": "https://sustainability.iitm.ac.in/policy-documents/new/Sustainable-Purchases-policy.pdf"
+    },
+    {
+      "id": 2,
+      "title": "2024 Policy",
+      "image": "/images/Policy_images/Sustainable_purchase-Final-25July.jpg",
+      "alt": "Sustainable_purchase",
+      "file_path": "https://sustainability.iitm.ac.in/policy-documents/old/Sustainable_purchase-Final-25July.pdf"
+    }
+  ],
+  "investment": [
+    {
+      "id": 1,
+      "title": "2025 Policy",
+      "image": "/images/Policy_images/Sustainable-Investment-Policy.jpg",
+      "alt": "Sustainable-Investment-Policy",
+      "file_path": "https://sustainability.iitm.ac.in/policy-documents/new/Sustainable-Investment-Policy.pdf"
+    },
+    {
+      "id": 2,
+      "title": "2024 Policy",
+      "image": "/images/Policy_images/Sustainable_Investments.jpg",
+      "alt": "Sustainable_Investments",
+      "file_path": "https://sustainability.iitm.ac.in/policy-documents/old/Sustainable_Investments-Final-25July.pdf"
+    }
+  ],
+  "anti_corruption": [
+    {
+      "id": 1,
+      "title": "2025 Policy",
+      "image": "/images/Policy_images/Anti-Corruption-Policy.jpg",
+      "alt": "Anti-Corruption-Policy",
+      "file_path": "https://sustainability.iitm.ac.in/policy-documents/new/Anti-Corruption-Policy-Final-20July.pdf"
+    },
+    {
+      "id": 2,
+      "title": "2024 Policy",
+      "image": "/images/Policy_images/Anti-Corruption-Policy-2024.jpg",
+      "alt": "Anti-Corruption-Policy",
+      "file_path": "https://sustainability.iitm.ac.in/policy-documents/old/Anti-Corruption-Policy-Final-20July.pdf"
+    }
+  ],
+  "ethics": [
+    {
+      "id": 1,
+      "title": "2025 Policy",
+      "image": "/images/Policy_images/Ethics-and-Code-of-Conduct–2025.jpg",
+      "alt": "Ethics-and-Code-of-Conduct",
+      "file_path": "https://sustainability.iitm.ac.in/policy-documents/new/Ethics-and-Code-of-Conduct%E2%80%93IIT-Madras.pdf"
+    },
+    {
+      "id": 2,
+      "title": "2024 Policy",
+      "image": "/images/Policy_images/Ethics-and-Code-of-Conduct-2024.jpg",
+      "alt": "Ethics-and-Code-of-Conduct",
+      "file_path": "https://sustainability.iitm.ac.in/policy-documents/old/Ethics-and-Code-of-Conduct.pdf"
+    }
+  ],
+  "carbon": [
+    {
+      "id": 1,
+      "title": "2025 Policy",
+      "image": "/images/Policy_images/iitm-carbon.jpg",
+      "alt": "iitm-carbon",
+      "file_path": "https://sustainability.iitm.ac.in/policy-documents/new/iitm-carbon-report.pdf"
+    },
+    {
+      "id": 2,
+      "title": "2024 Policy",
+      "image": "/images/Policy_images/CO2_REPORT.jpg",
+      "alt": "CO2_REPORT",
+      "file_path": "https://sustainability.iitm.ac.in/policy-documents/old/CO2_REPORT.pdf"
+    }
+  ]
+}

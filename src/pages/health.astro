@@ -1,0 +1,450 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import Newsletter from "../components/Newletter.astro";
+import "../styles/global.css";
+
+import hero from "../assets/Sustainability@IITM Health & Wellbeing Page - WorldZeroWasteDay_1.jpg";
+
+---
+
+<Layout title="Health & Safety">
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden ">
+  <div class="relative w-full h-[52vh] sm:h-[67vh] md:h-[77vh] lg:h-[87vh]  ">
+  <img
+  src={hero.src}
+  alt="..."
+  class="
+    w-full
+    h-[70vh] sm:h-[90vh] md:h-[120vh] lg:h-[120vh] xl:h-[150vh]
+    object-cover object-center
+    scale-120 translate-y-5 mt-8
+  "
+  loading="eager"
+  decoding="async"
+  width="1920"
+  height="1080"
+/>
+
+
+
+    <div class="absolute inset-0 bg-black/40 flex items-center justify-center px-4 sm:px-6 lg:px-12"></div>
+  </div>
+</section>
+
+
+  <!-- Navigation Links -->
+  <section>
+<nav id="navbar" class="sticky top-0 z-50 w-full bg-transparent text-white transition-navbar border-b border-gray-250">
+
+  <div
+    class="
+      flex justify-center items-center gap-3 py-3 whitespace-nowrap
+      [@media(hover:none)]:whitespace-normal
+      [@media(hover:none)]:flex-wrap
+    "
+  >
+    <a
+      href="#Health-Wellbeing"
+      class="text-green-700 hover:text-green-900 active:text-green-950 
+             font-medium text-base sm:text-lg md:text-xl lg:text-xl 
+             transition-all duration-300 px-4 py-2.5 rounded-lg 
+             hover:bg-green-100 focus:outline-none focus-visible:ring-2 
+             focus-visible:ring-green-500 focus-visible:ring-offset-2 scroll-mt-24"
+    >
+      Health & Wellbeing
+    </a>
+    <span class="text-gray-300">|</span>
+
+    <a
+      href="#medical-services-heading"
+      class="text-green-700 hover:text-green-900 active:text-green-950 
+             font-medium text-base sm:text-lg md:text-xl lg:text-xl 
+             transition-all duration-300 px-4 py-2.5 rounded-lg 
+             hover:bg-green-100 focus:outline-none focus-visible:ring-2 
+             focus-visible:ring-green-500 focus-visible:ring-offset-2 scroll-mt-24"
+    >
+      Medical Services
+    </a>
+    <span class="text-gray-300">|</span>
+
+    <a
+      href="#Facilities"
+      class="text-green-700 hover:text-green-900 active:text-green-950 
+             font-medium text-base sm:text-lg md:text-xl lg:text-xl 
+             transition-all duration-300 px-4 py-2.5 rounded-lg 
+             hover:bg-green-100 focus:outline-none focus-visible:ring-2 
+             focus-visible:ring-green-500 focus-visible:ring-offset-2 scroll-mt-24"
+    >
+      Facilities
+    </a>
+    <span class="text-gray-300">|</span>
+
+    <a
+      href="#Healthy-Community"
+      class="text-green-700 hover:text-green-900 active:text-green-950 
+             font-medium text-base sm:text-lg md:text-xl lg:text-xl 
+             transition-all duration-300 px-4 py-2.5 rounded-lg 
+             hover:bg-green-100 focus:outline-none focus-visible:ring-2 
+             focus-visible:ring-green-500 focus-visible:ring-offset-2 scroll-mt-24"
+    >
+      Healthy Community
+    </a>
+    <span class="text-gray-300">|</span>
+
+    <a
+      href="#Health-Promotions"
+      class="text-green-700 hover:text-green-900 active:text-green-950 
+             font-medium text-base sm:text-lg md:text-xl lg:text-xl 
+             transition-all duration-300 px-4 py-2.5 rounded-lg 
+             hover:bg-green-100 focus:outline-none focus-visible:ring-2 
+             focus-visible:ring-green-500 focus-visible:ring-offset-2 scroll-mt-24"
+    >
+      Health Promotions Framework
+    </a>
+  </div>
+</nav>
+</section>
+
+
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+    
+
+      <!-- Food on Campus -->
+       <section id="Health-Wellbeing" class="py-5 scroll-mt-19"></section>
+      <div class="mb-12">
+        <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-6 sm:mb-6">
+          Food on Campus
+        </h3>
+        <div class=" rounded-lg p-6 md:p-8  border border-green-400">
+          <p class="text-lg text-gray-700 leading-relaxed">
+            Healthy and affordable food choices are made available for all on campus. The Office of the Hostel Management (OHM) takes care of the dining facilities for all students in 21 hostels of the Institute. The Committee for Monitoring General Facilities of Students (CMGFS) and Mess Monitoring and Control Committee (MMCC) are tasked with monitoring and ensuring that healthy food choices are provided in a hygienic manner in the hostel dining facilities, Food Courts, Food joints, Eateries, Cafes, etc.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed mt-4">
+            Students are involved in decision-making related to procuring food items, planning menu and maintaining hygiene in the kitchen and mess hall.
+          </p>
+          <a
+            href="https://www.iitm.ac.in/campus-life/campus-amenities"
+            class="inline-block mt-4 text-green-600 hover:text-green-800 font-medium hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn more about campus amenities 
+          </a>
+        </div>
+      </div>
+
+      <!-- MITR -->
+      <div class="mb-12">
+        <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-green-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6">
+          MITR
+        </h3>
+        <div class="bg-gray-50 rounded-lg p-6 md:p-8 bg-gradient-to-r from-[#064924] to-[#519335] border border-green-400">
+          <p class="text-lg text-white leading-relaxed">
+            MITR is body of faculties and student MITRs, who offer peer counseling and support according to the student's needs. MITRs are trained in basic counseling skills and empathy, and are available in almost all the departments and hostels. MITR organizes Barefoot counseling training for the new MITRs in collaboration with the Wellness Centre, and also conduct surveys and events for students based on specific needs.
+          </p>
+          <a
+            href="https://dost.iitm.ac.in/iitmdost/mitr"
+            class="inline-block mt-4 text-green-400 hover:text-green-200 font-medium hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn more about MITR 
+          </a>
+        </div>
+      </div>
+
+      <!-- BE Happy -->
+      <div class="mb-12">
+        <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6">
+          Be Happy
+        </h3>
+        <div class=" rounded-lg p-6 md:p-8  border border-green-400">
+          <p class="text-lg text-gray-700 leading-relaxed">
+            Recently launched, "Be Happy" Initiative lists the various support systems available: Kushal meetings, Time-bound grievance redressal, improving life skills, Listeners, Helplines, etc. IIT Madras is continuously striving to ensure that our campus provides each student an environment filled with harmony and peace. This Kushal environment will support and enable each student in achieving their goals and marching towards their aspiration.
+          </p>
+          <a
+            href="https://behappy.iitm.ac.in/"
+            class="inline-block mt-4 text-green-600 hover:text-green-800 font-medium hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn more about Be Happy 
+          </a>
+        </div>
+      </div>
+
+      <!-- Institute Hospital -->
+      <div class="mb-12">
+        <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-green-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6">
+          Institute Hospital
+        </h3>
+        <div class="bg-gray-50 rounded-lg p-6 md:p-8 space-y-4 bg-gradient-to-r from-[#064924] to-[#519335] border border-green-400">
+          <p class="text-lg text-white leading-relaxed">
+            The Institute hospital has facilities to address the general health problems of students and staff. Apart from regular doctors, there are visiting specialists such as general surgeon, ENT surgeon, ophthalmologist, orthopedician, cardiologist and psychiatrist. There are well-equipped laboratories for all tests, X-Ray and in-patient wards, along with ambulance facility. All students and staff are covered under medical insurance.
+          </p>
+
+          <p class="text-lg text-white leading-relaxed">
+            Doctors care available between 8am and 6pm in their cabins/casualty/wards for consultation and treatment. Most common health issues are treated and guided by the Institute doctors. Those requiring specialist medical care or expert opinion are referred to suitable specialists. Certain specialty doctors visit the hospital on specified days and time and appointments are fixed as per the requirement.
+          </p>
+
+          <div class="space-y-3">
+            <p class="text-sm font-semibold text-white">Sexual and Reproductive Health Services:</p>
+            <p class="text-white">
+              The Institute hospital assists in providing access to sexual and reproductive health-care services. Women's Forum also provides information and education services.
+            </p>
+            <a
+              href="https://womensforum.iitm.ac.in/"
+              class="inline-block text-green-400 hover:text-green-200 font-medium hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit Women's Forum 
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Medical Services -->
+      <section id="medical-services-section" class="mb-16 mt-5 scroll-mt-24">
+  <h3
+    id="medical-services-heading"
+    class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6 scroll-mt-24"
+  >
+    Medical Services
+  </h3>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <!-- Inpatient Care -->
+    <div
+      class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow  border-green-400"
+    >
+      <h4 class="text-xl font-semibold text-gray-900 mb-3 ">Inpatient Care</h4>
+      <p class="text-gray-700">
+        Staff and students requiring inpatient care are admitted in our wards in the hospital.
+      </p>
+    </div>
+
+    <!-- Pharmacy -->
+    <div
+      class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow  border-green-400"
+    >
+      <h4 class="text-xl font-semibold text-gray-900 mb-3">Pharmacy</h4>
+      <p class="text-gray-700">
+        The Clinical pharmacy is outsourced to ‘Kauvery Pharmacy Pvt Ltd’. It functions between 8am
+        and 8pm and all common medicines, injections are dispensed as per the Institute doctor’s
+        prescription.
+      </p>
+    </div>
+
+    <!-- Clinical Laboratory -->
+    <div
+      class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow  border-green-400"
+    >
+      <h4 class="text-xl font-semibold text-gray-900 mb-3">Clinical Laboratory</h4>
+      <p class="text-gray-700">
+        Outsourced to ‘Lister Metropolis Ltd’. The Lab is open 24×7 for emergency sample collection.
+        Routine blood work-up & non-urgent samples will be collected between 7am and 7pm.
+      </p>
+    </div>
+
+    <!-- Physiotherapy -->
+    <div
+      class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow  border-green-400"
+    >
+      <h4 class="text-xl font-semibold text-gray-900 mb-3">Physiotherapy</h4>
+      <p class="text-gray-700">
+        Services available from 9am to 5:30pm Monday to Friday and between 9am and 12:30pm on
+        Saturday. Outsourced to ‘Indus Therapeutics’.
+      </p>
+    </div>
+  </div>
+</section>
+
+      <!-- Facilities -->
+      <section id="Facilities" class="mb-16 mt-5 scroll-mt-24  border-green-400">
+        <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6">
+          Facilities
+        </h3>
+        <div class="space-y-6 bg-gradient-to-r from-[#064924] to-[#519335] border rounded-xl">
+          <div class="bg-white-50 rounded-lg p-6 ">
+            <h4 class="text-xl font-semibold text-white mb-3">Medical Insurance</h4>
+            <p class="text-white">
+              All staff and students are covered in Medical Insurance which is renewed annually.
+            </p>
+          </div>
+
+          <div class="rounded-lg p-6 ">
+            <h4 class="text-xl font-semibold text-white mb-3">Reimbursement</h4>
+            <p class="text-white">
+              Institute reimburses radiological investigations, consultation charges for those referred to specialty doctors, special procedures etc. on par with the CGHS rates. Medicines and laboratory investigations are not reimbursed.
+            </p>
+          </div>
+
+          <div class="bg-white-50 rounded-lg p-6 ">
+            <h4 class="text-xl font-semibold text-white mb-3">Vaccination</h4>
+            <p class="text-white">
+              Vaccination is done twice a month for both pediatric patients and adults. It is done on the second and fourth Wednesday.
+            </p>
+          </div>
+
+          <div class=" rounded-lg p-6 ">
+            <h4 class="text-xl font-semibold text-white mb-3">Health Camps</h4>
+            <p class="text-white">
+              Health camps (Mammography, Women health, Medical disease etc.), Blood donation camps are conducted on a need basis. Annual health check-up for all employees above 40 years of age is done.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Healthy Community -->
+      <section id="Healthy-Community" class="mb-16 mt-5 scroll-mt-24">
+        <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6 scroll-mt-24">
+          Healthy Community
+        </h3>
+        <div class="space-y-8">
+          <div class="border-l-4 border-green-500 pl-6">
+            <h4 class="text-xl font-semibold text-gray-900 mb-3">Health Education</h4>
+            <p class="text-gray-700 leading-relaxed">
+              First Aid classes and BLS classes are conducted for students and departments who request for the same. Awareness and appropriate safety measures to be taken in the event of certain diseases like Dengue, Typhoid etc. Importance of physical activity and lifestyle measures for physical and mental well-being is being stressed on a one-on-one basis. Nutritious and healthy balanced diet is important for maintaining general health and also prevents a lot of chronic diseases. Adequate hydration is also to be maintained both in healthy and diseased state.
+            </p>
+          </div>
+
+          <div class="border-l-4  border-green-500 pl-6">
+            <h4 class="text-xl font-semibold text-gray-900 mb-3">Disease Prevention</h4>
+            <p class="text-gray-700 leading-relaxed">
+              Preventive measures at all levels: a) Primary (those who are at risk), b) Secondary (those who have the disease but no complications of it), c) Tertiary (those with complications to prevent worsening & disability)
+            </p>
+          </div>
+
+          <div class="border-l-4 border-green-500 pl-6">
+            <h4 class="text-xl font-semibold text-gray-900 mb-3">Health Protection</h4>
+            <p class="text-gray-700 leading-relaxed">
+              Aid in implementing certain rules or policies which protect the individual and the community (e.g., Avoid smoking in certain closed rooms etc, use of mask in certain conditions)
+            </p>
+          </div>
+
+          <div class="border-l-4 border-green-500 pl-6">
+            <h4 class="text-xl font-semibold text-gray-900 mb-3">Psychological Health</h4>
+            <p class="text-gray-700 leading-relaxed">
+              Being in a stressful situation can lead to poor performance in academics and also deterioration in social life and lead to medical disorders. Counsellors (Hospital, Dean Student's office, tele-counseling etc.) and various relaxing activities are available on campus to ensure that psychological issues are also addressed.
+            </p>
+          </div>
+
+          <div class="border-l-4 border-green-500 pl-6">
+            <h4 class="text-xl font-semibold text-gray-900 mb-3">Sexual and Reproductive Health</h4>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Staff and students who come to the hospital with specific complaints related to sexual or reproductive health are addressed on a one-on-one basis. Women students are encouraged to come for annual women's health checkup when they are examined and their concerns are explained.
+            </p>
+            <div class=" bg-green-50 rounded-lg p-4 border-l-4 border-green-500">
+              <p class="text-blacktext-sm text-green-900">
+                <strong>Self Breast Examination:</strong> Monthly examination (at the end of menstruation or on the first of every month for post-menopausal women) is a must for all women, more so if there is a family history of malignancy.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Health Promotions Framework -->
+      <section id="Health-Promotions" class="mb-16 mt-5 scroll-mt-24">
+        <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6">
+          Health Promotions Framework
+        </h3>
+        <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-8">
+          <div class="space-y-4">
+            <div class="flex items-start space-x-3">
+              <span class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">P</span>
+              <p class="text-sm text-gray-700 pt-1">Pressure Check, Pap smear, Per Rectal examination</p>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">R</span>
+              <p class="text-sm text-gray-700 pt-1">Rest, relaxation, Recreation & Exercise</p>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">O</span>
+              <p class="text-sm text-gray-700 pt-1">Obesity counselling</p>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">M</span>
+              <p class="text-sm text-gray-700 pt-1">Mental Health, Mammography</p>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">O</span>
+              <p class="text-sm text-gray-700 pt-1">Oral Contraception</p>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">T</span>
+              <p class="text-sm text-gray-700 pt-1">Thyroid disorders, Tumors</p>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">I</span>
+              <p class="text-sm text-gray-700 pt-1">Immunizations, Intake of water</p>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">O</span>
+              <p class="text-sm text-gray-700 pt-1">Oral & Dental Hygiene</p>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">N</span>
+              <p class="text-sm text-gray-700 pt-1">Nutrition</p>
+            </div>
+            <div class="flex items-start space-x-3">
+              <span class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">S</span>
+              <p class="text-sm text-gray-700 pt-1">Stress reduction, Smoking cessation, Sugar Check, Sexual health</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <Newsletter />
+  <button
+    id="scrollToTop"
+    class="fixed bottom-6 right-6 z-50 bg-white border-2 border-green-600 text-green-600 p-3 rounded-full shadow-md transition-all duration-300 opacity-0 pointer-events-none hover:bg-green-50"
+    aria-label="Scroll to top"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-5 h-5"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      stroke-width="2"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"></path>
+    </svg>
+  </button>
+  <Footer />
+</Layout>
+
+<script>
+  const scrollBtn = document.getElementById("scrollToTop");
+  if (scrollBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        scrollBtn.classList.remove("opacity-0", "pointer-events-none");
+      } else {
+        scrollBtn.classList.add("opacity-0", "pointer-events-none");
+      }
+    });
+
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+</script>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  a:focus {
+    outline: 2px solid #059669;
+    outline-offset: 2px;
+  }
+</style>

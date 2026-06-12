@@ -1,0 +1,514 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import OutReachEventData from "../Data/outreach_events.json";
+
+// Import assets
+
+import stem from "../assets/stem1.svg";
+import school from "../assets/school.svg";
+import andrew from "../../public/outreach_images/Outreach Page.png";
+import Newletter from "../components/Newletter.astro";
+import MediaData from "../Data/media.json"
+
+import VentureLogo from "../assets/entrepreneurship/VentureLogo.jpg";
+import CompetitionLogo from "../assets/entrepreneurship/CompetitionLogo.png";
+
+
+
+// const SHEETS_API_URL = "https://script.google.com/macros/s/AKfycbwTyk22Yv_8pAC0IEuJIUQKIGkKeeVqBYvghpPBoUPOw9H1MC8zQAyKqeFJFnjUxucLmA/exec?ts=" + Date.now();
+
+let upcomingEvents: any[] = [];
+let pastEvents: any[] = [];
+let activeTab: 'upcoming' | 'past' = 'upcoming';
+const today = new Date();
+upcomingEvents=OutReachEventData.filter((e: any) => new Date(e.Date) >= today)
+pastEvents = OutReachEventData.filter((e: any) => new Date(e.Date) < today);
+
+
+// function setTab(tab: 'upcoming' | 'past') {
+//   activeTab = tab;
+// }
+//   try {
+//     const res = await fetch(SHEETS_API_URL);
+//     if (!res.ok) throw new Error(`Failed to fetch events: ${res.status}`);
+
+//     const json = await res.json();
+//     const allEvents = json.data|| []; 
+
+//     const today = new Date();
+
+//     upcomingEvents = allEvents.filter((e: any) => new Date(e.Date) >= today);
+//     pastEvents = allEvents.filter((e: any) => new Date(e.Date) < today);
+//   } catch (err) {
+//     console.error("Error fetching events:", err);
+//   }
+ 
+---
+
+<Layout title="School of Sustainability">
+  <!-- <Navbar /> -->
+
+  <main class="overflow-x-hidden" >
+    <!-- Hero Section (same structure as Knowledge Hub banner) -->
+    <section class="relative overflow-hidden">
+      <div class="relative w-full h-[52vh] sm:h-[30vh] md:h-[77vh] lg:h-[78vh]">
+        <img
+          src={andrew.src}
+          alt="Hero Image showcasing outreach activities"
+          class="w-full h-full object-cover object-center mt-20"
+          loading="eager"
+          decoding="async"
+        />
+        <div class="absolute inset-0 bg-black/40 flex items-center justify-center px-4 sm:px-6 lg:px-12"></div>
+      </div>
+    </section>
+
+
+    <section>
+  <!-- Navigation Links -->
+  <nav
+    class="sticky top-0 z-10 bg-white shadow-sm border-b border-gray-200"
+    aria-label="Health and Safety navigation"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        class="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 sm:gap-x-6 md:gap-x-8 py-3"
+      >
+        <a
+          href="#events"
+          class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl lg:text-xl transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+        >
+          Events
+        </a>
+        <span class="text-gray-300 hidden sm:inline">|</span>
+        <a
+          href="#media"
+          class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl lg:text-xl transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+        >
+          Media
+        </a>
+        <span class="text-gray-300 hidden sm:inline">|</span>
+        <a
+          href="#initiatives"
+          class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl lg:text-xl transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+        >
+          Initiatives
+        </a>
+        <span class="text-gray-300 hidden sm:inline">|</span>
+        <a
+          href="#entrepreneurship"
+          class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl lg:text-xl transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+        >
+          Entrepreneurship
+        </a>
+
+      </div>
+    </div>
+  </nav>
+</section>
+
+
+  <!-- Events Section -->
+  <section class="py-8 sm:py-12 scroll-mt-19" id="events">
+    <div class="container mx-auto px-4 ">
+      <!-- Events Header -->
+      <div class="mb-8">
+        <!-- Title -->
+        <h2
+  class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6 "
+>
+  Events
+</h2>
+
+
+        <!-- Tabs -->
+       <div class="flex justify-center gap-6 text-sm sm:text-base font-semibold">
+  <button id="upcomingBtn" class="px-3 cursor-pointer text-green-700 font-bold">Upcoming</button>
+  <button id="pastBtn" class="px-3 cursor-pointer text-gray-400 hover:text-green-700">Past</button>
+</div>
+      <!-- Events Grid -->
+    <div class="mt-10 ">
+                <div id="upcomingEvents" class="space-y-8">
+
+      {upcomingEvents?.length > 0
+        ? upcomingEvents.map((item) => {
+            const eventDate = new Date(item.Date);
+            const day = eventDate.getDate();
+            const month = eventDate.toLocaleString('en-US', { month: 'short' });
+            const year = eventDate.getFullYear();
+            const formatDateOnly = (d: Date) => {
+              const m = d.toLocaleString('en-US', { month: 'short' });
+              return `${m} ${d.getDate()}, ${d.getFullYear()}`;
+            };
+            const dateFormatted = item.EndDate
+              ? `${formatDateOnly(eventDate)} - ${formatDateOnly(new Date(item.EndDate))}`
+              : `${day}-${month}-${year}`;
+
+               const urlMatch = item.Description.match(/https?:\/\/[^\s]+/);
+      const url = urlMatch ? urlMatch[0] : null;
+
+      // Remove URL from the description text
+      const description = item.Description.replace(url, "").trim();
+
+            return (
+              <article class="event border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row">
+                <div class="w-full md:w-1/2 flex items-center justify-center">
+                  <img src={item.Poster} alt="Poster" class="max-h-[500px] w-auto object-center rounded-xl" loading="lazy"/>
+                </div>
+                <div class="w-full md:w-2/3 p-6 flex flex-col justify-between">
+                  <div class="inline-flex flex-col items-center justify-center text-black rounded-md px-4 py-2 shadow-md w-fit mb-4">
+                    <span class="block text-sm sm:text-base md:text-lg font-bold tracking-tight text-center">{dateFormatted}</span>
+                  </div>
+                  <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-3">{item.Title}</h3>
+                  <p class="text-base md:text-lg text-gray-700 text-justify leading-relaxed mb-8">
+                   {description}  <a
+            href={url}
+            class="text-blue-600 underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {url}
+          </a>
+                  </p>
+                </div>
+              </article>
+            );
+          })
+          : <p class="text-gray-500 text-center">No upcoming events found.</p>
+          <br>
+            }</div>
+           <div id="pastEvents" class="hidden space-y-8">
+        {pastEvents?.length > 0
+        ? pastEvents.map((item) => {
+            const eventDate = new Date(item.Date);
+            const day = eventDate.getDate();
+            const month = eventDate.toLocaleString('en-US', { month: 'short' });
+            const year = eventDate.getFullYear();
+            const formatDateOnly = (d: Date) => {
+              const m = d.toLocaleString('en-US', { month: 'short' });
+              return `${m} ${d.getDate()}, ${d.getFullYear()}`;
+            };
+            const dateFormatted = item.EndDate
+              ? `${formatDateOnly(eventDate)} - ${formatDateOnly(new Date(item.EndDate))}`
+              : `${day}-${month}-${year}`;
+
+               const urlMatch = item.Description.match(/https?:\/\/[^\s]+/);
+      const url = urlMatch ? urlMatch[0] : null;
+
+      // Remove URL from the description text
+      const description = item.Description.replace(url, "").trim();
+
+           return (
+              <article class="event past border rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row">
+                <div class="w-full md:w-1/2 flex items-center justify-center">
+                  <img src={item.Poster}
+                   alt="Poster" class="max-h-[500px] w-auto object-center rounded-xl" />
+                </div>
+                <div class="w-full md:w-2/3 p-6 flex flex-col justify-between">
+                  <div class="inline-flex flex-col items-center justify-center text-black rounded-md px-4 py-2 shadow-md w-fit mb-4">
+                    <span class="block text-sm sm:text-base md:text-lg font-bold tracking-tight text-center">{dateFormatted}</span>
+                  </div>
+                  <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-3">{item.Title}</h3>
+                  <p class="text-base md:text-lg text-gray-700 text-justify leading-relaxed mb-8">
+                    {description}  <a
+            href={url}
+            class="text-blue-600 underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {url}
+          </a>
+                  </p>
+                  
+                </div>
+              </article>
+            );
+                })
+              : <p class="text-gray-500 text-center">No past events found.</p>
+            }
+    </div>
+
+   <!-- Media Section -->
+<section class="bg-gradient-to-r from-[#064924] to-[#519335] py-16 scroll-mt-19 rounded-3xl mx-4 sm:mx-6 lg:mx-8" id="media" x-data="{ showAll: false }">
+  <div class="container mx-auto px-4">
+    <!-- Events Header -->
+    <h2
+  class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white border-l-4 border-[#519335] pl-3 sm:pl-4 mb-4 sm:mb-6 "
+>
+  Media
+</h2>
+
+
+    <!-- Media Grid - two by two -->
+    <section class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+      {MediaData.map((item, index) => (
+        <a
+          href={item.Link}
+          class={`group overflow-hidden rounded-2xl shadow hover:shadow-xl transition-all duration-300 bg-white ${
+            index > 3 ? 'hidden' : ''
+          }`}
+          x-show={`showAll || ${index} < 4`}
+          x-transition
+        >
+          <!-- Image Section -->
+          <div class="w-full h-80 overflow-hidden">
+            <img
+              src={item.Image}
+              alt={item.Title}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+
+          <!-- Details Section -->
+          <div class="p-6">
+            <span class="font-bold text-gray-900 leading-tight group-hover:text-green-600 transition-colors">
+              {item.Title}
+            </span>
+          </div>
+        </a>
+      ))}
+    </section>
+      <!-- View More Button -->
+    <div class="text-center mt-10">
+      <a
+        href="/media"
+        class="border-2 border-white text-white hover:bg-white hover:text-[#064924] font-semibold rounded-lg text-lg px-6 py-2 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg mt-10">
+        View More
+      </a>
+    </div>
+  </div>
+</section>
+   
+
+    <!-- Initiatives Section -->
+    <section class="py-8 sm:py-12 scroll-mt-19" id="initiatives">
+      <div class="container mx-auto px-4">
+      <h2
+  class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6"
+>
+  Initiatives
+</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <!-- Initiative Card 1 -->
+          <article
+            class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer group"
+          >
+            <div class="overflow-hidden rounded-t-lg">
+              <img
+                src={stem.src}
+                alt="STEM education initiative"
+                class="w-full h-48 sm:h-60 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <p
+                class="mb-6 text-gray-700 text-base sm:text-lg leading-relaxed group-hover:text-gray-900 transition-colors"
+              >
+                Electronic kits distribution
+              </p>
+              <div class="text-center">
+                <a
+                  href="https://sustainability.iitm.ac.in/initiatives/electronic-kits-distribution"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-block border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] hover:text-white font-semibold rounded-md text-lg lg:text-xl px-8 sm:px-12 lg:px-16 py-3 lg:py-4 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
+                >
+                  Read More
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Initiative Card 2 -->
+          <article
+            class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer group"
+          >
+            <div class="overflow-hidden rounded-t-lg">
+              <img
+                src={school.src}
+                alt="School outreach initiative"
+                class="w-full h-48 sm:h-60 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <p
+                class="mb-6 text-gray-700 text-base sm:text-lg leading-relaxed group-hover:text-gray-900 transition-colors"
+              >
+                Rural Technology Centres/ Rural Interaction Centres
+              </p>
+              <div class="text-center">
+                <a
+                  href="https://sustainability.iitm.ac.in/initiatives/rural-technology-centres"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-block border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] hover:text-white font-semibold rounded-md text-lg lg:text-xl px-8 sm:px-12 lg:px-16 py-3 lg:py-4 w-full max-w-xs lg:max-w-sm min-h-[3rem] lg:min-h-[3.5rem] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex items-center justify-center gap-2 group whitespace-nowrap"
+                >
+                  Read More
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Entrepreneurship Section -->
+<section
+  class="py-8 sm:py-12 scroll-mt-19 bg-gradient-to-r from-[#064924] to-[#519335] rounded-xl"
+  id="entrepreneurship"
+>
+  <div class="container mx-auto px-4">
+
+    <h2
+      class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white border-l-4 border-[#519335] pl-3 sm:pl-4 mb-6 sm:mb-8"
+    >
+      Entrepreneurship
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+      
+      <!-- Venture Studios Card -->
+      <a
+        href="https://indusdc.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group relative overflow-hidden rounded-2xl border-2 border-white/30 h-80 sm:h-96
+               hover:shadow-2xl hover:-translate-y-1 hover:border-white/50 transition-all duration-500 ease-in-out block"
+      >
+        <img
+          src={VentureLogo.src}
+          alt="Sustainability Venture Studios"
+          class="absolute inset-0 h-full object-contain bg-black transition-transform duration-500 group-hover:scale-110"
+        />
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-500"></div>
+        <div class="relative z-10 flex items-end justify-center text-center text-white h-full pb-10 sm:pb-20">
+          <h4 class="text-2xl sm:text-3xl font-semibold">
+            Sustainability Venture Studios
+          </h4>
+        </div>
+      </a>
+
+      <!-- Competitions Card -->
+      <a
+        href="https://czeroc.in/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group relative overflow-hidden rounded-2xl border-2 border-white/30 h-80 sm:h-96
+               hover:shadow-2xl hover:-translate-y-1 hover:border-white/50 transition-all duration-500 ease-in-out block"
+      >
+        <img
+          src={CompetitionLogo.src}
+          alt="Competitions"
+          class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-500"></div>
+        <div class="relative z-10 flex items-end justify-center text-center text-white h-full pb-10 sm:pb-20">
+          <h4 class="text-2xl sm:text-3xl font-semibold">
+            Competitions
+          </h4>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+    </section>
+</main>
+    <!-- Contact & Newsletter Section -->
+    <Newletter />
+    <button
+  id="scrollToTop"
+  class="fixed bottom-6 right-6 z-50 bg-white border-2 border-green-600 text-green-600 p-3 rounded-full shadow-md transition-all duration-300 opacity-0 pointer-events-none"
+  aria-label="Scroll to top"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-5 h-5"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"
+    ></path>
+  </svg>
+</button>
+<script>
+  const scrollBtn = document.getElementById("scrollToTop");
+  if (scrollBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        scrollBtn.classList.remove("opacity-0", "pointer-events-none");
+      } else {
+        scrollBtn.classList.add("opacity-0", "pointer-events-none");
+      }
+    });
+
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+</script>
+    <Footer />
+  </section>
+</Layout>
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const upcomingBtn = document.getElementById('upcomingBtn');
+    const pastBtn = document.getElementById('pastBtn');
+    const upcomingDiv = document.getElementById('upcomingEvents');
+    const pastDiv = document.getElementById('pastEvents');
+
+    upcomingBtn.addEventListener('click', () => {
+      upcomingDiv.classList.remove('hidden');
+      pastDiv.classList.add('hidden');
+
+      upcomingBtn.classList.add('text-green-700', 'font-bold');
+      upcomingBtn.classList.remove('text-gray-400');
+      pastBtn.classList.remove('text-green-700', 'font-bold');
+      pastBtn.classList.add('text-gray-400');
+    });
+
+    pastBtn.addEventListener('click', () => {
+      pastDiv.classList.remove('hidden');
+      upcomingDiv.classList.add('hidden');
+
+      pastBtn.classList.add('text-green-700', 'font-bold');
+      pastBtn.classList.remove('text-gray-400');
+      upcomingBtn.classList.remove('text-green-700', 'font-bold');
+      upcomingBtn.classList.add('text-gray-400');
+    });
+  });
+</script>
+
+
+
+<style>
+  /* Utility class for text truncation */
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Ensure proper container constraints */
+  .container {
+    max-width: 1400px;
+  }
+
+  /* Smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Focus styles for better accessibility */
+  button:focus,
+  input:focus,
+  a:focus {
+    outline: 2px solid #10b981;
+    outline-offset: 2px;
+  }
+</style>

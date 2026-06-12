@@ -1,0 +1,327 @@
+{
+  "teamMembers": [
+    {
+      "name": "Rajnish Kumar",
+      "position": "Head, School of Sustainability",
+      "image": "../assets/Rajnish-Kumarv2 1.svg",
+      "linkedin": "",
+      "website": "https://che.iitm.ac.in/rajnish/",
+      "icon": "webglobe"
+    },
+    {
+      "name": "Satyanarayanan Seshadri",
+      "position": "Associate Head, School of Sustainability",
+      "image": "../assets/Satyanarayanan Seshadri 4.jpg",
+      "website": "https://energyconsortium.org/member/satyanarayanan-seshadri/",
+      "icon": "linkedin"
+    }
+  ],
+  "coreTeam": [
+    {
+      "name": "Charuta Kulkarni",
+      "position": "Head, School of Sustainability",
+      "image": "../assets/resource (2) 1.svg",
+      "linkedin": "https://www.linkedin.com/in/charuta-kulkarni-ph-d-61749b1a/"
+    },
+    {
+      "name": "Dolly Sweetlin Jennifer",
+      "position": "Senior Project Scientist",
+      "image": "../assets/Dolly Sweetlin Jennifer Compressed.jpg",
+      "linkedin": "https://www.linkedin.com/in/dolly-sweetlin-jennifer-035311189?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+    },
+    {
+      "name": "Rahul Muralidharan",
+      "position": "Associate Head, School of Sustainability",
+      "image": "../assets/resource (1) 1.svg",
+      "linkedin": "https://in.linkedin.com/in/rahul-muralidharan-70629418a"
+    },
+    {
+      "name": "Siva Barathi A",
+      "position": "Associate Head, School of Sustainability",
+      "image": "../assets/resource 1.svg",
+      "linkedin": "https://www.linkedin.com/in/siva-barathi-annamalai-24959616"
+    },
+    {
+      "name": "Vishakha Shankar",
+      "position": "Associate Head, School of Sustainability",
+      "image": "../assets/resource (4) 1.svg",
+      "linkedin": "https://www.linkedin.com/in/vishakhashankar/"
+    }
+  ],
+  "associateFaculty": [
+    {
+      "name": "Dr. Anubhab Roy",
+      "position": "Applied Mechanics",
+      "image": "../assets/AssociateFaculty/1 Compressed.jpg",
+      "website": "https://home.iitm.ac.in/anubhab"
+    },
+    {
+      "name": "Dr. Aravind Kumar Chandiran",
+      "position": "Chemical Engineering",
+      "image": "../assets/AssociateFaculty/2 Compressed.jpg",
+      "website": "https://che.iitm.ac.in/aravindkumar/"
+    },
+    {
+      "name": "Dr. Ashwin Mahalingam",
+      "position": "Civil Engineering",
+      "image": "../assets/AssociateFaculty/3.svg",
+      "website": "https://civil.iitm.ac.in/faculty/mash/"
+    },
+    {
+      "name": "Dr. Balaji Narasimhan",
+      "position": "Civil Engineering",
+      "image": "../assets/AssociateFaculty/4.svg",
+      "website": "https://civil.iitm.ac.in/faculty/nbalaji/"
+    },
+    {
+      "name": "Dr. Balaraman Ravindran",
+      "position": "Computer Science and Engineering",
+      "image": "../assets/AssociateFaculty/5.svg",
+      "website": "http://www.cse.iitm.ac.in/~ravi/"
+    },
+    {
+      "name": "Dr. Chakravarthy Balaji",
+      "position": "Department of Biology",
+      "image": "../assets/AssociateFaculty/6.svg",
+      "website": "https://home.iitm.ac.in/balaji"
+    },
+    {
+      "name": "Dr. Ethayaraja Mani",
+      "position": "Department of Chemical Engineering",
+      "image": "../assets/AssociateFaculty/Ethayaraja Mani Compressed.jpg",
+      "website": "https://che.iitm.ac.in/~ethaya/"
+    },
+    {
+      "name": "Dr. Ganga Prasath S",
+      "position": "Applied Mechanics",
+      "image": "../assets/AssociateFaculty/7.svg",
+      "website": "http://sgangaprasath.github.io/"
+    },
+    {
+      "name": "Dr. Himanshu Goyal",
+      "position": "Department of Chemical Engineering",
+      "image": "../assets/AssociateFaculty/himanshu.png",
+      "website": "https://www.goyalresearch.com/"
+    },
+    {
+      "name": "Dr. Indumathi M. Nambi",
+      "position": "Department of Civil Engineering",
+      "image": "../assets/AssociateFaculty/8.svg",
+      "website": "https://indunambi.com/"
+    },
+    {
+      "name": "Dr. Jitendra Sangwai",
+      "position": "Department of Chemical Engineering",
+      "image": "../assets/AssociateFaculty/Jitendra Sangwai Compressed.jpg",
+      "website": "https://che.iitm.ac.in/jitendrasangwai/"
+    },
+    {
+      "name": "Dr. Krishna Malakar",
+      "position": "Humanities and Social Sciences",
+      "image": "../assets/AssociateFaculty/Krishna Malakar.jpg",
+      "website": "https://hss.iitm.ac.in/krishna-malakar/"
+    },
+    {
+      "name": "Dr. Krishna Vasudevan",
+      "position": "Department of Electrical Engineering",
+      "image": "../assets/AssociateFaculty/Krishna Vasudevan Compressed.jpg",
+      "website": "https://sites.google.com/a/ee.iitm.ac.in/krishna-vasudevan/"
+    },
+    {
+      "name": "Dr. Mohanakrishnan Logan",
+      "position": "Department of Civil Engineering",
+      "image": "../assets/AssociateFaculty/Mohanakrishnan Logan.jpg",
+      "website": "https://civil.iitm.ac.in/faculty/mohanlogan/"
+    },
+    {
+      "name": "Dr. Nagabhushana Rao Vadlamani",
+      "position": "Department of Aerospace Engineering",
+      "image": "../assets/AssociateFaculty/rao-pp.jpg",
+      "website": "https://home.iitm.ac.in/nrv/"
+    },
+    {
+      "name": "Dr. Nitin Muralidharan",
+      "position": "Department of Chemical Engineering",
+      "image": "../assets/AssociateFaculty/Nitin Muralidharan Compressed.jpg",
+      "website": "https://sites.google.com/view/emergegroup"
+    },
+    {
+      "name": "Dr. Preeti Aghalayam",
+      "position": "Department of Chemical Engineering",
+      "image": "../assets/AssociateFaculty/Preeti Aghalayam resized.jpg",
+      "website": "https://che.iitm.ac.in/preeti/"
+    },
+    {
+      "name": "Dr. Ravi Kumar N V",
+      "position": "Metallurgical and Materials Engineering",
+      "image": "../assets/AssociateFaculty/Ravi Kumar N Compressed.jpg",
+      "website": "https://mme.iitm.ac.in/nvrk"
+    },
+    {
+      "name": "Dr. Ravindra Gettu",
+      "position": "Department of Civil Engineering",
+      "image": "../assets/AssociateFaculty/Ravindra Gettu Compressed.jpg",
+      "website": "https://civil.iitm.ac.in/faculty/gettu/"
+    },
+    {
+      "name": "Dr. Sachin Gunthe",
+      "position": "Department of Civil Engineering",
+      "image": "../assets/AssociateFaculty/Sachin Gunthe Compressed.jpg",
+      "website": "https://civil.iitm.ac.in/faculty/sgunthe/"
+    },
+    {
+      "name": "Dr. Sankha Karmakar",
+      "position": "Department of Chemical Engineering",
+      "image": "../assets/AssociateFaculty/Sankha Karmakar.jpg",
+      "website": "https://che.iitm.ac.in/skarmakar/"
+    },
+    {
+      "name": "Dr. Santosh Kumar Sahu",
+      "position": "Humanities and Social Sciences",
+      "image": "../assets/AssociateFaculty/Santosh Kumar Sahu.jpg",
+      "website": "https://sites.google.com/view/sksahuiitm/home"
+    },
+    {
+      "name": "Dr. Sivakumar Palaniappan",
+      "position": "Department of Civil Engineering",
+      "image": "../assets/AssociateFaculty/Sivakumar Palaniappan.jpg",
+      "website": "https://civil.iitm.ac.in/faculty/sp/"
+    },
+    {
+      "name": "Dr. Smita Srivastava",
+      "position": "Department of Biotechnology",
+      "image": "../assets/AssociateFaculty/Smita Srivastava.jpg",
+      "website": "https://biotech.iitm.ac.in/biotech/faculty/smita_web/index.html"
+    },
+    {
+      "name": "Dr. Sreeram K. Kalpathy",
+      "position": "Metallurgical and Materials Engineering",
+      "image": "../assets/AssociateFaculty/sreeram k k.jpg",
+      "website": "https://sreeramkris.wixsite.com/sreeram"
+    },
+    {
+      "name": "Dr. Sriram Venkatachalam",
+      "position": "Department of Ocean Engineering",
+      "image": "../assets/AssociateFaculty/Sriram VenkatachalamCompressed.jpg",
+      "website": "https://home.iitm.ac.in/vsriram/"
+    },
+    {
+      "name": "Dr. Swathi Sudhakar",
+      "position": "Applied Mechanics and Biomedical Engineering",
+      "image": "../assets/AssociateFaculty/Swathi sudakar.jpg",
+      "website": "https://sites.google.com/smail.iitm.ac.in/nanomolecularlabiitm/home"
+    },
+    {
+      "name": "Dr. Tiju Thomas",
+      "position": "Metallurgical and Materials Engineering",
+      "image": "../assets/AssociateFaculty/Tiju Thomas.jpg",
+      "website": "https://mme.iitm.ac.in/tijuthomas/"
+    },
+    {
+      "name": "Dr. Venkatarathnam G",
+      "position": "Department of Mechanical Engineering",
+      "image": "../assets/AssociateFaculty/Venkatarathnam G Compressed.jpg",
+      "website": "https://mech.iitm.ac.in/profile.php?fname=gvenkat"
+    },
+    {
+      "name": "Dr. Venkatraman Srinivasan",
+      "position": "Department of Civil Engineering",
+      "image": "../assets/AssociateFaculty/Venkatraman Srinivasan Compressed.jpg",
+      "website": "https://home.iitm.ac.in/venkatraman/team.htm"
+    },
+    {
+      "name": "Dr. Vinu R",
+      "position": "Department of Chemical Engineering",
+      "image": "../assets/AssociateFaculty/Vinu R Compressed.jpg",
+      "website": "https://che.iitm.ac.in/vinu/"
+    }
+  ],
+  "affiliateFellows": [
+    {
+      "name": "Dr. Anuradda Ganesh",
+      "position": "Research Fellow",
+      "image": "../assets/A.svg",
+      "linkedin": "https://www.linkedin.com/in/anuradda-ganesh-fellow-inae-8b535064/"
+    },
+    {
+      "name": "Dr. Christoph Woiwode",
+      "position": "Senior Fellow",
+      "image": "../assets/B.svg",
+      "website": "https://www.ioer.de/en/institute/staff/woiwode"
+    },
+    {
+      "name": "Dr. E. Nandakumar",
+      "position": "Visiting Fellow",
+      "image": "../assets/C.svg",
+      "linkedin": "https://www.linkedin.com/in/e-nandakumar/"
+    },
+    {
+      "name": "Kaushal Kumar Jha",
+      "position": "Research Associate",
+      "image": "../assets/D.svg",
+      "linkedin": "https://www.linkedin.com/in/dr-kaushal-jha/"
+    },
+    {
+      "name": "Madhavan Nampoothiri",
+      "position": "Post-doc Fellow",
+      "image": "../assets/E.svg",
+      "linkedin": "https://www.linkedin.com/in/madhavan-nampoothiri-95564a2/"
+    },
+    {
+      "name": "Dr. Nikhil Tambe",
+      "position": "Senior Researcher",
+      "image": "../assets/F.svg",
+      "linkedin": "https://www.linkedin.com/in/nikhil-tambe-61b7b47/"
+    },
+    {
+      "name": "Dr. Parama Roy",
+      "position": "Research Scientist",
+      "image": "../assets/G.svg",
+      "website": "https://www.okapia.co/about-okapi-research-advisory/"
+    },
+    {
+      "name": "Dr. Parthiban V",
+      "position": "Deputy Chief Manager",
+      "image": "../assets/Parthiban.jpg",
+      "linkedin": "https://www.linkedin.com/in/parthiban-v-73173026/"
+    },
+    {
+      "name": "Dr. Raghuttama Rao",
+      "position": "Principal Investigator",
+      "image": "../assets/H.svg",
+      "linkedin": "https://www.linkedin.com/in/raghuttama-rao-350b072/"
+    }
+  ],
+  "advisors": [
+    {
+      "name": "Dr. Thalappil Pradeep",
+      "position": "Chemistry",
+      "image": "../assets/05.svg",
+      "website": "https://www.chem.iitm.ac.in/faculty/pradeep/"
+    },
+    {
+      "name": "Dr. Ligy Philip",
+      "position": "Civil Engineering",
+      "image": "../assets/01.svg",
+      "website": "https://civil.iitm.ac.in/faculty/ligy/"
+    },
+    {
+      "name": "Dr. Mahesh Panchagnula",
+      "position": "Applied Mechanics",
+      "image": "../assets/02.svg",
+      "website": "https://home.iitm.ac.in/mvp/"
+    },
+    {
+      "name": "Dr. Muraleedharan VR",
+      "position": "Humanities and Social Sciences",
+      "image": "../assets/03.svg",
+      "website": "https://hss.iitm.ac.in/muraleedharan-vr/"
+    },
+    {
+      "name": "Raghunathan Rengaswamy",
+      "position": "Advisor",
+      "image": "../assets/04.svg",
+      "website": "https://rbcdsai.iitm.ac.in/people/raghunathan-rengaswamy/"
+    }
+  ]
+}

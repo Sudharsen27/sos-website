@@ -1,0 +1,154 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import andrew from "../../public/outreach_images/hero_section.svg";
+import MediaData from "../Data/media.json"
+import Newletter from "@/components/Newletter.astro";
+---
+
+<Layout title="School of Sustainability">
+   <main class="overflow-x-hidden" >
+    <!-- Hero Section -->
+    <section class="relative">
+      <div class="relative w-full">
+        <!-- Responsive Image Container -->
+        <div
+          class="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] xl:h-[85vh]"
+        >
+          <img
+            src={andrew.src}
+            alt="Hero Image showcasing outreach activities"
+            class="w-full h-full sm:h-full lg:h-full object-cover"
+            loading="eager"
+          />
+        </div>
+
+        <!-- Text Overlay - Positioned at Bottom Left -->
+        <div
+          class="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 md:bottom-8 md:left-8 lg:bottom-10 lg:left-10 z-10"
+        >
+        </div>
+      </div>
+    </section>
+<!-- Navigation Breadcrumb -->
+ 
+   <!-- <nav
+  class="sticky top-0 z-10 bg-white shadow-sm border-b border-gray-200"
+  aria-label="Health and Safety navigation"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+      class="flex whitespace-nowrap justify-center items-center gap-2 sm:gap-4 md:gap-6 py-4"
+    >
+      <a
+        href="#events"
+        class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+      >
+        Events
+      </a>
+      <span class="text-gray-300">|</span>
+      <a
+        href="#media"
+        class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+      >
+        Media
+      </a>
+      <span class="text-gray-300">|</span>
+      <a
+        href="#initiatives"
+        class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+      >
+        Initiatives
+      </a>
+    </div>
+  </div>
+</nav>  -->
+
+  </div>
+</section>
+
+
+<!-- Media Section -->
+<section class="py-8 sm:py-12" id="media" x-data="{ showAll: false }">
+  <div class="container mx-auto px-4">
+    <!-- Events Header -->
+    <div class="mb-8">
+      <!-- Title -->
+      <h2
+        class="text-2xl sm:text-3xl font-semibold text-gray-900 border-l-4 border-green-600 pl-2 mb-4"
+      >
+        Media
+      </h2>
+
+      <section class="max-w-7xl mx-auto px-6 py-6 grid md:grid-cols-4 gap-8">
+        {MediaData.map((item) => (
+          <a
+            href={item.Link}
+            class="group overflow-hidden rounded-2xl shadow hover:shadow-xl transition-all duration-300 bg-white"
+          >
+            <!-- Image Section -->
+            <div class="w-full h-80 overflow-hidden">
+              <img
+                src={item.Image}
+                alt={item.Title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            <!-- Details Section -->
+            <div class="p-6">
+              <span
+                class="font-bold text-gray-900 leading-tight group-hover:text-green-600 transition-colors"
+              >
+                {item.Title}
+              </span>
+            </div>
+          </a>
+        ))}
+      </section>
+    </div>
+  </div>
+</section>
+
+</main>
+<Newletter/>
+<button
+  id="scrollToTop"
+  class="fixed bottom-6 right-6 z-50 bg-white border-2 border-green-600 text-green-600 p-3 rounded-full shadow-md transition-all duration-300 opacity-0 pointer-events-none"
+  aria-label="Scroll to top"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-5 h-5"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"
+    ></path>
+  </svg>
+</button>
+<script>
+  const scrollBtn = document.getElementById("scrollToTop");
+  if (scrollBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        scrollBtn.classList.remove("opacity-0", "pointer-events-none");
+      } else {
+        scrollBtn.classList.add("opacity-0", "pointer-events-none");
+      }
+    });
+
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+</script>
+<Footer/>
+
+</Layout>
+
+ 
+

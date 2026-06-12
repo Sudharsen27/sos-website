@@ -1,0 +1,754 @@
+---
+import organicfood from "../assets/Organic Food.svg";
+import Flash from "../assets/Flash On.svg";
+import DogHouse from "../assets/Dog House.svg";
+import UserAcc from "../assets/User Account.svg";
+import EventsImg from "../assets/Home_images/Events.webp";
+import exploreImg from "../assets/Talk_Andrew Forrest Talk 1.svg";
+import ecofriendly from "../assets/Home_images/research.webp";
+import profkamakoti from "../assets/prof-kamakoti.png";
+import rajnishkumar from "../assets/Rajnish-Kumarv2 1.svg";
+import homesvg from "../assets/Home_images/Hero_section.webp";
+import peoplehome from "../assets/Home_images/home_people.webp";
+import peoplesvg from "../assets/1_Launch_1 1.svg";
+import Footer from "../components/Footer.astro";
+import Newletter from "./Newletter.astro";
+import "../styles/global.css";
+import { intersection } from "astro:schema";
+
+// import Hero from "../assets/Home_hero_section_images/Groupimage.png";
+// // import Hero1 from "../assets/Home_hero_section_images/about_hero.svg";
+// import Hero2 from "../assets/Home_hero_section_images/Home Page Banner - MoU.jpg";
+// import Hero3 from "../assets/Home_hero_section_images/Groupimage.png";
+// import Hero4 from "../assets/Home_hero_section_images/Home Page Banner - CCUS Lab Visit 2.jpeg";
+// import Hero5 from "../assets/Home_hero_section_images/3_School Sustainability Day.jpg";
+// import Hero6 from "../assets/Home_hero_section_images/Home Page Banner - CXO Roundatble_1.jpg";
+// import Hero7 from "../assets/Home_hero_section_images/Home Page Banner - Energy Summit 2024.jpg";
+// import Hero8 from "../assets/Home_hero_section_images/Home Page Banner - ICSSR Conference_1.jpeg";
+// import Hero9 from "../assets/Home_hero_section_images/20250426_154428.jpg";
+// import Hero10 from "../assets/Home_hero_section_images/Home Page Banner - KoyambeduTeamwithTNGovernment.jpg";
+import Hero from "../assets/Home_hero_section_images/Groupimage.png";
+import Hero2 from "../assets/Home_hero_section_images/HomePageBannerMoU.jpg";
+import Hero3 from "../assets/Home_hero_section_images/Groupimage.png";
+import Hero4 from "../assets/Home_hero_section_images/HomePageBannerCCUS.jpeg";
+import Hero5 from "../assets/Home_hero_section_images/3_School Sustainability Day.jpg";
+import Hero6 from "../assets/Home_hero_section_images/HomePageBanner CXO.jpg";
+import Hero7 from "../assets/Home_hero_section_images/Home Page Banner - Energy Summit 2024.jpg";
+import Hero8 from "../assets/Home_hero_section_images/HomePageBannerICSSR.jpeg";
+import Hero9 from "../assets/Home_hero_section_images/20250426_154428.jpg";
+import Hero10 from "../assets/Home_hero_section_images/HomePageBannerKoyambedu.jpg";
+
+
+const res = await fetch(
+  `https://script.google.com/macros/s/AKfycbxF2ZlHi2tnbvMmROXF6NyFftJ2D4NtkOPr-_gFdkejl_KuAr8FwXkmp1mo_mLRIZS-bw/exec?ts=${Date.now()}`
+);
+
+let data = [];
+
+if (res.ok) {
+  try {
+    const json = await res.json();
+    data = json.data || [];
+  } catch (err) {
+    console.error("Invalid JSON, got:", err);
+  }
+} else {
+  console.error(`Failed to fetch: ${res.status} ${res.statusText}`);
+}
+
+const heroimage=[Hero,Hero2,Hero3,Hero4,Hero5,Hero6,Hero7,Hero8,Hero9,Hero10]
+---
+
+<!-- Hero Section - full viewport height -->
+<section class="relative w-full min-h-screen h-[100vh] overflow-hidden">
+  <!-- Carousel Container -->
+  <div class="carousel-container relative w-full h-full">
+    <!-- Slide 1 - Main Campus (First Image) -->
+
+    {heroimage.map((hero)=>  <div
+  class="carousel-slide absolute inset-0 w-full h-full transition-opacity duration-700 opacity-100"
+  data-slide="0"
+>
+  <!-- Background Image -->
+  <img
+    src={hero.src}
+    alt="IIT Madras sustainable campus with green buildings"
+    class="absolute inset-0 w-full h-full object-cover object-center"
+    loading="eager"
+    decoding="async"
+    width="1920"
+    height="1080"
+  />
+
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-black/40"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 flex items-center justify-center h-full px-4 sm:px-6 lg:px-12">
+    <div class="text-center max-w-2xl">
+      <h2
+        class="text-white font-extrabold leading-tight sm:leading-snug text-2xl sm:text-2xl md:text-4xl lg:text-5xl tracking-wide "
+        style="font-family: 'Poppins', 'Montserrat', 'Oswald', sans-serif;"
+      >
+        <span class="block" >School of Sustainability</span>
+        <span class="block">IIT Madras</span>
+      </h2>
+    </div>
+  </div>
+</div>)}
+  </div>
+
+  <!-- Navigation Arrows -->
+  <button
+    class="carousel-prev  absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors duration-300 rounded-full p-3 group"
+    aria-label="Previous slide"
+  >
+    <svg
+      class="w-6 h-6 text-white group-hover:text-white/80"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M15 19l-7-7 7-7"
+      ></path>
+    </svg>
+  </button>
+
+  <button
+    class="carousel-next  absolute right-2 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors duration-300 rounded-full p-3 group"
+    aria-label="Next slide"
+  >
+    <svg
+      class="w-6 h-6 text-white group-hover:text-white/80"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M9 5l7 7-7 7"
+      ></path>
+    </svg>
+  </button>
+
+  <!-- Slide Indicators -->
+  <div
+    class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3"
+  >
+    <button
+      class="carousel-indicator w-3 h-3 rounded-full bg-white/80 transition-all duration-300 active"
+      data-slide="0"
+      aria-label="Go to slide 1"
+    ></button>
+    <button
+      class="carousel-indicator w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300"
+      data-slide="1"
+      aria-label="Go to slide 2"
+    ></button>
+    <button
+      class="carousel-indicator w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300"
+      data-slide="2"
+      aria-label="Go to slide 3"
+    ></button>
+    <button
+      class="carousel-indicator w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300"
+      data-slide="3"
+      aria-label="Go to slide 4"
+    ></button>
+    <button
+      class="carousel-indicator w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300"
+      data-slide="4"
+      aria-label="Go to slide 5"
+    ></button>
+    <button
+      class="carousel-indicator w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300"
+      data-slide="5"
+      aria-label="Go to slide 6"
+    ></button>
+    <button
+      class="carousel-indicator w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300"
+      data-slide="6"
+      aria-label="Go to slide 7"
+    ></button>
+    <button
+      class="carousel-indicator w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300"
+      data-slide="7"
+      aria-label="Go to slide 8"
+    ></button>
+    <button
+      class="carousel-indicator w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300"
+      data-slide="8"
+      aria-label="Go to slide 9"
+    ></button>
+    <button
+      class="carousel-indicator w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300"
+      data-slide="9"
+      aria-label="Go to slide 10"
+    ></button>
+  </div>
+
+  <!-- What's New Sidebar - Desktop -->
+ <div
+  class="hidden md:block absolute top-20 right-8 lg:right-10 xl:right-16 w-60 lg:w-76 z-15"
+>
+  <div
+    class="bg-black/40 backdrop-blur-sm rounded-lg p-6 h-auto mt-11  "
+  >
+    <!-- Header -->
+    <div class="text-white text-center mb-6">
+      <h3 class="text-xl font-semibold">What's New</h3>
+    </div>
+
+    <!-- Content List -->
+    <div class="space-y-4">
+      {data.length > 0 ? (
+        data.map((item: any, index: number) => (
+          <div class="text-white/90 p-3 bg-white/10 rounded-lg text-left">
+            <h4 class="text-base mb-2">{item.Title}</h4>
+            <p class="text-base text-white/80">{item.Description}</p>
+          </div>
+        ))
+      ) : (
+        <p class="text-white/70 text-center">No updates found.</p>
+      )}
+    </div>
+  </div>
+</div>
+</section>
+
+<section>
+<!-- What's New Section - Mobile -->
+<div class="md:hidden w-full bg-black/40 backdrop-blur-sm p-6 -mt-4">
+  <div class="text-white text-center  font-medium mb-6">
+    What's New
+  </div>
+
+  <div class="space-y-4">
+    {data.length > 0 ? (
+      data.map((item: any, index: number) => (
+        <div
+          class="text-white/90  p-3 bg-white/10 rounded-lg"
+        >
+          <h6 class="font-medium mb-2">{item.Title}</h6>
+          <p class="text-white/80">{item.Description}</p>
+        </div>
+      ))
+    ) : (
+      <p class="text-white/70 text-center">No updates found.</p>
+    )}
+  </div>
+</div>
+</section>
+
+
+
+
+<!-- Themes Section -->
+<section class="bg-linear-to-r from-[#064924] to-[#519335] py-16">
+  <div class="container mx-auto px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+    <!-- Header -->
+        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6">
+      Themes
+    </h2>
+
+    <!-- Top 3 Cards -->
+    <div class="flex flex-col items-center gap-6 relative">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full px-4 md:px-10">
+        <!-- Card 1 -->
+        <div
+          class="border px-2 bg-linear-to-r from-[#064924] to-[#519335] rounded-xl shadow-md"
+        >
+          <div class="flex justify-center items-center text-white pt-4">
+            <img src={organicfood.src} class="w-12 h-12" />
+          </div>
+                  <div class="text-white ps-2 mt-3 font-bold md:text-xl text-center">
+
+            Climate Change Impacts and Adaptation: Scenario Modeling
+          </div>
+          <p class="text-base md:text-lg text-white leading-relaxed mb-8 mt-5 text-center
+">
+           Explore climate change impacts and adaptation strategies from an
+            engineering perspective, utilizing advanced modeling techniques to
+            assess long-term consequences and inform sustainable
+            decision-making
+        </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="border px-2 bg-linear-to-r from-[#064924] to-[#519335] rounded-xl shadow-md"
+        >
+          <div class="flex justify-center items-center text-white pt-4">
+            <img src={Flash.src} class="bg-white p-2 rounded-3xl mt-2 w-10 h-10" />
+          </div>
+                  <div class="text-white ps-2 mt-3 font-bold md:text-xl text-center">
+
+            Ubiquitous Decarbonization <br/> (Materials and Energy)
+          </div>
+         <p class="text-base md:text-lg text-white leading-relaxed mb-8 mt-5 text-center
+">
+            Comprehensive decarbonization efforts spanning renewable energy,
+            sustainable materials, and industrial processes, drawing from
+            collaborative research across various departments, to mitigate
+            carbon emissions and promote sustainable industry practices
+         </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="border px-2 bg-linear-to-r from-[#064924] to-[#519335] rounded-xl shadow-md"
+        >
+          <div class="flex justify-center items-center text-white pt-4">
+            <img
+              src={DogHouse.src}
+              class="bg-white p-2 rounded-3xl mt-2 w-10 h-10"
+            />
+          </div>
+            <div class="text-white ps-2 mt-3 font-bold md:text-xl text-center">
+
+            Sustainable Human Settlements and <br/> The F-E-W Nexus
+          </div>
+         <p class="text-base md:text-lg text-white leading-relaxed mb-8 mt-5 text-center
+">
+            Develop sustainable models for human settlements that address the
+            intricate interplay of Food, Energy, and Water <br/> (F-E-W) resources,
+            fostering a holistic <br/> and sustainable way of living
+         </p>
+        </div>
+      </div>
+
+      <!-- Flow Lines -->
+      <div class="h-8 w-full relative flex justify-center items-center mt-4">
+        <div class="absolute h-8 w-px bg-white left-[25%]"></div>
+        <div class="absolute h-8 w-px bg-white left-[50%]"></div>
+        <div class="absolute h-8 w-px bg-white left-[75%]"></div>
+        <div class="absolute top-8 left-[25%] w-[50%] h-px bg-white"></div>
+        <div class="absolute top-8 left-[50%] h-8 w-px bg-white"></div>
+      </div>
+      <!-- Bottom Card -->
+      <div
+        class="border px-4 bg-gradient-to-r from-[#064924] to-[#519335] rounded-xl shadow-xl w-[90%] md:w-[60%]"
+      >
+        <div class="flex justify-center items-center text-white pt-4">
+          <img src={UserAcc.src} class="bg-white p-2 rounded-3xl mt-2 w-10 h-10" />
+        </div>
+        <div class="text-white ps-2 mt-3 font-bold md:text-xl text-center">
+          Behavioural Change for Sustainability
+        </div>
+         <p class="text-base md:text-lg text-white leading-relaxed mb-8 mt-5 text-center
+">
+
+          Explore the spectrum of human behavior across various facets of life,
+          drive sustainable transformation through policy dialogues,
+          interdisciplinary studies, and vibrant outreach, envisioning a world
+          where sustainable living seamlessly integrates into our daily
+          existence
+         </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Events Section -->
+<section class="py-16">
+  <div class="container mx-auto px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start lg:items-start">
+      <!-- Content Section -->
+      <div class="order-2 lg:order-1 self-start">
+        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6 ">
+          Events
+        </h2>
+
+        <p class="text-gray-800 font-medium leading-relaxed text-base sm:text-md md:text-lg w-full mb-12 mt-4" style="text-align: justify; hyphens: auto;">
+          Join us for insightful events that drive meaningful conversations on sustainability. From expert-led seminars to hands-on workshops, our events foster innovation, collaboration, and real-world impact. Stay updated and be part of the change!
+        </p>
+
+        <div class="flex justify-center lg:justify-start">
+          <a
+            href="/outreach"
+            class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] hover:text-white font-semibold rounded-lg text-lg px-8 py-4 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg"
+          >
+            View Events
+          </a>
+        </div>
+      </div>
+
+      <!-- Image Section -->
+      <div class="order-1 lg:order-2 w-full">
+        <img
+  src={EventsImg.src}
+  alt="School of Sustainability events at IITM"
+  class="rounded-lg object-cover"
+  style="width: 100%; height: 300px;"
+/>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Explore Programs Section -->
+<section class="bg-gradient-to-r from-[#064924] to-[#519335] py-16">
+  <div class="container mx-auto px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start lg:items-start">
+      <!-- Image Section -->
+      <div class="order-1 md:order-1 w-full">
+        <img
+          src={exploreImg.src}
+          alt="Explore Sustainability Programs"
+          class=" rounded-lg object-cover"
+          style="width: 100%; height: 300px;"
+        />
+      </div>
+
+      <!-- Content Section -->
+      <div class="text-white order-1 md:order-1 self-start">
+        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6">
+          Programs Offered
+        </h2>
+
+        <p class="text-white font-medium leading-relaxed text-base sm:text-md md:text-lg w-full mb-12 mt-4" style="text-align: justify; hyphens: auto;">
+          As a new interdisciplinary entity in one of India's oldest technological institutions, the School of Sustainability opens doors to the field of Sustainability for a wide array of groups including students, industries, policymakers, and the public in India. Harnessing the best pedagogical practices implemented in interdisciplinary curricula worldwide, the School of Sustainability is creating new modes of knowledge transfer in Sustainability Science and Technology.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" >
+          <a
+            href="/programs"
+            class="border-2 border-[#3DAA6F] text-white hover:bg-[#3DAA6F] font-semibold rounded-lg text-lg px-6 py-3 text-center transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg"
+          >
+            Executive Education Programs
+          </a>
+          <a
+            href="/programs"
+            class="border-2 border-[#3DAA6F] text-white hover:bg-[#3DAA6F] font-semibold rounded-lg text-lg px-6 py-3 text-center transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg"
+          >
+            Degree Programs
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Research Section -->
+<section id="research" class="py-16">
+  <div class="container mx-auto px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start lg:items-start">
+      <!-- Content Section -->
+      <div class="order-2 lg:order-1 self-start">
+        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6">
+          Research
+        </h2>
+
+         <p class="text-gray-800 font-medium leading-relaxed text-base sm:text-md md:text-lg w-full mb-12 mt-4"
+   style="text-align: justify; hyphens: auto;">
+          At the School of Sustainability, research is at the heart of every
+          initiative. Our projects address pressing global challenges through
+          interdisciplinary collaboration. We work closely with affiliated
+          research centers to expand our reach and impact. These centers bring
+          together faculty, students, and partners from across domains. From
+          sustainable materials to climate action, innovation drives our
+          efforts.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <a
+            href="/research"
+            class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] hover:text-white font-semibold rounded-lg text-lg px-6 py-3 text-center transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg"
+          >
+            Ongoing Projects
+          </a>
+          <a
+            href="/research"
+            class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] hover:text-white font-semibold rounded-lg text-lg px-6 py-3 text-center transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg"
+          >
+            Affiliated Centers
+          </a>
+          <a
+            href="/research"
+            class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] hover:text-white font-semibold rounded-lg text-lg px-6 py-3 text-center transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg"
+          >
+            Research & Development
+          </a>
+        </div>
+      </div>
+
+      <!-- Image Section -->
+      <div class="order-1 lg:order-2 w-full">
+        <img
+          src={ecofriendly.src}
+          alt="Eco-friendly research"
+          class=" rounded-lg object-cover"
+          style="width: 100%; height: 300px;"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- People Section -->
+<section id="people" class="relative py-16 min-h-[60vh] flex items-center">
+  <!-- Background Image -->
+  <div
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    style={`background-image: url(${peoplehome.src})`}
+  >
+    <div class="absolute inset-0 bg-black/40"></div>
+  </div>
+
+  <!-- Foreground Content -->
+  <div class="relative z-10 container mx-auto px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+    
+    <!-- Top-left "People" text -->
+        
+
+    <!-- Two-column layout -->
+    <div class="flex flex-col lg:flex-row items-start gap-12">
+      
+      <!-- Image Left -->
+      <div class="w-full ">
+        <img
+          src={peoplesvg.src}
+          alt="People illustration"
+          class=" rounded-lg object-cover"
+          style="width: 100%; height: 300px;"
+        />
+      </div>
+      
+      <!-- Content Right -->
+      <div class="w-full flex flex-col justify-center text-white">
+        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6">
+          People
+        </h2>
+
+        <p class="text-white font-medium leading-relaxed text-base sm:text-md md:text-lg w-full mb-12 mt-4" style="text-align: justify; hyphens: auto;">
+          The School of Sustainability is a dynamic community of IITM faculty members, IITM Centres of Excellence, research scholars, and practitioners. We strive to foster creative modes of knowledge transfer, conduct integrated and actionable research in Sustainability Science and Technology, and aim to maximize impact through implementation and policy.
+        </p>
+
+        <div class="flex justify-center lg:justify-start">
+        <a
+          href="/people"
+          class="border-2 border-[#3DAA6F] text-white hover:bg-[#3DAA6F] font-semibold rounded-lg text-base md:text-lg px-6 py-2 md:px-8 md:py-3 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg w-max"
+        >
+          Know More
+        </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Director Section -->
+<section class="bg-[#F2F2F2] py-16">
+  <div class="container mx-auto px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start lg:items-start">
+      <!-- Photo + Name -->
+      <div class="col-span-1 flex flex-col items-center text-center">
+        <img
+          src={profkamakoti.src}
+          alt="Prof. Kamakoti"
+          class="w-52 h-48 rounded-lg shadow-lg mb-4 object-cover"
+        />
+        <h6 class="text-xl font-semibold mb-2">Prof. V. Kamakoti</h6>
+        <p class="text-gray-600">Director, IIT Madras</p>
+      </div>
+
+      <!-- Message -->
+      <div class="col-span-1 md:col-span-2">
+        <h3 class="text-2xl md:text-3xl font-semibold text-[#032A03] mb-6">
+
+          From The Director
+        </h3>
+        <blockquote
+          class="text-base md:text-lg text-gray-700 leading-relaxed italic text-justify"
+        >
+          "Sustainability is a critical component of our National Education
+          Policy. Every field of engineering and technology will eventually
+          converge to meet one or many of the seventeen Sustainable development
+          goals as listed by the United Nations. This convergence has started
+          happening at a rapid pace as inferred from the multiple G20 related
+          events conducted in India in 2023. In this context, the school of
+          sustainability shows IIT-Madras' unwavering commitment to capacity
+          building and action in this field."
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Head of School Section -->
+<section class="bg-[#F2F2F2] py-8">
+  <div class="container mx-auto px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 items-start lg:items-start">
+      <!-- Message -->
+      <div class="col-span-1 md:col-span-3 order-2 lg:order-1">
+        <h3 class="text-2xl md:text-3xl font-semibold text-[#032A03]  mb-6">
+          From The Head of the School
+        </h3>
+        <blockquote
+          class="text-base md:text-lg text-gray-700 leading-relaxed italic text-justify"
+        >
+          "The School of Sustainability will focus on three major areas, I.
+          making IIT Madras a sustainable institution which is committed to
+          becoming NetZero, II. providing sustainable education and helping
+          embed sustainability within the IITM curriculum, and III. integrating
+          government funded and industry funded research activities related to
+          sustainability and United Nations' Sustainable Development Goals.
+          Through science, practice and policy intervention, School of
+          Sustainability at IITM will deliver a more holistic impact for NetZero
+          India. "
+        </blockquote>
+      </div>
+
+      <!-- Image + Name/Title -->
+      <div
+        class="col-span-1 order-1 lg:order-2 flex flex-col items-center text-center"
+      >
+        <img
+          src={rajnishkumar.src}
+          alt="Prof. Rajnish Kumar"
+          class="w-52 h-48 rounded-lg object-cover shadow-lg mb-4"
+        />
+        <h6 class="text-xl font-semibold mb-2">Prof. Rajnish Kumar</h6>
+        <p class="text-gray-600">Head, School of Sustainability</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<Newletter />
+
+<button
+  id="scrollToTop"
+  class="fixed bottom-6 right-6 z-50 bg-white border-2 border-green-600 text-green-600 p-3 rounded-full shadow-md transition-all duration-300 opacity-0 pointer-events-none"
+  aria-label="Scroll to top"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-5 h-5"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"
+    ></path>
+  </svg>
+</button>
+
+<Footer />
+
+<script>
+  // Scroll to top functionality
+  const scrollBtn = document.getElementById("scrollToTop");
+  if (scrollBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        scrollBtn.classList.remove("opacity-0", "pointer-events-none");
+      } else {
+        scrollBtn.classList.add("opacity-0", "pointer-events-none");
+      }
+    });
+
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  // Carousel functionality
+  document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll(".carousel-slide");
+    const indicators = document.querySelectorAll(".carousel-indicator");
+    const prevButton = document.querySelector(".carousel-prev");
+    const nextButton = document.querySelector(".carousel-next");
+
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    let autoSlideInterval;
+
+    function showSlide(index) {
+      // Hide all slides
+      slides.forEach((slide) => {
+        slide.classList.remove("opacity-100");
+        slide.classList.add("opacity-0");
+      });
+
+      // Update indicators
+      indicators.forEach((indicator) => {
+        indicator.classList.remove("active", "bg-white/80");
+        indicator.classList.add("bg-white/40");
+      });
+
+      // Show current slide
+      slides[index].classList.remove("opacity-0");
+      slides[index].classList.add("opacity-100");
+
+      // Update current indicator
+      indicators[index].classList.add("active", "bg-white/80");
+      indicators[index].classList.remove("bg-white/40");
+
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      const next = (currentSlide + 1) % totalSlides;
+      showSlide(next);
+    }
+
+    function prevSlide() {
+      const prev = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(prev);
+    }
+
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    }
+
+    function stopAutoSlide() {
+      clearInterval(autoSlideInterval);
+    }
+
+    // Event listeners
+    if (nextButton) {
+      nextButton.addEventListener("click", () => {
+        nextSlide();
+        stopAutoSlide();
+        startAutoSlide(); // Restart auto-slide
+      });
+    }
+
+    if (prevButton) {
+      prevButton.addEventListener("click", () => {
+        prevSlide();
+        stopAutoSlide();
+        startAutoSlide(); // Restart auto-slide
+      });
+    }
+
+    // Indicator clicks
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener("click", () => {
+        showSlide(index);
+        stopAutoSlide();
+        startAutoSlide(); // Restart auto-slide
+      });
+    });
+
+    // Pause auto-slide on hover
+    const carouselContainer = document.querySelector(".carousel-container");
+    if (carouselContainer) {
+      carouselContainer.addEventListener("mouseenter", stopAutoSlide);
+      carouselContainer.addEventListener("mouseleave", startAutoSlide);
+    }
+
+    // Start auto-slide
+    startAutoSlide();
+  });
+</script>

@@ -1,0 +1,481 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Newsletter from "../components/Newletter.astro";
+import Footer from "../components/Footer.astro";
+import Navbar from "@/components/Navbar.astro";
+import Home from "../components/Home.astro";
+
+import kh from "../assets/Sustainability@IITM Organization & Policy Page - Sus Com_1.jpeg";
+
+import "../styles/global.css";
+import PoliciesData from "../Data/polices.json"
+const {DEI,purchase,investment,anti_corruption,ethics,carbon}= PoliciesData
+---
+
+<Layout title="Organisation and Policies">
+
+  <!-- Hero Section (same structure as Knowledge Hub banner) -->
+  <section class="relative overflow-hidden">
+    <div class="relative w-full h-[52vh] sm:h-[30vh] md:h-[77vh] lg:h-[78vh]">
+      <img
+        src={kh.src}
+        alt="Organisation at School of Sustainability, IIT Madras"
+        class="w-full h-full object-cover object-center mt-20"
+        loading="eager"
+        decoding="async"
+      />
+      <div class="absolute inset-0 bg-black/40 flex items-center justify-center px-4 sm:px-6 lg:px-12"></div>
+    </div>
+  </section>
+
+  <nav
+    class="sticky top-0 z-10 bg-white shadow-sm border-b border-gray-200"
+    aria-label="Health and Safety navigation"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        class="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 sm:gap-x-6 md:gap-x-8 py-3"
+      >
+        <a
+          href="#organization"
+          class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl lg:text-xl transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+        >
+          Organization
+        </a>
+        <span class="text-gray-300 hidden sm:inline">|</span>
+        <a
+          href="#policies"
+          class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl lg:text-xl transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+        >
+          Policies
+        </a>
+       
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== Organisation Section ===== -->
+  <section
+  id="organization"
+  class="relative w-full py-20 px-6 bg-gradient-to-b from-gray-50 via-white to-gray-100 scroll-mt-18"
+>
+  <div class="max-w-6xl mx-auto">
+    <!-- Section Heading -->
+    <h2
+      class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-12 sm:mb-14 text-left"
+    >
+      Organization
+    </h2>
+
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
+      <!-- Advisory Council on Sustainability -->
+      <div
+        class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
+      >
+        <div class="relative overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1000&q=80"
+            alt="Advisory Council on Sustainability"
+            class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-700"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#3DAA6F]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700"
+          ></div>
+        </div>
+        <div class="p-7 text-center relative z-10">
+          <h5
+            class="text-xl font-semibold text-[#032A03] mb-4 transition-all duration-300 group-hover:text-[#3DAA6F]"
+          >
+            Advisory Council on Sustainability
+          </h5>
+          <button
+            onclick="window.location.href='/organisation/advisory-council-on-sustainability'"
+            class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] hover:text-white font-semibold rounded-lg text-lg px-6 py-2 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg mt-3"
+          >
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Environment Management Committee -->
+      <div
+        class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
+      >
+        <div class="relative overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1000&q=80"
+            alt="Environment Management Committee"
+            class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-700"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#3DAA6F]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700"
+          ></div>
+        </div>
+        <div class="p-7 text-center relative z-10">
+          <h5
+            class="text-xl font-semibold text-[#032A03] mb-4 transition-all duration-300 group-hover:text-[#3DAA6F]"
+          >
+            Environment Management Committee
+          </h5>
+          <button
+            onclick="window.location.href='/organisation/environment-management'"
+            class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] hover:text-white font-semibold rounded-lg text-lg px-6 py-2 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg mt-3"
+          >
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Governance -->
+      <div
+        class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
+      >
+        <div class="relative overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1000&q=80"
+            alt="Governance"
+            class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-700"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#3DAA6F]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700"
+          ></div>
+        </div>
+        <div class="p-7 text-center relative z-10">
+          <h5
+            class="text-xl font-semibold text-[#032A03] mb-4 transition-all duration-300 group-hover:text-[#3DAA6F]"
+          >
+            Governance
+          </h5>
+          <button
+            onclick="window.location.href='/organisation/governance'"
+            class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] hover:text-white font-semibold rounded-lg text-lg px-6 py-2 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg mt-3"
+          >
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <!-- Student Committee -->
+      <div
+        class="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500"
+      >
+        <div class="relative overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80"
+            alt="Student Committee at School of Sustainability"
+            class="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-700"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#3DAA6F]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700"
+          ></div>
+        </div>
+        <div class="p-7 text-center relative z-10">
+          <h5
+            class="text-xl font-semibold text-[#032A03] mb-4 transition-all duration-300 group-hover:text-[#3DAA6F]"
+          >
+            Student Committee
+          </h5>
+          <button
+            onclick="window.location.href='/organisation/student-committee'"
+            class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] hover:text-white font-semibold rounded-lg text-lg px-6 py-2 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg mt-3"
+          >
+            Learn More
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ===== Scroll to Top Button ===== -->
+  <button
+    id="scrollToTop"
+    class="fixed bottom-6 right-6 z-50 bg-white border-2 border-green-600 text-green-600 p-3 rounded-full shadow-md transition-all duration-300 opacity-0 pointer-events-none"
+    aria-label="Scroll to top"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"></path>
+    </svg>
+  </button>
+
+  <script>
+    const scrollBtn = document.getElementById("scrollToTop");
+    if (scrollBtn) {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+          scrollBtn.classList.remove("opacity-0", "pointer-events-none");
+        } else {
+          scrollBtn.classList.add("opacity-0", "pointer-events-none");
+        }
+      });
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+  </script>
+
+  <style>
+    :global(body) {
+      font-family: "DM Sans", sans-serif;
+    }
+    :global(html) {
+      scroll-behavior: smooth;
+    }
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slide-up {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fade-in 1s ease forwards; }
+    .animate-slide-up { animation: slide-up 1.3s ease forwards; }
+  </style>
+
+
+
+<!-- Policies Section -->
+<section
+  id="policies"
+  class="relative w-full py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 scroll-mt-18"
+>
+  <div class="max-w-7xl mx-auto">
+    <!-- Section Heading -->
+    <h2
+      class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-12 sm:mb-14 text-left"
+    >
+      Policies
+    </h2>
+
+    <!-- Policy Grid: white, green, green, white, white, green -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 text-center">
+      
+      <!-- 1. White -->
+      <div class="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
+        <h5 class="text-xl sm:text-2xl font-semibold text-[#032A03] mb-6">
+          Diversity, Equity and Inclusion (DEI)
+        </h5>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {
+            DEI.map((policy) => (
+              <div class="relative overflow-hidden rounded-2xl bg-white/40 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                <div class="relative overflow-hidden rounded-t-2xl bg-gradient-to-br from-gray-50 to-gray-100">
+                  <a href={policy.file_path} target="_blank" rel="noopener noreferrer" class="block">
+                    <img
+                      src={policy.image}
+                      alt={policy.alt}
+                      class="w-full h-64 sm:h-80 object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </a>
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 text-white text-lg font-semibold bg-[#3DAA6F]/80 py-2 text-center translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  {policy.title}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- 2. Green -->
+      <div class="bg-gradient-to-r from-[#064924] to-[#519335] rounded-lg border border-green-700/30 p-6 shadow-sm">
+        <h5 class="text-xl sm:text-2xl font-semibold text-white mb-6">
+          Policy for Sustainable Purchases
+        </h5>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {
+            purchase.map((policy) => (
+              <div class="relative overflow-hidden rounded-2xl bg-white/40 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                <div class="relative overflow-hidden rounded-t-2xl bg-gradient-to-br from-gray-50 to-gray-100">
+                  <a href={policy.file_path} target="_blank" rel="noopener noreferrer" class="block">
+                    <img
+                      src={policy.image}
+                      alt={policy.alt}
+                      class="w-full h-64 sm:h-80 object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </a>
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 text-white text-lg font-semibold bg-[#3DAA6F]/80 py-2 text-center translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  {policy.title}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- 3. Green -->
+      <div class="bg-gradient-to-r from-[#064924] to-[#519335] rounded-lg border border-green-700/30 p-6 shadow-sm">
+        <h5 class="text-xl sm:text-2xl font-semibold text-white mb-6">
+          Sustainable Investment Policy
+        </h5>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {
+            investment.map((policy) => (
+              <div class="relative overflow-hidden rounded-2xl bg-white/40 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                <div class="relative overflow-hidden rounded-t-2xl bg-gradient-to-br from-gray-50 to-gray-100">
+                  <a href={policy.file_path} target="_blank" rel="noopener noreferrer" class="block">
+                    <img
+                      src={policy.image}
+                      alt={policy.alt}
+                      class="w-full h-64 sm:h-80 object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </a>
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 text-white text-lg font-semibold bg-[#3DAA6F]/80 py-2 text-center translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  {policy.title}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- 4. White -->
+      <div class="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
+        <h5 class="text-xl sm:text-2xl font-semibold text-[#032A03] mb-6">
+          Anti-Corruption Policy
+        </h5>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {
+            anti_corruption.map((policy) => (
+              <div class="relative overflow-hidden rounded-2xl bg-white/40 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                <div class="relative overflow-hidden rounded-t-2xl bg-gradient-to-br from-gray-50 to-gray-100">
+                  <a href={policy.file_path} target="_blank" rel="noopener noreferrer" class="block">
+                    <img
+                      src={policy.image}
+                      alt={policy.alt}
+                      class="w-full h-64 sm:h-80 object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </a>
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 text-white text-lg font-semibold bg-[#3DAA6F]/80 py-2 text-center translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  {policy.title}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- 5. White -->
+      <div class="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
+        <h5 class="text-xl sm:text-2xl font-semibold text-[#032A03] mb-6">
+          Ethics & Code of Conduct
+        </h5>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {
+            ethics.map((policy) => (
+              <div class="relative overflow-hidden rounded-2xl bg-white/40 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                <div class="relative overflow-hidden rounded-t-2xl bg-gradient-to-br from-gray-50 to-gray-100">
+                  <a href={policy.file_path} target="_blank" rel="noopener noreferrer" class="block">
+                    <img
+                      src={policy.image}
+                      alt={policy.alt}
+                      class="w-full h-64 sm:h-80 object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </a>
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 text-white text-lg font-semibold bg-[#3DAA6F]/80 py-2 text-center translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  {policy.title}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- 6. Green -->
+      <div class="bg-gradient-to-r from-[#064924] to-[#519335] rounded-lg border border-green-700/30 p-6 shadow-sm">
+        <h5 class="text-xl sm:text-2xl font-semibold text-white mb-6">
+          Carbon Footprint Report
+        </h5>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {
+            carbon.map((policy) => (
+              <div class="relative overflow-hidden rounded-2xl bg-white/40 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                <div class="relative overflow-hidden rounded-t-2xl bg-gradient-to-br from-gray-50 to-gray-100">
+                  <a href={policy.file_path} target="_blank" rel="noopener noreferrer" class="block">
+                    <img
+                      src={policy.image}
+                      alt={policy.alt}
+                      class="w-full h-64 sm:h-80 object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </a>
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 text-white text-lg font-semibold bg-[#3DAA6F]/80 py-2 text-center translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  {policy.title}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <Newsletter />
+  <button
+  id="scrollToTop"
+  class="fixed bottom-6 right-6 z-50 bg-white border-2 border-green-600 text-green-600 p-3 rounded-full shadow-md transition-all duration-300 opacity-0 pointer-events-none"
+  aria-label="Scroll to top"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-5 h-5"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"
+    ></path>
+  </svg>
+</button>
+<script>
+  const scrollBtn = document.getElementById("scrollToTop");
+  if (scrollBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        scrollBtn.classList.remove("opacity-0", "pointer-events-none");
+      } else {
+        scrollBtn.classList.add("opacity-0", "pointer-events-none");
+      }
+    });
+
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+</script>
+  <Footer />
+</Layout>
+
+<style>
+  /* Apply Poppins font globally with fallbacks */
+  :global(body) {
+    font-family: "DM Sans", sans-serif;
+  }
+
+  /* Ensure smooth scrolling for anchor links */
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+</style>

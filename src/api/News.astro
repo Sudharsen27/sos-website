@@ -1,0 +1,61 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+---
+
+
+
+<script type="module">
+  const table = document.getElementById('pub-table');
+  const tbody = document.getElementById('pub-body');
+  const loading = document.getElementById('loading');
+  const errorBox = document.getElementById('error-box');
+
+  async function loadPublications() {
+    try {
+      const res = await fetch("https://script.google.com/macros/s/AKfycbxQHBTHUUgEM_SKrE7T-dBUMPXxtlyGiLznNNGyaJVMOdugL1nf23NzvMm1_xTj99Qxzg/exec?ts=" + Date.now());
+      if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+      const json = await res.json();
+      const data = json.data || [];
+
+      if (data.length === 0) {
+        loading.textContent = "No publications found.";
+        return;
+      }
+
+      data.forEach(item => {
+        const row = document.createElement('tr');
+        row.className = "border-b border-neutral-700 hover:bg-neutral-800";
+
+let formattedDate;
+
+try {
+  const date = new Date(item.Date);
+  if (!isNaN(date.getTime()) && item.Date.trim().split(' ').length <= 3) {
+    formattedDate = `${String(date.getDate()).padStart(2, '0')}-${String(date.getMonth() + 1).padStart(2, '0')}-${date.getFullYear()}`;
+  } else {
+    formattedDate = item.Date;
+  }
+} catch (error) {
+  formattedDate = item.Date; 
+}
+
+
+        row.innerHTML = `
+          <td class="p-3 text-neutral-300">${item.Title}</td>
+          
+        `;
+        tbody.appendChild(row);
+      });
+
+      loading.classList.add("hidden");
+      table.classList.remove("hidden");
+    } catch (err) {
+      loading.classList.add("hidden");
+      errorBox.classList.remove("hidden");
+      errorBox.textContent = "Error loading data: " + err.message;
+    }
+  }
+
+  loadPublications();
+</script>

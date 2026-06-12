@@ -1,0 +1,815 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Footer from "@/components/Footer.astro";
+import Newletter from "@/components/Newletter.astro";
+import "../styles/global.css";
+import cover from "../../public/images/banner.webp";
+import project1 from "../assets/project1.svg";
+import projectcover from "../assets/wind-farms-fields.jpg";
+import projectcovercover from "../assets/abstract-creative-3d-sphere-with-vegetation.jpg";
+import projectbackgrond from "../assets/Home_images/home_people.webp";
+import project4 from "../assets/reseach_images/Consultancy Projects.jpg";
+import project5 from "../assets/reseach_images/Patents Filed.jpg";
+import project6 from "../assets/reseach_images/Patents Granted.jpg";
+import { centersData, researchProjectsData } from "../Data/research.js";
+import { formatResearchProjects, truncateText } from "../utils/helpers.js";
+import Icon1 from "../assets/reseach_images/Icon1.png";
+import Icon2 from "../assets/reseach_images/icon2.png";
+import Icon3 from "../assets/reseach_images/icon3.png";
+import Icon4 from "../assets/reseach_images/icon4.png";
+import Icon5 from "../assets/reseach_images/icon5.png";
+import Icon6 from "../assets/reseach_images/icon6.png";
+import Icon7 from "../assets/reseach_images/icon7.png";
+import Icon8 from "../assets/reseach_images/icon8.png";
+
+const centers = centersData;
+const researchProjects = [
+  {
+    ...researchProjectsData[0],
+    image: project1,
+  },
+  {
+    ...researchProjectsData[1],
+    image: project4,
+  },
+  {
+    ...researchProjectsData[2],
+    image: project5,
+  },
+  {
+    ...researchProjectsData[3],
+    image: project6,
+  }
+];
+
+const formattedProjects = formatResearchProjects(researchProjects);
+---
+
+<Layout title="Research & Development">
+  <section class="relative overflow-hidden">
+  <div class="relative w-full h-[52vh] sm:h-[42vh] md:h-[50vh] lg:h-[82vh]  ">
+    <img
+      src={cover.src}
+      alt="School of Sustainability IIT Madras campus view"
+      class="w-full h-full object-top mt-12"
+      loading="eager"
+      decoding="async"
+    />
+
+    <div class="absolute inset-0 bg-black/40 flex items-center justify-center px-4 sm:px-6 lg:px-12"></div>
+  </div>
+</section>
+
+
+
+
+  <!-- Navigation Links -->
+  <section>
+  <!-- Navigation Links -->
+  <nav
+    class="sticky top-0 z-10 bg-white shadow-sm border-b border-gray-200"
+    aria-label="Health and Safety navigation"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        class="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 sm:gap-x-6 md:gap-x-8 py-3"
+      >
+        <a
+          href="#projects"
+          class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl lg:text-xl transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+        >
+          Ongoing Projects
+        </a>
+        <span class="text-gray-300 hidden sm:inline">|</span>
+        <a
+          href="#centers"
+          class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl lg:text-xl transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+        >
+          Affiliated Centers
+        </a>
+        <span class="text-gray-300 hidden sm:inline">|</span>
+        <a
+          href="#research"
+          class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl lg:text-xl transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+        >
+          Research & Development
+        </a>
+       
+      </div>
+    </div>
+  </nav>
+</section>
+ <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- ======== Ongoing Projects Section ======== -->
+<section
+  id="projects"
+  class="container mx-auto px-4 py-20 sm:py-24 md:py-28 lg:py-32 bg-white scroll-mt-24"
+>
+  <!-- Section Heading -->
+  <h2
+    class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-8 sm:mb-10"
+  >
+    Ongoing Projects
+  </h2>
+
+  <!-- Projects Grid -->
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6"
+  >
+    <!-- Project 1 -->
+    <article
+      class="group bg-gray-100 border-2 border-gray-200 rounded-2xl overflow-hidden hover:border-emerald-500 hover:shadow-lg transition-all duration-300 p-4 sm:p-5 flex flex-col items-center text-center h-full"
+    >
+      <div class="flex justify-center items-center mb-4 mt-1 w-full">
+        <img
+          src={Icon1.src}
+          alt="Methane Project Logo"
+          class="w-12 h-12 sm:w-14 sm:h-14 object-contain transition-transform duration-300 group-hover:scale-110"
+        />
+      </div>
+
+      <p
+        class="text-gray-800 font-medium leading-relaxed text-base text-center"
+      >
+        Affordable and portable instrumentation for robust monitoring of
+        Methane emissions in urban micro-environments.
+      </p>
+    </article>
+
+    <!-- Project 2 -->
+    <article
+      class="group bg-gray-100 border-2 border-gray-200 rounded-2xl overflow-hidden hover:border-lime-500 hover:shadow-lg transition-all duration-300 p-4 sm:p-5 flex flex-col items-center text-center h-full"
+    >
+      <div class="flex justify-center items-center mb-4 mt-1 w-full">
+        <img
+          src={Icon2.src}
+          alt="Zein Project Logo"
+          class="w-12 h-12 sm:w-14 sm:h-14 object-contain transition-transform duration-300 group-hover:scale-110"
+        />
+      </div>
+
+      <p
+        class="text-gray-800 font-medium leading-relaxed text-sm text-center"
+      >
+        Feasibility study of "Zein" — a byproduct of food processing for
+        industrial decarbonization.
+      </p>
+    </article>
+
+    <!-- Project 3 -->
+    <article
+      class="group bg-gray-100 border-2 border-gray-200 rounded-2xl overflow-hidden hover:border-rose-500 hover:shadow-lg transition-all duration-300 p-4 sm:p-5 flex flex-col items-center text-center h-full"
+    >
+      <div class="flex justify-center items-center mb-4 mt-1 w-full">
+        <img
+          src={Icon3.src}
+          alt="Plastic Upgradation Project"
+          class="w-12 h-12 sm:w-14 sm:h-14 object-contain transition-transform duration-300 group-hover:scale-110"
+        />
+      </div>
+
+      <p
+        class="text-gray-800 font-medium leading-relaxed text-sm text-center"
+      >
+        Chemo-microbial upgradation of waste plastics to platform chemicals.
+      </p>
+    </article>
+
+    <!-- Project 4 -->
+    <article
+      class="group bg-gray-100 border-2 border-gray-200 rounded-2xl overflow-hidden hover:border-sky-500 hover:shadow-lg transition-all duration-300 p-4 sm:p-5 flex flex-col items-center text-center h-full"
+    >
+      <div class="flex justify-center items-center mb-4 mt-1 w-full">
+        <img
+          src={Icon4.src}
+          alt="Climate Action Tool"
+          class="w-12 h-12 sm:w-14 sm:h-14 object-contain transition-transform duration-300 group-hover:scale-110"
+        />
+      </div>
+
+      <p
+        class="text-gray-800 font-medium leading-relaxed text-sm text-center"
+      >
+        Climate Action Tool (CAT) for modeling industrial decarbonization.
+      </p>
+    </article>
+
+    <!-- Project 5 -->
+    <article
+      class="group bg-gray-100 border-2 border-gray-200 rounded-2xl overflow-hidden hover:border-amber-500 hover:shadow-lg transition-all duration-300 p-4 sm:p-5 flex flex-col items-center text-center h-full"
+    >
+      <div class="flex justify-center items-center mb-4 mt-1 w-full">
+        <img
+          src={Icon5.src}
+          alt="Wastewater Digital Twin"
+          class="w-12 h-12 sm:w-14 sm:h-14 object-contain transition-transform duration-300 group-hover:scale-110"
+        />
+      </div>
+
+      <p
+        class="text-gray-800 font-medium leading-relaxed text-sm text-center"
+      >
+        Developing digital twins for evaluating technology options and optimizing wastewater
+        treatment — both centralized and decentralized — integrated with outfalls in water bodies.
+      </p>
+    </article>
+
+    <!-- Project 6 -->
+    <article
+      class="group bg-gray-100 border-2 border-gray-200 rounded-2xl overflow-hidden hover:border-fuchsia-500 hover:shadow-lg transition-all duration-300 p-4 sm:p-5 flex flex-col items-center text-center h-full"
+    >
+      <div class="flex justify-center items-center mb-4 mt-1 w-full">
+        <img
+          src={Icon6.src}
+          alt="Fishing Community Project"
+          class="w-12 h-12 sm:w-14 sm:h-14 object-contain transition-transform duration-300 group-hover:scale-110"
+        />
+      </div>
+
+      <p
+        class="text-gray-800 font-medium leading-relaxed text-sm text-center"
+      >
+        Enhancing livelihoods and safety of fishing communities in the Bay of Bengal while ensuring
+        sustainable implementation.
+      </p>
+    </article>
+
+    <!-- Project 7 -->
+    <article
+      class="group bg-gray-100 border-2 border-gray-200 rounded-2xl overflow-hidden hover:border-indigo-500 hover:shadow-lg transition-all duration-300 p-4 sm:p-5 flex flex-col items-center text-center h-full"
+    >
+      <div class="flex justify-center items-center mb-4 mt-1 w-full">
+        <img
+          src={Icon7.src}
+          alt="Floating Solar PV Guidelines"
+          class="w-12 h-12 sm:w-14 sm:h-14 object-contain transition-transform duration-300 group-hover:scale-110"
+        />
+      </div>
+
+      <p
+        class="text-gray-800 font-medium leading-relaxed text-sm text-center"
+      >
+        Development of guidelines for floating solar photovoltaics in India.
+      </p>
+    </article>
+
+    <!-- Project 8 -->
+    <article
+      class="group bg-gray-100 border-2 border-gray-200 rounded-2xl overflow-hidden hover:border-teal-500 hover:shadow-lg transition-all duration-300 p-4 sm:p-5 flex flex-col items-center text-center h-full"
+    >
+      <div class="flex justify-center items-center mb-4 mt-1 w-full">
+        <img
+          src={Icon8.src}
+          alt="Heat Pump Systems Project"
+          class="w-12 h-12 sm:w-14 sm:h-14 object-contain transition-transform duration-300 group-hover:scale-110"
+        />
+      </div>
+
+      <p
+        class="text-gray-800 font-medium leading-relaxed text-sm text-center"
+      >
+        Development of design and performance guidelines for heat pump systems.
+      </p>
+    </article>
+  </div>
+</section>
+
+
+
+
+<!-- ======== Add big gap BELOW this section ======== -->
+<div class="h-24 sm:h-28 md:h-32"></div>
+
+
+  <!--Affiliated Centers -->
+  <section id="centers" class="py-8 sm:py-12 md:py-16 lg:py-20 relative scroll-mt-18">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-left w-full ">
+        
+       <div class="relative z-10">
+  <h2
+    class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white
+           border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6"
+  >
+    Affiliated Centers
+  </h2>
+</div>
+
+<!-- Background Image -->
+<div class="absolute inset-0 bg-cover rounded-lg overflow-hidden">
+  <img
+    src={projectbackgrond.src}
+    alt="Affiliated Centers background"
+    class="w-full h-full object-cover opacity-100"
+    loading="lazy"
+  />
+</div>
+      </div>
+
+      <!-- Centers Grid -->
+      <div id="centersGrid" class="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6 transition-all duration-800 mt-4 sm:mt-6">
+        {centers.map((center) => (
+          <div class="center-card relative bg-white/20 backdrop-blur-sm transition-all duration-800 p-3 sm:p-4 md:p-4 rounded-lg group shadow-lg hover:shadow-xl border-green/20 min-w-0"
+               data-center-name={center.name.toLowerCase()}
+               data-center-detail={center.detail.toLowerCase()}
+               data-center-id={center.id}
+               tabindex="0">
+            
+            <!-- Main Card Content -->
+            <div class="card-content transition-all duration-300">
+              <!-- Logo -->
+              <div class="w-14 h-14 sm:w-20 sm:h-20 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden mx-auto mb-2 sm:mb-3 flex-shrink-0">
+  <img 
+    src={center.logo} 
+    alt={center.name} 
+    class="w-full h-full object-contain"
+    loading="lazy"
+  />
+</div>
+
+              <!-- Name -->
+              <div class="text-center min-w-0">
+                <h4 class="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-white leading-tight break-words line-clamp-2">
+                  {center.name}
+                </h4>
+              </div>
+            </div>
+
+            <div class="center-tooltip absolute bg-white border border-gray-200 rounded-xl shadow-2xl p-4 sm:p-6 md:p-8 w-[calc(100vw-2rem)] max-w-[22rem] sm:max-w-[26rem] md:max-w-[28rem] opacity-0 invisible transition-all duration-300 pointer-events-none z-50 scale-95">
+              
+              <!-- Close button: min 44px for touch -->
+              <button class="tooltip-close absolute top-3 right-3 sm:top-4 sm:right-4 w-10 h-10 sm:w-9 sm:h-9 min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 bg-gray-800 text-white rounded-full text-lg sm:text-base flex items-center justify-center hover:bg-gray-900 transition-colors z-10 touch-manipulation" aria-label="Close">
+                ×
+              </button>
+              
+              <!-- Tooltip Header -->
+              <div class="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6 pr-12 min-w-0">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gray-100 rounded-full flex items-center justify-center overflow-hidden flex-shrink-0">
+                  <img 
+                    src={center.logo} 
+                    alt={center.name} 
+                    class="w-full h-full object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <h4 class="font-bold text-gray-800 text-base sm:text-lg md:text-xl leading-tight break-words min-w-0">
+                  {center.name}
+                </h4>
+              </div>
+
+              <!-- Details Section: no scroll, content expands fully -->
+              <div class="space-y-4 sm:space-y-5">
+                <!-- Center Type -->
+                <div class="border-b border-gray-100 pb-3 flex-shrink-0">
+                  <span class="text-sm sm:text-base text-gray-600 font-medium">Center Type: </span>
+                  <span class="text-base sm:text-lg font-semibold text-gray-800 block sm:inline mt-0.5">Research & Development</span>
+                </div>
+                
+                <!-- Description -->
+                <div class="border-b border-gray-100 pb-3 flex-shrink-0">
+                  <div class="text-sm sm:text-base text-gray-600 mb-1.5 sm:mb-2 font-semibold">Description</div>
+                  <div class="tooltip-description text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
+                    {center.detail}
+                  </div>
+                </div>
+                
+                <div class="pt-2 flex-shrink-0">
+                  <a
+                    href={center.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center gap-2 min-h-[44px] px-4 sm:px-5 py-2.5 sm:py-3 bg-green-600 text-white text-sm sm:text-base font-medium rounded-lg hover:bg-green-700 transition-colors touch-manipulation w-full sm:w-auto"
+                  >
+                    Visit Center
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Add big gap BELOW this section ======== -->
+<div class="h-24 sm:h-28 md:h-32"></div>
+
+
+<!-- ======== Research & Development ======== -->
+   <section id="research" class="container mx-auto px-4 py-12 sm:py-16 md:py-20 scroll-mt-24">
+     <h2   class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6 ">
+
+      Research & Development
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-4 gap-6 sm:gap-8">
+      {formattedProjects.map((project) => {
+        const isInternal = project.url.startsWith("/");
+        return (
+        <article class="bg-gray-100 rounded-xl overflow-hidden hover:shadow-lg transition-shadow group">
+          <a
+            href={project.url}
+            target={isInternal ? undefined : "_blank"}
+            rel={isInternal ? undefined : "noopener noreferrer"}
+            class="block"
+            data-project-id={project.id}
+          >
+            <img
+              src={project.image.src}
+              alt={project.title}
+              class="w-full h-48 sm:h-56 md:h-64 object-cover p-4 group-hover:scale-105 transition-transform cursor-pointer rounded-3xl"
+              loading="lazy"
+            />
+          </a>
+          <div class="p-4 sm:p-6">
+            <a
+              href={project.url}
+              target={isInternal ? undefined : "_blank"}
+              rel={isInternal ? undefined : "noopener noreferrer"}
+              class="text-base sm:text-lg font-medium  transition-colors block"
+              data-project-id={project.id}
+            >
+              {project.title}
+            </a>
+          </div>
+        </article>
+      );})}
+    </div>
+  </section>
+
+
+  <br />
+  <Newletter />
+  <button
+  id="scrollToTop"
+  class="fixed bottom-6 right-6 z-50 bg-white border-2 border-green-600 text-green-600 p-3 rounded-full shadow-md transition-all duration-300 opacity-0 pointer-events-none"
+  aria-label="Scroll to top"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-5 h-5"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"
+    ></path>
+  </svg>
+</button>
+<script>
+  const scrollBtn = document.getElementById("scrollToTop");
+  if (scrollBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        scrollBtn.classList.remove("opacity-0", "pointer-events-none");
+      } else {
+        scrollBtn.classList.add("opacity-0", "pointer-events-none");
+      }
+    });
+
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+</script>
+  <Footer />
+</Layout>
+
+<style>
+  .line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .center-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    z-index: 50;
+    /* Responsive: overridden by Tailwind + media queries below */
+    min-width: min(280px, calc(100vw - 2rem));
+  }
+
+  #centersGrid:has(.center-card:hover) .center-card:not(:hover) {
+    filter: blur(4px);
+    opacity: 0.4;
+    transform: scale(0.95);
+  }
+
+  #centersGrid:has(.center-card:hover) .center-card:hover {
+    filter: none;
+    opacity: 1;
+    transform: scale(1.02);
+    z-index: 60;
+  }
+
+  .center-card:hover .center-tooltip,
+  .center-card:focus-within .center-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+  }
+
+  /* Position tooltip relative to the grid container */
+  #centersGrid {
+    position: relative;
+  }
+
+  .center-card:hover .center-tooltip {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  /* Custom scrollbar for tooltip content */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #d1d5db #f3f4f6;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 2px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 2px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+  }
+
+  /* Responsive: small screens – no scroll, modal expands with content */
+  @media (max-width: 640px) {
+    .center-tooltip {
+      width: calc(100vw - 2rem) !important;
+      max-width: none !important;
+      padding: 1rem !important;
+      position: fixed !important;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) scale(1) !important;
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    .center-tooltip {
+      width: min(26rem, calc(100vw - 2rem)) !important;
+      position: fixed !important;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) scale(1) !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #centersGrid:has(.center-card:hover) .center-card:not(:hover) {
+      filter: blur(2px);
+      opacity: 0.3;
+    }
+  }
+
+  /* Animation for grid-centered tooltip */
+  @keyframes gridTooltipSlideIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  .center-card:hover .center-tooltip {
+    animation: gridTooltipSlideIn 0.3s ease-out;
+  }
+
+  /* Additional CSS for blur effects */
+  #centersGrid.has-active-tooltip .center-card:not(.active-tooltip-card) {
+    filter: blur(4px);
+    opacity: 0.4;
+    transform: scale(0.95);
+  }
+
+  #centersGrid.has-active-tooltip .center-card.active-tooltip-card {
+    filter: none;
+    opacity: 1;
+    transform: scale(1.02);
+    z-index: 60;
+  }
+
+  /* Fallback for browsers that don't support :has() selector */
+  @supports not selector(:has(*)) {
+    .center-card:hover ~ .center-card,
+    .center-card:hover ~ * .center-card {
+      filter: blur(4px);
+      opacity: 0.4;
+      transform: scale(0.95);
+    }
+  }
+
+  /* Focus states for accessibility */
+  .center-card:focus {
+    outline: 2px solid #3daa6f;
+    outline-offset: 2px;
+  }
+
+  .center-card:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Animation for grid-centered tooltip */
+  @keyframes gridTooltipSlideIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  .center-card:hover .center-tooltip {
+    animation: gridTooltipSlideIn 0.3s ease-out;
+  }
+
+  /* Smooth transitions for all cards */
+  .center-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Enhanced button styles */
+  .tooltip-close:hover {
+    background-color: #ef4444;
+    transform: scale(1.1);
+  }
+
+  /* Prevent text selection on tooltip */
+  .center-tooltip {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  /* Allow text selection in description */
+  .center-tooltip .tooltip-description {
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+  }
+</style>
+
+<!-- <script>
+  // Import utility functions for client-side functionality
+  import { scrollToSection, handleExternalLink, trackEvent } from "../utils/helpers.js";
+
+  // Declare activeTooltip variable for tooltip management
+  let activeTooltip = null;
+  const centersGrid = document.getElementById('centersGrid');
+
+  // Initialize when DOM is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    // Handle smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        scrollToSection(targetId);
+      });
+    });
+
+    // Handle external link tracking
+    const externalLinks = document.querySelectorAll('a[target="_blank"]');
+    externalLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        const url = this.getAttribute('href');
+        const linkName = this.textContent.trim() || this.getAttribute('data-center-id') || this.getAttribute('data-project-id');
+        trackEvent('external_link_click', { url, link_name: linkName });
+      });
+    });
+
+    // Close tooltip on clicking close button
+    document.querySelectorAll('.tooltip-close').forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const tooltip = this.closest('.center-tooltip');
+        const card = tooltip.closest('.center-card');
+        if (tooltip) {
+          tooltip.style.opacity = '0';
+          tooltip.style.visibility = '';
+          tooltip.style.pointerEvents = '';
+          card.classList.remove('active-tooltip-card');
+          activeTooltip = null;
+        }
+      });
+    });
+
+  });
+
+  // Close tooltips on scroll 
+  window.addEventListener('scroll', function() {
+    if (activeTooltip) {
+      hideGridCenteredTooltip(activeTooltip);
+    }
+  });
+
+  // Handle window resize to reposition tooltip
+  window.addEventListener('resize', function() {
+    if (activeTooltip) {
+      const activeCard = document.querySelector('.active-tooltip-card');
+      if (activeCard) {
+        const gridRect = centersGrid.getBoundingClientRect();
+        const centerX = gridRect.left + gridRect.width / 2;
+        const centerY = gridRect.top + gridRect.height / 2;
+        activeTooltip.style.left = centerX + 'px';
+        activeTooltip.style.top = centerY + 'px';
+      }
+    }
+  });
+
+  // View Projects button
+  const viewProjectsBtn = document.getElementById('viewProjectsBtn');
+  if (viewProjectsBtn) {
+    viewProjectsBtn.addEventListener('click', function() {
+      scrollToSection('research');
+      trackEvent('view_projects_click', { source: 'hero_section' });
+    });
+  }
+
+  // Search functionality (if search input exists)
+  const searchInput = document.getElementById('centerSearch');
+  const centerCardsList = document.querySelectorAll('.center-card');
+  const noResults = document.getElementById('noResults');
+
+  if (searchInput) {
+    searchInput.addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      centerCardsList.forEach(card => {
+        const name = card.getAttribute('data-center-name');
+        const detail = card.getAttribute('data-center-detail');
+
+        if (name.includes(searchTerm) || detail.includes(searchTerm)) {
+          card.style.display = 'block';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Show/hide no results message
+      if (noResults) {
+        if (visibleCount === 0) {
+          noResults.classList.remove('hidden');
+        } else {
+          noResults.classList.add('hidden');
+        }
+      }
+    });
+  }
+
+  function hideGridCenteredTooltip(activeTooltip) {
+    if (activeTooltip) {
+      activeTooltip.style.opacity = '';
+      activeTooltip.style.visibility = '';
+      activeTooltip.style.pointerEvents = '';
+      const activeCard = document.querySelector('.active-tooltip-card');
+      if (activeCard) {
+        activeCard.classList.remove('active-tooltip-card');
+      }
+      activeTooltip = null;
+    }
+  }
+</script> -->

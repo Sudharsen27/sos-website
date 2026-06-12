@@ -1,0 +1,373 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Navbar from "@/components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+import Newsletter from "../../../components/Newletter.astro";
+import "../../../styles/global.css";
+
+const committees = [
+  {
+    name: "Student Sustainability Committee",
+    link: "https://dost.iitm.ac.in/iitmdost/sustainability-committee",
+    hasLink: true,
+  },
+  {
+    name: "IIT for Villages (IViL)",
+    hasLink: false,
+  },
+  {
+    name: "Sustainability Network (S-Net)",
+    hasLink: false,
+  },
+  {
+    name: "Sahaay",
+    hasLink: false,
+  },
+  {
+    name: "JAGRITI",
+    hasLink: false,
+  },
+  {
+    name: "Sustainable Campus Collective",
+    hasLink: false,
+  },
+  {
+    name: "Prakriti Club",
+    link: "https://home.iitm.ac.in/prakriti/prakriti/",
+    hasLink: true,
+  },
+  {
+    name: "Plant-Based Society",
+    hasLink: false,
+  },
+  {
+    name: "Disaster Management Committee",
+    hasLink: false,
+  },
+];
+
+const initiatives = [
+  {
+    title: "IIT for Villages",
+    image: "/images/comm1.webp",
+    description: `IIT for Villages (IViL) was started with the vision to leverage the unique and vast resource base in the Institute for a wider audience. IViL is a discussion forum and an action platform for students to implement their thoughts for rural India. The forum has a dozen projects, ranging from setting up an accessibility lab for visually challenged students to bridging the gap between farmers and agriculture experts to teaching the children of mess workers on campus. They undertake frequent visits to villages on the outskirts of Chennai, and engage with students and community through various events.`,
+    imagePosition: "left",
+  },
+  {
+    title: "Sustainability Network",
+    image: "/images/comm2.jpg",
+    description: `The Sustainability Network (S-Net) team at IIT Madras makes sure environmental sustainability is achieved and continuously pursued in the future within our campus and beyond. To be a part of this beautiful campus is to not only enjoy every part of it, but to also work towards preserving its diversity and aiding its needs. S-Network focuses on major issues such as water crises, electricity consumption, food wastage, climate change, green cover on campus and waste management. They make noticeable changes by incorporating small projects to achieve immediate change, conducting awareness events, holding competitions to find solutions, and motivating every student to contribute to the betterment of our surroundings.`,
+    imagePosition: "right",
+  },
+  {
+    title: "Team Sahaay",
+    image: "/images/comm3.jpg",
+    description: `"The pleasure one experiences by helping someone in need is invaluable and the level of contentment of such achievements is extremely high." Sahaay, as the name suggests, aims to develop technological products and provide technical solutions to assist specially-abled people in their daily lives. The goal is to establish a team of enthusiastic students who would collaborate with various NGOs and work towards the development of technologies as societally impactful solutions.`,
+    imagePosition: "left",
+  },
+];
+---
+
+<Layout title="Student Committee">
+  <Navbar />
+  <br>
+  <br>
+
+  <!-- Student Committee Section -->
+  <section class="student-committee-section">
+    <div class="committee-container">
+      <h1 class="committee-title">Student Committee</h1>
+
+      <p class="committee-subtitle">
+        This page lists all the committees led by students on sustainability
+      </p>
+
+      <!-- Committee Grid -->
+      <div class="committee-grid">
+        {committees.map((item, index) => (
+          <div class={`committee-card committee-card-${index + 1}`}>
+            <h3 class="committee-name">{item.name}</h3>
+
+            {item.hasLink && (
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="visit-button"
+              >
+                Visit Website
+              </a>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Initiatives Section -->
+  <section class="social-initiatives-section">
+    <div class="initiatives-container">
+      <h2 class="initiatives-title">Social Initiatives</h2>
+
+      {initiatives.map((initiative, index) => (
+        <div class={`initiative-item ${index === 1 ? 'initiative-reverse' : ''}`}>
+          <div class="initiative-image-wrapper">
+            <img
+              src={initiative.image}
+              alt={initiative.title}
+              class="initiative-image"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="initiative-content">
+            <h3 class="initiative-title">{initiative.title}</h3>
+            <p class="initiative-description">{initiative.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <Newsletter />
+  <Footer />
+</Layout>
+
+<style>
+  :global(body) {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    color: #333333;
+  }
+
+  /* ========== STUDENT COMMITTEE SECTION ========== */
+  .student-committee-section {
+    width: 100%;
+    padding: 5rem 1.5rem;
+    background: #ffffff;
+  }
+
+  .committee-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .committee-title {
+    font-family: "DM Sans", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: left;
+    color: #0f172a;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .committee-subtitle {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #333333;
+    text-align: left;
+    margin-bottom: 3.5rem;
+  }
+
+  /* Committee Grid */
+  .committee-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    background: #EAF5EA;
+    border-radius: 1.5rem;
+    overflow: hidden;
+  }
+
+  .committee-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  .committee-card:last-child {
+    border-bottom: none;
+  }
+
+  .committee-name {
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #333333;
+    margin-bottom: 1rem;
+  }
+
+  .visit-button {
+    font-family: "DM Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    display: inline-block;
+    background: #16a34a;
+    color: white;
+    padding: 0.625rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .visit-button:hover {
+    background: #15803d;
+    transform: translateY(-2px);
+  }
+
+  /* ========== SOCIAL INITIATIVES SECTION ========== */
+  .social-initiatives-section {
+    width: 100%;
+    padding: 6rem 1.5rem;
+    background: #ffffff;
+  }
+
+  .initiatives-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .initiatives-title {
+    font-family: "DM Sans", sans-serif;
+    font-size: 2.25rem;
+    font-weight: 800;
+    text-align: left;
+    color: #0f172a;
+    margin-bottom: 6rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .initiative-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+    margin-bottom: 7rem;
+  }
+
+  .initiative-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .initiative-image-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .initiative-image {
+    width: 100%;
+    max-width: 28rem;
+    height: auto;
+    border-radius: 1rem;
+    object-fit: cover;
+  }
+
+  .initiative-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .initiative-title {
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #333333;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+
+  .initiative-description {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: #333333;
+  }
+
+  /* ========== TABLET (768px+) ========== */
+  @media (min-width: 768px) {
+    .committee-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .committee-card {
+      border-bottom: 1px solid #ffffff;
+      border-right: 1px solid #ffffff;
+    }
+
+    /* Remove right border on last column */
+    .committee-card-3,
+    .committee-card-6,
+    .committee-card-9 {
+      border-right: none;
+    }
+
+    /* Remove bottom border on last row */
+    .committee-card-7,
+    .committee-card-8,
+    .committee-card-9 {
+      border-bottom: none;
+    }
+
+    .initiative-item {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3.5rem;
+    }
+
+    /* Image on Right for Second Initiative */
+    .initiative-reverse {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .initiative-reverse .initiative-image-wrapper {
+      order: 2;
+      justify-content: flex-end;
+    }
+
+    .initiative-reverse .initiative-content {
+      order: 1;
+    }
+
+    .initiative-image-wrapper {
+      justify-content: flex-start;
+    }
+  }
+
+  /* ========== DESKTOP (1024px+) ========== */
+  @media (min-width: 1024px) {
+    .committee-title {
+      font-size: 3rem;
+    }
+
+    .initiatives-title {
+      font-size: 2.5rem;
+    }
+
+    .initiative-title {
+      font-size: 1.75rem;
+    }
+  }
+
+  /* ========== LARGE DESKTOP (1280px+) ========== */
+  @media (min-width: 1280px) {
+    .committee-title {
+      font-size: 3.5rem;
+    }
+
+    .initiatives-title {
+      font-size: 3rem;
+    }
+  }
+</style>
+
+
+

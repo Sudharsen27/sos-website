@@ -1,0 +1,179 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import Newletter from "../components/Newletter.astro";
+import aboutcover from "../assets/About_images/banner5.png";
+---
+
+<Layout title="Assessment Tools - School of Sustainability">
+  <!-- Banner -->
+  <section class="relative overflow-hidden">
+    <div class="relative w-full h-[60vh] sm:h-[50vh] md:h-[60vh] lg:h-[88vh] overflow-hidden">
+      <img
+        src={aboutcover.src}
+        alt="Assessment Tools at School of Sustainability, IIT Madras"
+        class="absolute inset-0 w-full h-full object-cover object-center"
+        loading="eager"
+        decoding="async"
+        width="1920"
+        height="1080"
+      />
+      <div class="absolute inset-0 bg-black/30"></div>
+    </div>
+  </section>
+
+  <!-- Main Section -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div id="patent-tables">
+      <!-- Loader skeleton -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-semibold text-green-700 mb-4 text-center">
+          Loading Assessment Data...
+        </h2>
+      </section>
+    </div>
+  </main>
+
+  <!-- Scroll to top button -->
+  <button
+  id="scrollToTop"
+  class="fixed bottom-6 right-6 z-50 bg-white border-2 border-green-600 text-green-600 p-3 rounded-full shadow-md transition-all duration-300 opacity-0 pointer-events-none"
+  aria-label="Scroll to top"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-5 h-5"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"
+    ></path>
+  </svg>
+</button>
+
+  <Footer />
+  <Newletter />
+</Layout>
+
+<!-- JS Section -->
+<script type="module">
+const ASSESSMENT_API_URL = "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLgCMMzr_2fRhC_4dU3Bf7Z3LgZUfbD_UTZQHu2eASnG-gsj_c8aMsSKZpRDhkccY20XSS8HEj4zWFd7amRNupSqRZyFohPwzVIv7qGSeUiQRr0Ku5rFjAfnH8X8VwiGRsVcm1NQyNfbqMdOz5koYxuOVc1k6_el1cTJgigut0oxaMmxmOvswc5GacB3uIHAh7JTfcPuwqQJD12BEXvKzTMlbz0sgI0rwaSJ5wrdf2MofN4IGCsFpgHinHbiGmEmseUD-CsZ4LALFklLqS2Tcg6gE-Wv0BQYxzNHLrGF8PKOO_LY1iM&lib=MogGsq4yb-hOgncgBsj98JqHVcGstMHy0";
+
+function formatDate(dateString) {
+  if (!dateString) return "-";
+  try {
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
+  } catch (e) {
+    return dateString;
+  }
+}
+
+async function fetchAssessmentData() {
+  const container = document.getElementById("patent-tables");
+  if (!container) return;
+
+  try {
+    const res = await fetch(ASSESSMENT_API_URL);
+    if (!res.ok) throw new Error("Failed to fetch Assessment Data");
+
+    const raw = await res.json();
+    if (raw && raw.error) throw new Error(raw.error);
+
+    const data = Array.isArray(raw.data) ? raw.data : [];
+    const count = raw.count != null ? raw.count : data.length;
+
+    // Clear loading skeleton
+    container.innerHTML = "";
+
+    const section = document.createElement("section");
+    section.className = "mb-16";
+
+    const header = document.createElement("h2");
+    header.className = "text-2xl font-semibold text-green-700 mb-4 text-center";
+    header.textContent = "Assessment Tools";
+    section.appendChild(header);
+
+    if (data.length === 0) {
+      const empty = document.createElement("p");
+      empty.className = "text-center text-gray-600";
+      empty.textContent = "No assessment data found.";
+      section.appendChild(empty);
+      container.appendChild(section);
+      return;
+    }
+
+    const tableWrapper = document.createElement("div");
+    tableWrapper.className = "overflow-x-auto rounded-xl shadow-md border border-gray-200";
+
+    const table = document.createElement("table");
+    table.className = "min-w-full border border-gray-300 bg-white text-sm text-left";
+
+    table.innerHTML = `
+      <thead class="bg-green-100 text-green-900 font-medium">
+        <tr>
+          <th class="px-4 py-2 border-b">S.No</th>
+          <th class="px-4 py-2 border-b">Course Number</th>
+          <th class="px-4 py-2 border-b">Course Name</th>
+          <th class="px-4 py-2 border-b">Student Name</th>
+          <th class="px-4 py-2 border-b">Department</th>
+          <th class="px-4 py-2 border-b">Assessment Date</th>
+          <th class="px-4 py-2 border-b">Assessment Format</th>
+          <th class="px-4 py-2 border-b">Quiz Score</th>
+          <th class="px-4 py-2 border-b">Grade</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    `;
+
+    const tbody = table.querySelector("tbody");
+    data.forEach((row, index) => {
+      const tr = document.createElement("tr");
+      tr.className = "hover:bg-green-50";
+      tr.innerHTML = `
+        <td class="px-4 py-2 border-b">${index + 1}</td>
+        <td class="px-4 py-2 border-b">${row["Course Number"] != null ? String(row["Course Number"]).trim() : "-"}</td>
+        <td class="px-4 py-2 border-b">${row["Course Name"] != null ? String(row["Course Name"]).trim() : "-"}</td>
+        <td class="px-4 py-2 border-b">${row["Student Name"] != null ? String(row["Student Name"]).trim() : "-"}</td>
+        <td class="px-4 py-2 border-b">${row["Department"] != null ? String(row["Department"]).trim() : "-"}</td>
+        <td class="px-4 py-2 border-b">${formatDate(row["Assessment Date"])}</td>
+        <td class="px-4 py-2 border-b">${row["Assessment Format"] != null ? String(row["Assessment Format"]).trim() : "-"}</td>
+        <td class="px-4 py-2 border-b">${row["Quiz Score"] != null ? row["Quiz Score"] : "-"}</td>
+        <td class="px-4 py-2 border-b">${row["Grade"] != null ? String(row["Grade"]).trim() : "-"}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    tableWrapper.appendChild(table);
+    section.appendChild(tableWrapper);
+    container.appendChild(section);
+  } catch (err) {
+    container.innerHTML = `
+      <section class="mb-16">
+        <h2 class="text-red-600 text-center">Error loading Assessment Data.</h2>
+        <p class="text-center text-gray-600 mt-2">${err.message || "Unknown error"}</p>
+      </section>`;
+    console.error("Error fetching assessment data:", err);
+  }
+}
+
+fetchAssessmentData();
+
+// Scroll-to-Top Button logic
+const scrollBtn = document.getElementById("scrollToTop");
+if (scrollBtn) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      scrollBtn.classList.remove("opacity-0", "pointer-events-none");
+    } else {
+      scrollBtn.classList.add("opacity-0", "pointer-events-none");
+    }
+  });
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+</script>

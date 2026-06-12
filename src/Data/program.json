@@ -1,0 +1,40 @@
+{
+    "degree" :[
+        {
+            "id" :1,
+            "title":"Minor in Sustainability",
+             "image":"/Programs/env-eng-v2.webp",
+              "file":"https://civil.iitm.ac.in/ee/"
+        },
+        {
+            "id" :2,
+            "title":"ID Core Course: Ecology and Environment",
+             "image":"/Programs/hydraulic-science.webp",
+              "file":"https://civil.iitm.ac.in/hwre/"
+        },
+        {
+            "id" :3,
+            "title":"ID5101: Sustainability and Entrepreneurship",
+             "image":"/Programs/energy-systems.webp",
+              "file":"https://ioe.iitm.ac.in/program/energy-systems/"
+        },
+        {
+            "id" :4,
+            "title":"Courses and Assessments on Sustainability",
+             "image":"/Programs/atmosphere-sciences.webp",
+              "file":"https://cacs.iitm.ac.in/"
+        },
+        {
+            "id" :5,
+            "title":"Postgraduate Programs",
+             "image":"/Programs/nac-building.webp",
+              "file":"https://abcd-centre.org/master-program.html"
+        },
+        {
+            "id" :6,
+            "title":"Ethics Courses",
+             "image":"/Programs/ethics.webp",
+              "file":"https://docs.google.com/spreadsheets/d/e/2PACX-1vQWikidQZfQQOuuX9NWw4QvwGz1UdWMrjezPqxdveaiyKTAW2VM7PJxSUOF-0iCON8nBTtmKZLRC1gt/pubhtml?gid=488988286&single=true&urp=gmail_link"
+        }
+    ]
+}

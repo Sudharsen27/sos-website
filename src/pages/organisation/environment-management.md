@@ -1,0 +1,9 @@
+---
+layout: ../../layouts/MDLayout.astro
+title: "Environment Management"
+description: "School of Sustainability at IIT Madras"
+---
+
+### **Environment Management Committee**
+
+The primary objective of an Environment Management Committee is to develop and execute strategies that mitigate the environmental impact of an organization's activities. This involves assessing the current environmental practices, identifying areas of improvement, and implementing effective measures to reduce ecological footprints. The committee's composition may vary depending on the organization's size and goals, but typically includes representatives from various departments or sectors, such as operations, human resources, facilities management, and sustainability.

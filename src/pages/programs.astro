@@ -1,0 +1,531 @@
+---
+import Layout from "../layouts/Layout.astro";
+import andrew from "../assets/SfIB Cohort_1.jpg";
+import man from "../assets/medium-shot-man-with-paperwork.svg";
+import female from "../assets/female-student.svg";
+import cert1 from "../assets/front-view-woman-holding-tablet-hand-looking-aside 1 (1).svg";
+import Santosh from "../assets/Santosh Photos 1.svg";
+import sstownhall from "../assets/SS Townhall  1.svg";
+import "../styles/global.css";
+import Newsletter from "../components/Newletter.astro";
+import Footer from "../components/Footer.astro";
+import Env from "../assets/Programs/env-eng-v2.webp";
+import Hydraulics from "../assets/Programs/hydraulic-science.webp";
+import Energy from "../assets/Programs/energy-systems.webp";
+import Atmosphere from "../assets/Programs/atmosphere-sciences.webp";
+import Building from "../assets/Programs/nac-building.webp";
+import Ethis from "../assets/Programs/ethics.webp";
+import Executive1 from "../assets/Executive image1.png";
+import Executive2 from "../assets/Executive image2.png";
+import Executive3 from "../assets/Executive image3.png";
+import Executive4 from "../assets/Executive image4.png";
+import Executive5 from "../assets/Executive image5.png";
+import Executive6 from "../assets/Executive image6.png";
+import Executive7 from "../assets/Executive image7.png";
+import Executive8 from "../assets/Executive image8.png";
+import Executive9 from "../assets/Executive image9.png";
+import Executive10 from "../assets/Executive image10.png";
+import Executive11 from "../assets/Executive image11.png";
+import Executive12 from "../assets/Executive image12.png";
+import Sustain1 from "../assets/Sustain image1.png";
+import Sustain2 from "../assets/Sustain image2.png";
+import Sustain3 from "../assets/Sustain image3.png";
+import Sustain4 from "../assets/Sustain image4.png";
+import Sustain5 from "../assets/Sustain image5.png";
+import Sustain6 from "../assets/Sustain image6.png";
+import Sustain7 from "../assets/Sustain image7.png";
+import Sustain8 from "../assets/Sustain image8.png";
+import Sustain9 from "../assets/Sustain image9.png";
+import Sustain10 from "../assets/Sustain image10.png";
+import Sustain11 from "../assets/Sustain image11.png";
+import Environmental from "../assets/reseach_images/Environmental.jpg"
+import EnergySystems from "../assets/reseach_images/Energy Systems.webp"
+import HydraulicSystem from "../assets/reseach_images/HydraulicSystem.jpg"
+import Atomsperic from "../assets/reseach_images/Atomsperic.jpg"
+import ABCD from "../assets/reseach_images/ABCD.webp"
+import Ethics from "../assets/reseach_images/Ethics.webp"
+import NPTELCourses from "../assets/reseach_images/NPTEL Courses.jpg"
+import AssessmentTools from "../assets/reseach_images/Assessment Tools.webp"
+import programdata from "../Data/program.json";
+
+// SEO and meta data
+const pageTitle = "OuHydraulicsr Programs - School of Sustainability";
+const pageDescription =
+  "Explore our comprehensive sustainability programs including certificate courses, degree programs, and postgraduate options at IIT Madras School of Sustainability.";
+
+const degree = [
+  {
+    id: 1,
+    title: "Environmental Engineering",
+    image: Environmental,
+    file: "https://civil.iitm.ac.in/ee/",
+    description: "IIT Madras offers a 2 year M.Tech program, an M.S (Masters by Research) and a PhD program in the area of environmental engineering. Students in this program will be exposed to concepts related to water conservation, air quality, waste management and circularity. "
+  },
+  {
+    id: 2,
+    title: "Hydraulics and Water Resources Engineering",
+    image: HydraulicSystem,
+    file: "https://civil.iitm.ac.in/hwre/",
+    description: "IIT Madras offers a 2 year M.Tech program, an M.S (Masters by Research) and a PhD program in the area of Hydraulics and Water Resources Engineering. Students in this program will be exposed to concepts related to hydrology, water resources management, hydraulic engineering, flood management and disaster mitigation."
+  },
+  {
+    id: 3,
+    title: "Energy Systems",
+    image: EnergySystems,
+    file: "https://ioe.iitm.ac.in/program/energy-systems/",
+    description: "IIT-Madras offers an Interdisciplinary Dual Degree Programme in Energy Systems. Any undergraduate student of the Institute with certain minimum norms of academic performance can apply for this programme in their 5th semester. This program helps students grasp energy use and conversion, preparing them for real-world challenges. Courses cover Thermal Energy Conversion, Renewable Energy, Energy Storage Materials, and Energy Economics."
+  },
+  {
+    id: 4,
+    title: "Atmospheric & Climate Sciences",
+    image: Atomsperic,
+    file: "https://cacs.iitm.ac.in/",
+    description: "IIT-Madras offers an Interdisciplinary Dual degree program in Atmospheric and Climate Sciences. The objective of this program is to provide detailed understanding about atmospheric processes and their interactions covering the range from molecular to global scale, helping in improved knowledge about climate change. "
+  },
+  {
+    id: 5,
+    title: "ABCD Program",
+    image: ABCD,
+    file: "https://abcd-centre.org/master-program.html",
+    description: "IIT-Madras, along with RWTH Aachen, AIT Bangkok and TU Dresden offers a joint Master's program on Water Security and Global Change. This program is open to applicants from all nationalities and provides an integrated and holistic approach to the topic of water security. 4 of the 11 core courses offered in the program are being offered by IIT Madras."
+  },
+]
+const ethicsCourses = [
+  {
+    id: 1,
+    title: "Ethics Courses",
+    image: Ethics,
+    file: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQWikidQZfQQOuuX9NWw4QvwGz1UdWMrjezPqxdveaiyKTAW2VM7PJxSUOF-0iCON8nBTtmKZLRC1gt/pubhtml?gid=488988286&single=true&urp=gmail_link",
+    link: "/ethics",
+    description: "This course covers fundamental ethical principles. Students will learn about various ethical frameworks and how to apply them in real-world situations. The course includes case studies and discussions to deepen understanding."
+  }
+];
+const sustainabilityCourses = [
+  {
+    id: 1,
+    title: "Code & NPTEL Courses",
+    image: NPTELCourses,
+    // file: "https://docs.google.com/spreadsheets/d/e/2PACX-1vReKjLQK9iz6KSU6IEtEnM1CX4iXixdtWMwCng3KyQnPwlilloXEnsAyLjtAyuNHWU-u70h1r0RXp9a/pubhtml",
+    link: "/nptel",
+    description:
+      "These courses cover fundamental sustainability principles. Students will learn about various sustainability frameworks and how to apply them in real-world situations. click the below link",
+  },
+  {
+    id: 2,
+    title: "Assessment Tools",
+    image: AssessmentTools,
+   // file: "https://docs.google.com/spreadsheets/d/e/2PACX-1vStykHW4AERfqjF1ByZuY2s060QLBU-eKm_gqv70qCwCnpv7MVoU9Fw5HMYY_R8IEK6R46aIULI2f3k/pubhtml",
+    link: "/assessment",
+    description:
+      "IIT Madras is deeply invested in imparting a knowledge base essential to think and act sustainably at all stages of life. The mandatory undergraduate course 'ID1200 Ecology and Environment' is, thus, designed for sensitising students towards real-world sustainability scenarios. As an assessment tool, a multiple-choice exam involving knowledge and skill-based questions is offered at the end of the course. During 2024-25, 93% students secured Satisfactory (= GPA10) grade, highlighting intellectual investment in sustainable literacy programs among IIT Madras's student body.",
+  },
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <main>
+    <!-- Hero Section -->
+    <section class="relative w-full overflow-hidden">
+  <div class="relative w-full h-[52vh] sm:h-[67vh] md:h-[77vh] lg:h-[87vh]">
+    <!-- Banner Image -->
+    <img
+      src={andrew.src}
+      alt="Programs offered at the School of Sustainability, IIT Madras"
+      class="w-full h-[52vh] sm:h-[67vh] md:h-[77vh] lg:h-[87vh] object-cover object-center mt-2"
+      loading="eager"
+      decoding="async"
+      width="1920"
+      height="1080"
+    />
+
+    <!-- Dark overlay -->
+    <div class="absolute inset-0 bg-black/40"></div>
+  </div>
+</section>
+
+
+
+    <!-- Tab Navigation -->
+    <div
+  class="
+    flex justify-center items-center gap-3 py-3 whitespace-nowrap
+    border-b border-gray-300
+    [@media(hover:none)]:whitespace-normal
+    [@media(hover:none)]:flex-wrap
+  "
+>
+
+
+      <a
+        href="#certificate"
+        class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl lg:text-xl transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 "
+      >
+        Executive Education Programs
+      </a>
+      <span class="text-gray-300">|</span>
+      <a
+        href="#degree"
+        class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl lg:text-xl transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 "
+      >
+        Degree Programs
+      </a>
+      <span class="text-gray-300"></span>
+      <!-- 
+      <a
+        href="#ethics"
+        class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl lg:text-xl transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 "
+      >
+        Ethics Courses
+      </a>
+      -->
+     
+      <!--
+      <a
+        href="#sustainability"
+        class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl lg:text-xl transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 "
+      >
+        Courses and Assessments on Sustainability
+      </a>
+      -->
+    </div>
+  </div>
+
+
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Certificate Courses Section -->
+      <section
+        id="certificate"
+        class="mb-16 sm:mb-20 scroll-mt-24"
+        aria-labelledby="certificate"
+      >
+        <h3
+          class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6"
+        >
+          Executive Education Programs
+        </h3>
+
+        <!-- Additional Certificate Cards -->
+        <section class="py-12">
+          <div class="max-w-6xl mx-auto px-4">
+            <div
+              class="grid grid-cols-1 lg:grid-cols-4 gap-8 sm:gap-12 justify-items-center"
+            >
+              <!-- Sustainability of Indian Business -->
+              <article
+                class="bg-white rounded-lg cursor-pointer shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:scale-105 lg:col-span-2 w-[85%] sm:w-[80%]"
+              >
+                <img
+                  src={Sustain1.src}
+                  alt="Professional working with environmental documents and paperwork"
+                  class="w-full object-contain max-h-[350px] sm:max-h-[400px] md:max-h-[450px] bg-gray-100 transition-transform duration-300"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div
+                  class="p-5 sm:p-6 text-center flex flex-col items-center"
+                >
+                  <h5
+                    class="text-lg sm:text-xl font-bold mb-3 text-gray-800 leading-tight"
+                  >
+                    Sustainability for Indian Businesses
+                  </h5>
+                  <a
+  href="https://drive.google.com/file/d/12rdb1Ta6NwtSsqAbsgW-ul31TszK3z5n/view"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] hover:text-white font-semibold rounded-lg text-lg px-6 py-2 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg mt-10"
+>
+  View Brochure
+</a>
+
+                </div>
+              </article>
+
+              <!-- Masterclass on ESG -->
+              <article
+                class="bg-white rounded-lg cursor-pointer shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:scale-105 lg:col-span-2 w-[85%] sm:w-[80%]"
+              >
+                <img
+                  src={Executive1.src}
+                  alt="Professional working with environmental documents and paperwork"
+                  class="w-full object-contain max-h-[350px] sm:max-h-[400px] md:max-h-[450px] bg-gray-100 transition-transform duration-300"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div
+                  class="p-5 sm:p-6 text-center flex flex-col items-center"
+                >
+                  <h5
+                    class="text-lg sm:text-xl font-bold mb-3 text-gray-800 leading-tight"
+                  >
+                    Masterclass on ESG: From Compliance to Opportunity
+                  </h5>
+                  <a
+  href="https://drive.google.com/file/d/1gQewyRrqk-_U80HnEppGu-K7_xY9tlDn/view?usp=drive_link"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] hover:text-white font-semibold rounded-lg text-lg px-6 py-2 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg mt-3"
+>
+  View Brochure
+</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Degree Programs Section -->
+<section
+  id="degree"
+  class="bg-gradient-to-r from-[#064924] to-[#519335] py-16 scroll-mt-24 rounded-2xl mx-4 sm:mx-6 lg:mx-8"
+  aria-labelledby="degree"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
+
+    <h3
+      class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-14 border-l-4 border-[#519335] pl-4"
+    >Degree Programs
+    </h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      {degree.map((degrees) => (
+        <article
+          class="bg-gradient-to-r from-[#064924] to-[#519335] rounded-3xl shadow-lg border border-white/20 hover:shadow-2xl transition-all duration-500 p-6 flex flex-col"
+        >
+          <div class="relative -mt-10 mb-6 rounded-2xl overflow-hidden shadow-lg">
+            <img
+              src={degrees.image.src}
+              alt={degrees.title}
+              class="w-full h-56 object-cover transition-transform duration-500 hover:scale-105"
+            />
+          </div>
+
+          <div class="flex flex-col flex-grow px-2">
+            <h4 class="text-xl sm:text-2xl font-semibold text-white mb-3">
+              {degrees.title}
+            </h4>
+
+            {degrees.description && (
+              <p class="text-white/90 leading-relaxed text-base mb-6">
+                {degrees.description}
+              </p>
+            )}
+
+            <div class="mt-auto">
+              <a
+                href={degrees.file}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="border-2 border-white text-white hover:bg-white hover:text-[#064924] font-semibold rounded-lg text-lg px-6 py-2 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg flex justify-center"
+              >
+                Read More
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+      <!-- Ethics Courses Section: cards stay white background; grid supports 2 cards when second is added -->
+      <section
+        id="ethics"
+        class="mb-16 sm:mb-20 scroll-mt-24"
+        aria-labelledby="ethics"
+      >
+        <h3
+          class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6 mt-11 "
+        >
+          Ethics Courses
+        </h3>
+
+        {/* Ethics Cards Grid - same white card style for all; no background change */}
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 lg:gap-12"
+        >
+          {
+            ethicsCourses.map((course) => (
+              <article class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col max-w-md mx-auto w-full">
+                {/* Image Container */}
+                <div class="h-64 bg-gray-100 overflow-hidden">
+                  <img
+                    src={course.image.src}
+                    alt={course.title}
+                    class="h-full w-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                    width={course.image.width}
+                    height={course.image.height}
+                  />
+                </div>
+
+                {/* Content Container */}
+                <div class="p-6 sm:p-8 flex flex-col flex-grow">
+                  <h4 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 leading-tight">
+                    {course.title}
+                  </h4>
+
+                  {course.description && (
+                    <p class="text-sm sm:text-base text-gray-700 leading-relaxed mb-8 flex-grow">
+                      {course.description}
+                    </p>
+                  )}
+
+                  {/* Button Container */}
+                  <div class="mt-auto">
+                    <a
+                      href={course.link || course.file}
+                      target={course.link ? "_self" : "_blank"}
+                      rel="noopener noreferrer"
+                      class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] hover:text-white font-semibold rounded-lg text-lg px-6 py-2 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex justify-center"
+                    >
+                      Read More
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <!-- Courses and Assessments on Sustainability Section -->
+   <section
+  id="sustainability"
+  class="mb-16 sm:mb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#064924] to-[#519335] py-16 scroll-mt-24 rounded-2xl mx-4 sm:mx-6 lg:mx-8"
+  aria-labelledby="sustainability"
+>
+  <div class="max-w-6xl mx-auto">
+
+    <h3
+      class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white border-l-4 border-[#519335] pl-3 sm:pl-4 mb-8 sm:mb-12"
+    >
+      Courses and Assessments on Sustainability
+    </h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 w-full">
+      {sustainabilityCourses.map((course) => (
+        <article
+          class="bg-gradient-to-r from-[#064924] to-[#519335] rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col border border-white/20"
+        >
+          <div class="h-64 bg-gray-100 overflow-hidden">
+            <img
+              src={course.image.src}
+              alt={course.title}
+              class="h-full w-full object-cover"
+              loading="lazy"
+              decoding="async"
+              width={course.image.width}
+              height={course.image.height}
+            />
+          </div>
+
+          <div class="p-6 sm:p-8 flex flex-col flex-grow">
+            <h4 class="text-xl font-bold text-white mb-4 leading-tight">
+              {course.title}
+            </h4>
+
+            {course.description && (
+              <p class="text-sm sm:text-base text-white/90 leading-relaxed mb-8 flex-grow">
+                {course.description}
+              </p>
+            )}
+
+            <div class="mt-auto">
+              <a
+                href={course.link || course.file}
+                target={course.link ? "_self" : "_blank"}
+                rel="noopener noreferrer"
+                class="border-2 border-white text-white hover:bg-white hover:text-[#064924] font-semibold rounded-lg text-lg px-6 py-2 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg flex justify-center"
+              >
+               Read More
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+    </div>
+  </main>
+</Layout>
+
+<Newsletter />
+<button
+  id="scrollToTop"
+  class="fixed bottom-6 right-6 z-50 bg-white border-2 border-green-600 text-green-600 p-3 rounded-full shadow-md transition-all duration-300 opacity-0 pointer-events-none"
+  aria-label="Scroll to top"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-5 h-5"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"
+    ></path>
+  </svg>
+</button>
+<script>
+  const scrollBtn = document.getElementById("scrollToTop");
+  if (scrollBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        scrollBtn.classList.remove("opacity-0", "pointer-events-none");
+      } else {
+        scrollBtn.classList.add("opacity-0", "pointer-events-none");
+      }
+    });
+
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+</script>
+<Footer />
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Enhanced focus styles for better accessibility */
+  .focus-visible {
+    outline: 2px solid #10b981;
+    outline-offset: 2px;
+  }
+
+  /* Custom scrollbar for better UX */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #10b981;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #059669;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+</style>

@@ -1,0 +1,1261 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "@/components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import Newletter from "../components/Newletter.astro";
+import "../styles/global.css";
+
+// Team photos
+
+import peoplecover from "../../public/outreach_images/Outreach Page.png";
+
+
+import Rajnish from "../assets/Team/rajnish_kumar.png";
+import satyaseshadri from "../assets/Team/satya.png";
+import charutaphoto from "../assets/Team/charuta_2.jpg";
+import rahulphoto from "../assets/Team/rahul.jpg";
+import sivaphoto from "../assets/Team/siva_barathi.jpg";
+import vishakha from "../assets/Team/vishakha_shankar.jpg";
+import iswatha from "../assets/Team/iswatha.jpg";
+import jennifer from "../assets/Team/d.png";
+
+// Social icons
+
+import webglobe from "../assets/icons/web_logo.svg";
+import linkedin from "../assets/icons/linkedin_(1).png";
+import emaillogo from "../assets/icons/maillogo.svg";
+
+// Associate faculty photos
+
+import associatefac0 from "../assets/AssociateFaculty/Arunachalam.webp";
+import associatefac1 from "../assets/AssociateFaculty/1.jpg";
+import associatefac2 from "../assets/AssociateFaculty/2.jpg";
+import associatefac3 from "../assets/AssociateFaculty/ashwin.jpg";
+import associatefac4 from "../assets/AssociateFaculty/4.svg";
+import associatefac5 from "../assets/AssociateFaculty/Bala.jpg";
+// import associatefac6 from "../assets/Chakravarthy.jpg";
+import associatefac7 from "../assets/AssociateFaculty/Ethayaraja.jpg";
+import associatefac8 from "../assets/AssociateFaculty/7.svg";
+import associatefac9 from "../assets/AssociateFaculty/himanshu.png";
+import associatefac10 from "../assets/AssociateFaculty/8.svg";
+import associatefac11 from "../assets/AssociateFaculty/Jitendra.jpg";
+import associatefac12 from "../assets/AssociateFaculty/KrishnaMalakar.jpg";
+import associatefac13 from "../assets/AssociateFaculty/Krishna.jpg";
+import associatefac14 from "../assets/AssociateFaculty/Mohanakrishnan.jpg";
+import associatefac15 from "../assets/AssociateFaculty/Rao.jpg";
+import associatefac16 from "../assets/AssociateFaculty/Nitin.jpg";
+import associatefac17 from "../assets/AssociateFaculty/Preeti.jpg";
+import associatefac18 from "../assets/AssociateFaculty/Ravi.jpg";
+import associatefac19 from "../assets/AssociateFaculty/Ravindra.jpg";
+import associatefac20 from "../assets/AssociateFaculty/Sachin.jpg";
+import associatefac21 from "../assets/AssociateFaculty/SankhaKarmakar.jpg";
+import associatefac22 from "../assets/AssociateFaculty/Santosh.jpg";
+import associatefac23 from "../assets/AssociateFaculty/SivakumarPalaniappan.jpg";
+import associatefac24 from "../assets/AssociateFaculty/SmitaSrivastava.jpg";
+import associatefac25 from "../assets/AssociateFaculty/sreeram.jpg";
+import associatefac26 from "../assets/AssociateFaculty/Sriram.jpg";
+import associatefac27 from "../assets/AssociateFaculty/Swathisudakar.jpg";
+import associatefac28 from "../assets/AssociateFaculty/TijuThomas.jpg";
+import associatefac29 from "../assets/AssociateFaculty/Venkatarathnam.jpg";
+import associatefac30 from "../assets/AssociateFaculty/VenkatramanSrinivasanCompressed.jpg";
+import associatefac31 from "../assets/AssociateFaculty/Vinu.jpg";
+import associatefac32 from "../assets/AssociateFaculty/chandan.png";
+import associatefac33 from "../assets/AssociateFaculty/Jayaraman.png";
+import associatefac34 from "../assets/AssociateFaculty/MuraliJagannathan.png";
+import associatefac35 from "../assets/AssociateFaculty/Nirav.png";
+import associatefac36 from "../assets/AssociateFaculty/Rahul.png";
+import associatefac37 from "../assets/AssociateFaculty/Raja.png";
+import associatefac38 from "../assets/AssociateFaculty/RohitBatra.png";
+import associatefac39 from "../assets/AssociateFaculty/ShivaNagendra.jpg";
+
+// Affiliate faculty photos
+
+import affac0 from "../assets/AffiliateFaculty/aaa.jpg";
+import afffac1 from "../assets/AffiliateFaculty/anuradda.jpg";
+import afffac2 from "../assets/AffiliateFaculty/christoph.jpg";
+import afffac3 from "../assets/AffiliateFaculty/c.svg";
+import afffac4 from "../assets/AffiliateFaculty/kaushal.png";
+import afffac5 from "../assets/AffiliateFaculty/e.svg";
+import afffac6 from "../assets/AffiliateFaculty/nikhil.jpg";
+import afffac7 from "../assets/AffiliateFaculty/parama.jpg";
+import afffac8 from "../assets/AffiliateFaculty/parthiban.jpg";
+import afffac9 from "../assets/AffiliateFaculty/rao.jpg";
+
+// Advisor photos
+
+import advisor5 from "../assets/Advisor/thalappilpradeep.jpg";
+import advisor1 from "../assets/Advisor/ligyphilip.jpg";
+import advisor2 from "../assets/Advisor/maheshpanchagnula.jpg";
+import advisor3 from "../assets/Advisor/muraleedharanvr1.jpg";
+import advisor4 from "../assets/Advisor/resizedraghunathanrengaswamy.jpg";
+
+// Team data structure for better maintainability
+
+const Team = [
+  {
+    name: "Rajnish Kumar",
+    position: "Head",
+    image: Rajnish,
+    website: "https://che.iitm.ac.in/rajnish/",
+    email: "rajnish@iitm.ac.in",
+    icon: webglobe,
+    highlight: true,
+  },
+  {
+    name: "Satyanarayanan Seshadri",
+    position: "Associate Head",
+    image: satyaseshadri,
+    website: "https://energyconsortium.org/member/satyanarayanan-seshadri/",
+    email: "satya@iitm.ac.in",
+    icon: webglobe,
+    highlight: true,
+  },
+];
+const coreTeam = [
+  {
+    name: "Charuta Kulkarni",
+    // position: "Team Member",
+    image: charutaphoto,
+    email: "ckulkarni@gradcenter.cuny.edu",
+    linkedin: "https://www.linkedin.com/in/charuta-kulkarni-ph-d-61749b1a/",
+    // icon: linkedin,
+    highlight: false,
+  },
+  {
+    name: "Dolly Sweetlin Jennifer",
+    // position: "Senior Project Scientist",
+    image: jennifer,
+    email: "ic39384@imail.iitm.ac.in",
+    linkedin: "https://www.linkedin.com/in/dolly-sweetlin-jennifer-035311189",
+    // icon: linkedin,
+    highlight: false,
+  },
+  {
+    name: "Iswatha Raju",
+    // position: "Team Member",
+    image: iswatha,
+    email: "ic36486@imail.iitm.ac.in",
+    highlight: false,
+  },
+  {
+    image: associatefac22,
+    name: "Santosh Kumar Sahu",
+    position: "Humanities and Social Sciences",
+    linkedin: "https://sites.google.com/view/sksahuiitm/home",
+    email: "santosh@iitm.ac.in",
+    loading: "lazy",
+  },
+  
+  {
+    name: "Siva Barathi A",
+    // position: "Team Member",
+    image: sivaphoto,
+    email: "ic39984@imail.iitm.ac.in",
+    linkedin: "https://www.linkedin.com/in/siva-barathi-annamalai-24959616",
+    // icon: linkedin,
+    highlight: false,
+  },
+  {
+    name: "Vishakha Shankar",
+    // position: "Team Member",
+    image: vishakha,
+    email: "ic10964@imail.iitm.ac.in",
+    linkedin: "https://www.linkedin.com/in/vishakhashankar/",
+    // icon: linkedin,
+    highlight: false,
+  },
+
+  // {
+  //   name: "Siva Barathi A",
+  //   position: "Associate Head, School of Sustainability",
+  //   image: sivaphoto,
+  //   website: "",
+  // },
+];
+
+const associateFaculty = [
+  {
+    image: associatefac0,
+    name: "Arunachalam N",
+    position: "Mechanical Engineering",
+    website: "https://home.iitm.ac.in/anubhab",
+    mail: "chalam@iitm.ac.in",
+    loading: "lazy",
+  },
+
+  {
+    image: associatefac1,
+    name: "Anubhab Roy",
+    position: "Applied Mechanics",
+    website: "https://home.iitm.ac.in/anubhab",
+    mail: "anubhab@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac2,
+    name: "Aravind Kumar Chandiran",
+    position: "Chemical Engineering",
+    website: "https://che.iitm.ac.in/aravindkumar/",
+    mail: "aravindkumar@iitm.ac.in",
+    loading: "lazy",
+  },
+  // {
+  //   image: associatefac3,
+  //   name: "Ashwin Mahalingam",
+  //   position: "Civil Engineering",
+  //   website: "https://civil.iitm.ac.in/faculty/mash/",
+  //   mail: "mash@iitm.ac.in",
+  //   loading: "lazy",
+  // },
+  {
+    image: associatefac4,
+    name: "Balaji Narasimhan",
+    position: "Civil Engineering",
+    website: "https://civil.iitm.ac.in/faculty/nbalaji/",
+    mail: "nbalaji@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac5,
+    name: "Balaraman Ravindran",
+    position: "Computer Science and Engineering",
+    website: "http://www.cse.iitm.ac.in/~ravi/",
+    mail: "ravib@iitm.ac.in",
+    loading: "lazy",
+  },
+  // {
+  //   image: associatefac6,
+  //   name: "Chakravarthy Balaji",
+  //   position: "Mechanical Engineering",
+  //   website: "https://home.iitm.ac.in/balaji",
+  //   mail: "balaji@iitm.ac.in",
+  //   loading: "lazy",
+  // },
+  {
+    image: associatefac32,
+    name: "Chandan Sarangi",
+    position: "Civil Engineering",
+    website: "https://civil.iitm.ac.in/faculty/chandansarangi/",
+    mail: "chandansarangi@civil.iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac7,
+    name: "Ethayaraja Mani",
+    position: "Chemical Engineering",
+    website: "https://che.iitm.ac.in/~ethaya/",
+    mail: "ethaya@iitm.ac.in",
+    loading: "lazy",
+  },
+
+  {
+    image: associatefac8,
+    name: "Ganga Prasath S",
+    position: "Applied Mechanics",
+    website: "http://sgangaprasath.github.io/",
+    mail: "sgangaprasath@smail.iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac33,
+    name: "Guhan Jayaraman",
+    position: "Biotechnology",
+    website:
+      "https://biotech.iitm.ac.in/innerfaculty.php?fname=Guhan%20Jayaraman",
+    mail: "guhanj@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac9,
+    name: "Himanshu Goyal",
+    position: "Chemical Engineering",
+    website: "https://www.goyalresearch.com/",
+    mail: "goyal@iitm.ac.in",
+    loading: "lazy",
+  },
+
+  {
+    image: associatefac10,
+    name: "Indumathi M. Nambi",
+    position: "Civil Engineering",
+    website: "https://indunambi.com/",
+    mail: "indunambi@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac11,
+    name: "Jitendra Sangwai",
+    position: "Chemical Engineering",
+    website: "https://che.iitm.ac.in/jitendrasangwai/",
+    mail: "jitendrasangwai@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac12,
+    name: "Krishna Malakar",
+    position: "Humanities and Social Sciences",
+    website: "https://hss.iitm.ac.in/krishna-malakar/",
+    mail: "krishnamalakar@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac13,
+    name: "Krishna Vasudevan",
+    position: "Electrical Engineering",
+    website: "https://sites.google.com/a/ee.iitm.ac.in/krishna-vasudevan/",
+    mail: "krishna@ee.iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac14,
+    name: "Mohanakrishnan Logan",
+    position: "Civil Engineering",
+    website: "https://civil.iitm.ac.in/faculty/mohanlogan/",
+    mail: "mohanlogan@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac34,
+    name: "Murali Jagannathan",
+    position: "Civil Engineering",
+    website: "https://civil.iitm.ac.in/faculty/muralij/",
+    mail: "muralij@civil.iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac15,
+    name: "Nagabhushana Rao Vadlamani",
+    position: "Aerospace Engineering",
+    website: "https://home.iitm.ac.in/nrv/",
+    mail: "nrv@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac35,
+    name: "Nirav Patel",
+    position: "Engineering Design",
+    website: "https://ed.iitm.ac.in/~nirav",
+    mail: "niravpatel@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac16,
+    name: "Nitin Muralidharan",
+    position: "Chemical Engineering",
+    website: "https://sites.google.com/view/emergegroup",
+    mail: "muralidharan@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac17,
+    name: "Preeti Aghalayam",
+    position: "Chemical Engineering",
+    website: "https://che.iitm.ac.in/preeti/",
+    mail: "preeti@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac36,
+    name: "Rahul Marathe R",
+    position: "Management Studies",
+    website: "https://doms.iitm.ac.in/index.php/rrm",
+    mail: "rrmarathe@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac37,
+    name: "Rajagopalan Srinivasan",
+    position: "Chemical Engineering",
+    website:
+      "https://che.iitm.ac.in/faculty.php?fname=Dr.%20Rajagopalan%20Srinivasan",
+    mail: "raj@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac18,
+    name: "Ravi Kumar N V",
+    position: "Metallurgical and Materials Engineering",
+    website: "https://mme.iitm.ac.in/nvrk",
+    mail: "nvrk@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac19,
+    name: "Dr. Ravindra Gettu",
+    position: "Civil Engineering",
+    website: "https://civil.iitm.ac.in/faculty/gettu/",
+    mail: "gettu@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac38,
+    name: "Rohit Batra",
+    position: "Metallurgical and Materials Engineering",
+    website: "https://mme.iitm.ac.in/faculty-inner.php?id=65&fc=1",
+    mail: "rbatra@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac20,
+    name: "Sachin Gunthe",
+    position: "Civil Engineering",
+    website: "https://civil.iitm.ac.in/faculty/sgunthe/",
+    mail: "s.gunthe@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac21,
+    name: "Dr. Sankha Karmakar",
+    position: "Chemical Engineering",
+    website: "https://che.iitm.ac.in/skarmakar/",
+    mail: "skarmakar@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac39,
+    name: "Shiva Nagendra SM",
+    position: "Civil Engineering",
+    website: "https://civil.iitm.ac.in/faculty/snagendra/ ",
+    mail: "snagendra@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac23,
+    name: "Dr. Sivakumar Palaniappan",
+    position: "Civil Engineering",
+    website: "https://civil.iitm.ac.in/faculty/sp/",
+    mail: "sp@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac24,
+    name: "Smita Srivastava",
+    position: "Biotechnology",
+    website: "https://biotech.iitm.ac.in/biotech/faculty/smita_web/index.html",
+    mail: "smita@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac25,
+    name: "Sreeram K. Kalpathy",
+    position: "Metallurgical and Materials Engineering",
+    website: "https://sreeramkris.wixsite.com/sreeram",
+    mail: "sreeram@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac26,
+    name: "Sriram Venkatachalam",
+    position: "Ocean Engineering",
+    website: "https://home.iitm.ac.in/vsriram/",
+    mail: "sriram@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac27,
+    name: "Swathi Sudhakar",
+    position: "Applied Mechanics and Biomedical Engineering",
+    website:
+      "https://sites.google.com/smail.iitm.ac.in/nanomolecularlabiitm/home",
+    mail: "swathi.s@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac28,
+    name: "Tiju Thomas",
+    position: "Metallurgical and Materials Engineering",
+    website: "https://mme.iitm.ac.in/tijuthomas/",
+    mail: "tijuthomas@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac29,
+    name: "Venkatarathnam G",
+    position: "Mechanical Engineering",
+    website: "https://mech.iitm.ac.in/profile.php?fname=gvenkat",
+    mail: "gvenkat@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac30,
+    name: "Venkatraman Srinivasan",
+    position: "Civil Engineering",
+    website: "https://home.iitm.ac.in/venkatraman/team.htm",
+    mail: "venkatraman@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: associatefac31,
+    name: "Vinu R",
+    position: "Chemical Engineering",
+    website: "https://che.iitm.ac.in/vinu/",
+    mail: "vinu@iitm.ac.in",
+    loading: "lazy",
+  },
+];
+
+const affiliateFellows = [
+  {
+    image: affac0,
+    name: "Ajay Shriram Patil",
+   
+    website:
+      "https://www.linkedin.com/in/ajay-patil-375aa69/?originalSubdomain=in",
+    email: "ajay.shriram.patil@gmail.com",
+    loading: "lazy",
+  },
+  // {
+  //   image: afffac1,
+  //   name: "Anuradda Ganesh",
+  //   position: "Research Fellow",
+  //   website:
+  //     "https://www.linkedin.com/in/anuradda-ganesh-fellow-inae-8b535064/",
+  //   email: "ganesh.anuradda@gmail.com",
+  //   loading: "lazy",
+  // },
+  {
+    image: afffac2,
+    name: "Christoph Woiwode",
+    
+    website: "https://www.ioer.de/en/institute/staff/woiwode",
+    email: "woiwode@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: afffac3,
+    name: "E. Nandakumar",
+    
+    website: "https://www.linkedin.com/in/e-nandakumar/",
+    email: "enandu@iccwindia.org",
+    loading: "lazy",
+  },
+  {
+    image: afffac4,
+    name: "Kaushal Kumar Jha",
+    
+    website: "https://www.linkedin.com/in/dr-kaushal-jha/",
+    email: "kaushal@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: afffac5,
+    name: "Madhavan Nampoothiri",
+    
+    website: "https://energyconsortium.org",
+    email: "mn@nordesg.com",
+    loading: "lazy",
+  },
+  {
+    image: afffac6,
+    name: "Nikhil Tambe",
+    
+    website: "https://www.linkedin.com/in/nikhil-tambe-61b7b47/",
+    email: "nikhil.tambe@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: afffac7,
+    name: "Parama Roy",
+    
+    website: "https://www.okapia.co/about-okapi-research-advisory/",
+    email: "proy@okapia.co",
+    loading: "lazy",
+  },
+  {
+    image: afffac8,
+    name: "Parthiban V",
+    website: "https://www.linkedin.com/in/parthiban-v-73173026/",
+    email: "ic34963@imail.iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: afffac9,
+    name: "Raghuttama Rao",
+    
+    website: "https://gdciitm.org/teams/r-raghuttama-rao/",
+    email: "raghu@gdciitm.org",
+    loading: "lazy",
+  },
+  // {
+  //   name: "Rahul Muralidharan",
+  //  image: rahulphoto,
+  //   email: "rd_ec@icsrpis.iitm.ac.in",
+  //   website: "https://in.linkedin.com/in/rahul-muralidharan-70629418a",
+  //   // icon: linkedin,
+  //   loading: "lazy",
+  // },
+];
+
+const advisors = [
+  {
+    image: advisor1,
+    name: "Ligy Philip",
+    position: "",
+    email: "ligy@iitm.ac.in",
+    website: "https://civil.iitm.ac.in/faculty/ligy/",
+    loading: "lazy",
+  },
+  {
+    image: advisor2,
+    name: "Mahesh Panchagnula",
+    position: "",
+    website: "https://home.iitm.ac.in/mvp/",
+    email: "mvp@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: advisor3,
+    name: "Muraleedharan VR",
+    position: "",
+    website: "https://hss.iitm.ac.in/muraleedharan-vr/",
+    email: "vrm@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: advisor4,
+    name: "Raghunathan Rengaswamy",
+    position: "",
+    website: "https://rbcdsai.iitm.ac.in/people/raghunathan-rengaswamy/",
+    email: "raghur@iitm.ac.in",
+    loading: "lazy",
+  },
+  {
+    image: advisor5,
+    name: "Thalappil Pradeep",
+    position: "",
+    email: "pradeep@iitm.ac.in",
+    website: "https://www.chem.iitm.ac.in/faculty/pradeep/",
+    loading: "lazy",
+  },
+];
+const scholars = [
+  { name: "Falak Naz", img: "/images/scholars/falak.jpg" },
+  { name: "Lagnajita Paul", img: "/images/scholars/lagnajita.jpg" },
+  { name: "Malavika Vipin", img: "/images/scholars/malavika.jpg" },
+  { name: "Ruthramoorthy S", img: "/images/scholars/ruthramoorthy.jpg" },
+];
+const researchers = [
+  { name: "Gokula Krishnan J. G.", img: "" },
+  { name: "Seenivasan Periyasamy.", img: "" },
+  { name: "Sudharshan Saranathan", img: "" },
+];
+---
+
+<!-- <Navbar /> -->
+<Layout title="School of Sustainability">
+<main class="min-h-screen scroll-smooth">
+  <section class="relative overflow-hidden">
+  <div class="relative w-full h-[52vh] sm:h-[67vh] md:h-[77vh] lg:h-[87vh]">
+    <img
+      src={peoplecover.src}
+      alt="Team at the School of Sustainability, IIT Madras"
+      class="w-full h-[52vh] sm:h-[67vh] md:h-[77vh] lg:h-[87vh] object-cover object-center mt-2"
+      loading="eager"
+      decoding="async"
+      width="1920"
+      height="1080"
+    />
+    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+    </div>
+  </div>
+</section>
+
+
+  <section>
+  <nav
+    class="sticky top-0 z-10 bg-white shadow-sm border-b border-gray-200"
+    aria-label="Health and Safety navigation"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+      
+    <div class="flex flex-wrap justify-center items-center gap-2 sm:gap-4 md:gap-6 py-3">
+      <a href="#core-team"
+          class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl lg:text-xl transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+        >
+          Core Team
+        </a>
+        <span class="text-gray-300">|</span>
+        <a
+          href="#associate-faculty"
+          class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl lg:text-xl transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+        >
+          Associate Faculty
+        </a>
+        <span class="text-gray-300">|</span>
+        <a
+          href="#affiliate-fellows"
+          class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl lg:text-xl transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+        >
+          Affiliate Fellows
+        </a>
+        <span class="text-gray-300">|</span>
+        <a
+          href="#advisors"
+          class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl lg:text-xl transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+        >
+          Advisors
+        </a>
+        <span class="text-gray-300">|</span>
+        <a
+          href="#scholars"
+          class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl lg:text-xl transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+        >
+          PhD Scholars
+        </a>
+        <span class="text-gray-300">|</span>
+        <a
+          href="#Researchers"
+          class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl lg:text-xl transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+        >
+          Researchers
+        </a>
+      </nav>
+    </section>
+  <!-- Leadership Team Section -->
+  
+    <section id="team" class="py-12 sm:py-16 md:py-20">
+<div class="container mx-auto px-4">
+      <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6">
+    Team
+  </h3>
+  <div class="flex flex-wrap justify-center gap-10">
+    {
+      Team.map((member) => (
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 relative w-60">
+          <div class="relative">
+            <img
+src={member.image ? member.image.src : ""}
+alt={member.name}
+class={`w-full h-58 object-cover object-top rounded-t-lg
+  ${member.name === "Rajnish Kumar" || member.name === "Satyanarayanan Seshadri"
+    ? "scale-110"
+    : ""
+  }`}
+                  />
+            <!-- Email + Website Icons -->
+            <div class="absolute inset-x-0 bottom-4 flex justify-between px-4">
+              {member.email && (
+                <a
+                  href={`mailto:${member.email}`}
+                  class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
+                >
+                  <img
+                    src={emaillogo.src}
+                    alt="Email"
+                    class="w-5 h-5 invert-0 brightness-0"
+                  />
+                </a>
+              )}
+              {(member.name.includes("Rajnish Kumar") ||
+                member.name.includes("Satyanarayanan Seshadri")) && (
+                <a
+                  href={member.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
+                >
+                  <img
+                    src={webglobe.src}
+                    alt="Website"
+                    class="w-5 h-5"
+                  />
+                </a>
+              )}
+            </div>
+          </div>
+          <div class="p-4">
+            <h6 class="text-base text-center font-semibold text-gray-900 mb-2">
+              {member.name}
+            </h6>
+            <p class="text-base text-center text-gray-600">
+              {member.position}
+            </p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+  </div>
+</section>
+
+
+      <!-- Core Team Section -->
+      <section id="core-team" class="py-10 sm:py-16 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <!-- <h3 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+            Core Team
+          </h3> -->
+<div class="flex flex-wrap justify-center gap-10">
+  {coreTeam.map((member) => (
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 w-60">
+      <div class="relative">
+        <img
+  src={member.image ? member.image.src : ""}
+  alt={member.name}
+  class={`w-full h-64 object-cover ${
+    member.name.includes("Santhosh Kumar Sahu")
+      ? "object-[50%_10%]"  
+      : "object-center"     
+  }`}
+/>
+
+
+                    <div class="absolute bottom-4 left-4 flex gap-2">
+                      {member.email && (
+                        <a
+                          href={`mailto:${member.email}`}
+                          class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
+                        >
+                          <img
+                            src={emaillogo.src}
+                            alt="Email"
+                            class="w-5 h-5 invert-0 brightness-0"
+                          />
+                        </a>
+                      )}
+                    </div>
+                    <div class="absolute bottom-4 right-4 flex gap-2">
+                      {member.linkedin && (
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
+                        >
+                          <img
+                            src={linkedin.src}
+                            alt="LinkedIn"
+                            class="w-5 h-5 invert-0 brightness-0"
+                          />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+
+                  <div class="p-4">
+                    <h6 class="text-base text-center font-semibold text-gray-900 mb-2">
+                      {member.name}
+                    </h6>
+                    {/* <p class="text-base text-center text-gray-600">
+          {member.position}
+        </p> */}
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <!-- Associate Faculty Section -->
+      <section id="associate-faculty" class="py-12 sm:py-16 md:py-20">
+        <div class="container mx-auto px-4">
+        <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6">
+            Associate Faculty
+          </h3>
+          <div class="flex flex-wrap justify-center gap-10">
+            {
+              associateFaculty.map((faculty) => (
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 relative w-60">
+                  <div class="relative">
+                    <img
+                      src={faculty.image.src}
+                      alt={faculty.name}
+                      class={`w-full h-64 object-cover ${
+                        faculty.name.includes("Nagabhushana Rao Vadlamani")
+                          ? "object-[50%_10%]"
+                          : faculty.name.includes("Tiju Thomas")
+                            ? "object-[50%_12%]"
+                            : "object-center"
+                      }`}
+                    />
+
+                    <div class="absolute inset-x-0 bottom-4 flex justify-between px-4">
+                      {faculty.mail && (
+                        <a
+                          href={`mailto:${faculty.mail}`}
+                          class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
+                        >
+                          <img
+                            src={emaillogo.src}
+                            alt="Email"
+                            class="w-5 h-5 invert-0 brightness-0"
+                          />
+                        </a>
+                      )}
+
+                      {faculty.website && (
+                        <a
+                          href={faculty.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
+                        >
+                          <img
+                            src={webglobe.src}
+                            alt="Website"
+                            class="w-5 h-5"
+                          />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+
+                  <div class="p-4">
+                    <h6 class="text-base text-center font-semibold text-gray-900 mb-2">
+                      {faculty.name}
+                    </h6>
+                    <p class="text-base text-center text-gray-600">
+                      {faculty.position}
+                    </p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <!-- Affiliate Fellows Section -->
+      <section
+        id="affiliate-fellows"
+        class="py-12 sm:py-16 md:py-20 bg-gray-50"
+      >
+        <div class="container mx-auto px-4">
+        <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6">
+            Affiliate Fellows
+          </h3>
+          <div class="flex flex-wrap justify-center gap-10">
+            {
+              affiliateFellows.map((fellow) => (
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 relative w-60">
+                  <div class="relative">
+                    <img
+                      src={fellow.image.src}
+                      alt={fellow.name}
+                      class={`w-full h-64 sm:h-56 md:h-64 object-cover ${
+                        fellow.name.includes("Parthiban")
+                          ? "object-[50%_10%]" /* 👈 custom top crop */
+                          : "object-center"
+                      }`}
+                    />
+
+                    <div class="absolute inset-x-0 bottom-4 flex justify-between px-4">
+                      {fellow.email && (
+                        <a
+                          href={`mailto:${fellow.email}`}
+                          class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
+                        >
+                          <img
+                            src={emaillogo.src}
+                            alt="Email"
+                            class="w-5 h-5 brightness-0"
+                          />
+                        </a>
+                      )}
+
+                      {fellow.website && (
+                        <a
+                          href={fellow.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="bg-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
+                        >
+                          <img
+                            src={webglobe.src}
+                            alt="Website"
+                            class="w-5 h-5"
+                          />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+
+                  <div class="p-4">
+                    <h6 class="text-base text-center font-semibold text-gray-900 mb-2">
+                      {fellow.name}
+                    </h6>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <!-- Advisors Section -->
+      <section id="advisors" class="py-12 sm:py-16 md:py-20">
+        <div class="container mx-auto px-4">
+        <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6">
+            Advisors
+          </h3>
+          <div class="flex flex-wrap justify-center gap-10">
+            {
+              advisors.map((advisor) => (
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 w-60">
+                  <div class="relative aspect-square">
+                    <img
+                      src={advisor.image.src}
+                      alt={advisor.name}
+                      class="w-full h-64 object-cover transition-transform duration-500"
+                      style={
+                        advisor.name === "Ligy Philip"
+                          ? "object-position: center -10%; transform: scale(1.1);"
+                          : advisor.name === "Mahesh Panchagnula"
+                            ? "object-position: 15% center;"
+                            : ""
+                      }
+                    />
+
+                    <div class="absolute inset-x-0 bottom-3 flex justify-between px-3">
+                      {advisor.email && (
+                        <a
+                          href={`mailto:${advisor.email}`}
+                          class="bg-white p-2 rounded-full shadow-md hover:scale-110 transition-transform duration-200"
+                        >
+                          <img
+                            src={emaillogo.src}
+                            alt="Email"
+                            class="w-5 h-5 brightness-0"
+                          />
+                        </a>
+                      )}
+
+                      {advisor.website && (
+                        <a
+                          href={advisor.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="bg-white p-2 rounded-full shadow-md hover:scale-110 transition-transform duration-200"
+                        >
+                          <img
+                            src={webglobe.src}
+                            alt="Website"
+                            class="w-5 h-5"
+                          />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+
+                  <div class="p-4">
+                    <h6 class="text-base text-center font-semibold text-gray-900 mb-2">
+                      {advisor.name}
+                    </h6>
+                    <p class="text-base text-center text-gray-600">
+                      {advisor.position}
+                    </p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <!--phd scholar section-->
+      <section id="scholars" class="py-12 sm:py-16 md:py-20">
+        <div class="container mx-auto px-4">
+        <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6">
+            PhD Scholars
+          </h3>
+
+          <div class="flex flex-wrap justify-center gap-10">
+            {
+              scholars.map((scholar) => (
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 w-60">
+                  {/* <div class="relative aspect-square">
+                    {scholar.img && scholar.img.trim() !== "" ? (
+                      <img src={scholar.img} loading="lazy" />
+                    ) : (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        class="w-12 h-12 text-gray-500"
+                      >
+                        <rect
+                          x="4"
+                          y="4"
+                          width="16"
+                          height="16"
+                          rx="2"
+                          ry="2"
+                        />
+                        <path d="M8 14l3-3 5 5H8z" />
+                        <circle cx="10" cy="10" r="1.5" />
+                      </svg>
+                    )}
+                  </div> */}
+                  <p class="mt-3 text-sm font-medium text-black text-center mb-2">
+                    {scholar.name}
+                  </p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <!--researcher section -->
+        <section id="Researchers" class="py-12 sm:py-16 md:py-20">
+          <div class="container mx-auto px-4">
+        <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6">
+              Researchers
+            </h3>
+            <div class="flex flex-wrap justify-center gap-10">
+              {
+                researchers.map((research) => (
+                  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 w-60">
+                    {/* <div class="relative aspect-square">
+                      {research.img ? (
+                        <img
+                          src={research.img}
+                          alt={research.name}
+                          class="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      ) : (
+                        // Placeholder icon (like your screenshot)
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          class="w-12 h-12 text-gray-500"
+                        >
+                          <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 
+              1.1.9 2 2 2h14c1.1 0 2-.9 
+              2-2V5c0-1.1-.9-2-2-2zm0 
+              16H5V5h14v14zM8.5 13.5l2.5 
+              3.01L14.5 12l4.5 6H5l3.5-4.5z"
+                          />
+                        </svg>
+                      )}
+                    </div> */}
+                  <p class="mt-3 text-sm font-medium text-black text-center mb-2">
+                      {research.name}
+                    </p>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+           
+          
+          <button
+            id="scrollToTop"
+            class="fixed bottom-6 right-6 z-50 bg-white border-2 border-green-600 text-green-600 p-3 rounded-full shadow-md transition-all duration-300 opacity-0 pointer-events-none"
+            aria-label="Scroll to top"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 15l7-7 7 7"></path>
+            </svg>
+          </button>
+          <script>
+            const scrollBtn = document.getElementById("scrollToTop");
+            if (scrollBtn) {
+              window.addEventListener("scroll", () => {
+                if (window.scrollY > 200) {
+                  scrollBtn.classList.remove(
+                    "opacity-0",
+                    "pointer-events-none"
+                  );
+                } else {
+                  scrollBtn.classList.add("opacity-0", "pointer-events-none");
+                }
+              });
+
+              scrollBtn.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              });
+            }
+          </script>
+          
+        </section>
+        <Newletter />
+      
+      </section>
+    <Footer />
+      <style>
+        html {
+          scroll-behavior: smooth;
+        }
+
+        /* Enhanced scroll padding to account for sticky navigation */
+        section[id] {
+          scroll-margin-top: 100px;
+        }
+
+        /* Active navigation state */
+        nav a:hover {
+          transform: translateY(-1px);
+        }
+      </style>
+
+      <!-- <script>
+        // Add active state management for navigation links
+        document.addEventListener("DOMContentLoaded", function () {
+          const navLinks = document.querySelectorAll('nav a[href^="#"]');
+          const sections = document.querySelectorAll("section[id]");
+
+          // Function to update active navigation link
+          function updateActiveNav() {
+            const scrollPos = window.scrollY + 120; // Account for sticky nav height
+
+            sections.forEach((section) => {
+              const htmlSection = section as HTMLElement;
+              const sectionTop = htmlSection.offsetTop;
+              const sectionHeight = htmlSection.offsetHeight;
+              const sectionId = section.getAttribute("id");
+
+              if (
+                scrollPos >= sectionTop &&
+                scrollPos < sectionTop + sectionHeight
+              ) {
+                navLinks.forEach((link) => {
+                  link.classList.remove("text-green-800", "bg-green-50");
+                  if (link.getAttribute("href") === `#${sectionId}`) {
+                    link.classList.add("text-green-800", "bg-green-50");
+                  }
+                });
+              }
+            });
+          }
+
+          // Add smooth scrolling and active state on click
+          navLinks.forEach((link) => {
+            link.addEventListener("click", (e) => {
+              e.preventDefault();
+              const targetId = (link.getAttribute("href") ?? "").substring(1);
+              const targetSection = document.getElementById(targetId);
+
+              if (targetSection) {
+                const offsetTop = targetSection.offsetTop - 100; // Account for sticky nav
+                window.scrollTo({
+                  top: offsetTop,
+                  behavior: "smooth",
+                });
+              }
+            });
+          });
+
+          // Update active nav on scroll
+          window.addEventListener("scroll", updateActiveNav);
+          updateActiveNav(); // Initial call
+        });
+      </script> -->
+    </section>
+  </main></Layout
+>

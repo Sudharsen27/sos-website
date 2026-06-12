@@ -1,0 +1,294 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import Newletter from "../components/Newletter.astro";
+
+import "../styles/global.css";
+
+import mission1 from "../assets/About_images/ICONS-04-04-04-04.png";
+import mission2 from "../assets/About_images/ICONS-03.png";
+import mission3 from "../assets/About_images/1ICONS-03.png";
+import aboutcover from "../assets/About_images/banner5.png";
+import whoWeAreImg from "../assets/About_images/banner1.jpg";
+import visionImg from "../assets/About_images/banner4.jpg";
+---
+
+<Layout title="About Us">
+
+  <!-- ✅ HERO SECTION (Fully Responsive - same size as Research page banner) -->
+ <section class="relative overflow-hidden">
+  <div class="relative w-full h-[60vh] sm:h-[50vh] md:h-[60vh] lg:h-[88vh] overflow-hidden">
+    <!-- Banner Image - fits banner section, fills area, centered -->
+    <img
+      src={aboutcover.src}
+      alt="About the School of Sustainability at IIT Madras"
+      class="absolute inset-0 w-full h-full object-cover object-center"
+      loading="eager"
+      decoding="async"
+      width="1920"
+      height="1080"
+    />
+
+    <!-- Dark overlay -->
+    <div class="absolute inset-0 bg-black/30"></div>
+  </div>
+</section>
+
+
+
+  <!-- ✅ NAVIGATION (Sticky, Responsive) -->
+  <section>
+  <nav
+  class="sticky top-0 z-20 bg-white shadow-sm border-b border-gray-200"
+  aria-label="About page navigation"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-wrap justify-center items-center gap-2 sm:gap-4 md:gap-6 py-2">
+      <a
+        href="#who-we-are"
+        class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl lg:text-xl transition-all duration-300 px-4 py-3.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+      >
+        Who We Are
+      </a>
+      <span class="text-gray-300">|</span>
+
+      <a
+        href="#our-vision"
+        class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl lg:text-xl transition-all duration-300 px-4 py-3.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+      >
+        Our Vision
+      </a>
+      <span class="text-gray-300">|</span>
+
+      <a
+        href="#our-mission"
+        class="text-green-700 hover:text-green-900 active:text-green-950 font-medium text-base sm:text-lg md:text-xl lg:text-xl transition-all duration-300 px-4 py-3.5 rounded-lg hover:bg-green-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+      >
+        Our Mission
+      </a>
+    </div>
+  </div>
+</nav>
+</section>
+
+
+  <!-- ✅ MAIN CONTENT (All Sections) -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- 🟩 WHO WE ARE (image + content like Home page) -->
+    <section id="who-we-are" class="scroll-mt-24 py-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start lg:items-start">
+        <!-- Content Section -->
+        <div class="order-2 lg:order-1 self-start">
+          <h2
+            class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 border-l-4 border-green-600 pl-3 sm:pl-4 mb-4 sm:mb-6"
+          >
+            Who We Are
+          </h2>
+          <p
+            class="text-gray-800 font-medium leading-relaxed text-base sm:text-md md:text-lg w-full mb-8 mt-4"
+            style="text-align: justify; hyphens: auto;"
+          >
+            IIT Madras’s School of Sustainability is a synergistic space with
+            interdisciplinarity as its mantra. It acts as an inclusive platform
+            for co-strategizing Sustainability through open stakeholder
+            dialogues, pursues actionable research bridging gaps between
+            science, policy, and business practices, and builds capacities among
+            students, industries, and policymakers via innovative teaching
+            programs.
+          </p>
+          <div class="flex justify-center lg:justify-start">
+            <a
+              href="/people"
+              class="border-2 border-[#3DAA6F] text-black hover:bg-[#3DAA6F] hover:text-white font-semibold rounded-lg text-lg px-8 py-4 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg"
+            >
+              Know Our People
+            </a>
+          </div>
+        </div>
+        <!-- Image Section -->
+        <div class="order-1 lg:order-2 w-full">
+          <img
+            src={whoWeAreImg.src}
+            alt="School of Sustainability at IIT Madras"
+            class="rounded-lg object-cover w-full"
+            style="height: 300px;"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- 🟩 OUR VISION (image + content like Home Programs section) -->
+    <section id="our-vision" class="scroll-mt-24 mt-12">
+      <div class="bg-gradient-to-r from-[#064924] to-[#519335] rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start lg:items-start">
+          <!-- Image Section -->
+          <div class="order-1 w-full">
+            <img
+              src={visionImg.src}
+              alt="Our Vision - Sustainability at IIT Madras"
+              class="rounded-lg object-cover w-full"
+              style="height: 300px;"
+            />
+          </div>
+          <!-- Content Section -->
+          <div class="text-white order-2 self-start">
+            <h2
+              class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white border-l-4 border-green-400 pl-3 sm:pl-4 mb-4 sm:mb-6"
+            >
+              Our Vision
+            </h2>
+            <p
+              class="text-white font-medium leading-relaxed text-base sm:text-md md:text-lg w-full mb-8 mt-4"
+              style="text-align: justify; hyphens: auto;"
+            >
+              The School aims to be recognized as a leader for sustainability
+              teaching and research in the Global South. The School's vision is to
+              be the go-to place for researchers, industry professionals, and
+              policymakers for an understanding of sustainability-related
+              technologies and policy implications.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 🟩 OUR MISSION -->
+    <section id="our-mission" class="mt-14 scroll-mt-24">
+      <h2
+        class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 border-l-4 border-green-600 pl-3 mb-8"
+      >
+        Our Mission
+      </h2>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 w-full justify-items-center mt-10"
+      >
+        <!-- Card 1 -->
+        <div
+          class="group bg-gradient-to-br from-white via-green-50 to-white border border-green-400 rounded-2xl p-8 sm:p-10 shadow-md w-full max-w-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 text-center"
+        >
+          <div class="flex flex-col items-center space-y-6">
+            <div
+              class="bg-green-100 rounded-full p-6 sm:p-8 transition-transform duration-300 group-hover:scale-110"
+            >
+              <img
+                src={mission1.src}
+                alt="Foster interactive and innovative teaching approaches"
+                class="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 object-contain"
+              />
+            </div>
+            <p
+              class="text-gray-800 font-medium leading-relaxed text-base text-center"
+            >
+              Foster interactive and innovative teaching approaches for students
+              and professionals to deepen our understanding of sustainability.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="group bg-gradient-to-br from-white via-green-50 to-white border border-green-400 rounded-2xl p-8 sm:p-10 shadow-md w-full max-w-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 text-center"
+        >
+          <div class="flex flex-col items-center space-y-6">
+            <div
+              class="bg-green-100 rounded-full p-6 sm:p-8 transition-transform duration-300 group-hover:scale-110"
+            >
+              <img
+                src={mission2.src}
+                alt="Drive integrated, interdisciplinary research"
+                class="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 object-contain"
+              />
+            </div>
+            <p
+              class="text-gray-800 font-medium leading-relaxed text-base text-center"
+            >
+              Drive integrated, interdisciplinary research on sustainability in
+              areas such as climate change, decarbonization, sustainable
+              settlements, and behavioral change.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="group bg-gradient-to-br from-white via-green-50 to-white border border-green-400 rounded-2xl p-8 sm:p-10 shadow-md w-full max-w-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 text-center"
+        >
+          <div class="flex flex-col items-center space-y-6">
+            <div
+              class="bg-green-100 rounded-full p-6 sm:p-8 transition-transform duration-300 group-hover:scale-110"
+            >
+              <img
+                src={mission3.src}
+                alt="Create impactful change"
+                class="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 object-contain"
+              />
+            </div>
+            <p
+              class="text-gray-800 font-medium leading-relaxed text-base text-center"
+            >
+              Create impactful change by collaborating with industry, engaging
+              in policy dialogues, and helping implement solutions on the ground.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ✅ Newsletter -->
+  <Newletter />
+
+  <!-- ✅ Scroll To Top Button -->
+  <button
+    id="scrollToTop"
+    class="fixed bottom-6 right-6 z-50 bg-white border-2 border-green-600 text-green-600 p-3 rounded-full shadow-md transition-all duration-300 opacity-0 pointer-events-none hover:bg-green-50"
+    aria-label="Scroll to top"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-5 h-5"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      stroke-width="2"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
+
+  <!-- ✅ Footer -->
+  <Footer />
+
+  <!-- ✅ JS: Smooth Scroll + Scroll To Top -->
+  <script>
+    // Scroll to Top Visibility
+    const scrollBtn = document.getElementById("scrollToTop");
+    if (scrollBtn) {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+          scrollBtn.classList.remove("opacity-0", "pointer-events-none");
+        } else {
+          scrollBtn.classList.add("opacity-0", "pointer-events-none");
+        }
+      });
+      scrollBtn.addEventListener("click", () =>
+        window.scrollTo({ top: 0, behavior: "smooth" })
+      );
+    }
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", (e) => {
+        e.preventDefault();
+        const href = (anchor as HTMLAnchorElement).getAttribute("href");
+        if (!href) return;
+        const target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+  </script>
+</Layout>

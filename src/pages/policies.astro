@@ -1,0 +1,269 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "@/components/Navbar.astro";
+import Newsletter from "../components/Newletter.astro";
+import Footer from "../components/Footer.astro";
+import Home from "../components/Home.astro";
+import "../styles/global.css";
+import PoliciesData from "../Data/polices.json"
+
+const {DEI,purchase,investment,anti_corruption,ethics,carbon}= PoliciesData
+---
+
+<Layout title="Policies">
+  <!-- <Navbar /> -->
+
+  <!-- Hero Section -->
+  <!-- Banner Section -->
+<section class="relative">
+  <img
+    src="https://i.ibb.co/0jv3m3H/health-hero.png"
+    alt="Policies at the School of Sustainability, IIT Madras"
+    class="w-full h-64 sm:h-80 lg:h-96 object-cover"
+    loading="lazy"
+  />
+  <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+    <div class="text-center text-white px-4">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Policies</h1>
+      
+    </div>
+  </div>
+</section>
+
+<!-- Policies Section -->
+<section class="relative w-full py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <!-- <h2 class="text-2xl sm:text-3xl font-bold text-[#032A03] text-center mb-12">
+      Policies
+    </h2> -->
+
+    <!-- Policy Grid: white, green, green, white, white, green -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 text-center">
+      
+      <!-- 1. White -->
+      <div class="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
+        <h5 class="text-xl sm:text-2xl font-semibold text-[#032A03] mb-6">
+          Diversity, Equity and Inclusion (DEI)
+        </h5>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {
+            DEI.map((policy) => (
+              <div class="relative overflow-hidden rounded-2xl bg-white/40 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                <div class="relative overflow-hidden rounded-t-2xl bg-gradient-to-br from-gray-50 to-gray-100">
+                  <a href={policy.file_path} target="_blank" rel="noopener noreferrer" class="block">
+                    <img
+                      src={policy.image}
+                      alt={policy.alt}
+                      class="w-full h-64 sm:h-80 object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </a>
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 text-white text-lg font-semibold bg-[#3DAA6F]/80 py-2 text-center translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  {policy.title}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Policy for Sustainable Purchases -->
+      <div class="bg-gradient-to-r from-[#064924] to-[#519335] rounded-lg border border-green-700/30 p-6 shadow-sm">
+        <h5 class="text-xl sm:text-2xl font-semibold text-white mb-6">
+          Policy for Sustainable Purchases
+        </h5>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {
+            purchase.map((policy) => (
+              <div class="relative overflow-hidden rounded-2xl bg-white/40 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                <div class="relative overflow-hidden rounded-t-2xl bg-gradient-to-br from-gray-50 to-gray-100">
+                  <a href={policy.file_path} target="_blank" rel="noopener noreferrer" class="block">
+                    <img
+                      src={policy.image}
+                      alt={policy.alt}
+                      class="w-full h-64 sm:h-80 object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </a>
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 text-white text-lg font-semibold bg-[#3DAA6F]/80 py-2 text-center translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  {policy.title}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- 3. Green -->
+      <div class="bg-gradient-to-r from-[#064924] to-[#519335] rounded-lg border border-green-700/30 p-6 shadow-sm">
+        <h5 class="text-xl sm:text-2xl font-semibold text-white mb-6">
+          Sustainable Investment Policy
+        </h5>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {
+            investment.map((policy) => (
+              <div class="relative overflow-hidden rounded-2xl bg-white/40 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                <div class="relative overflow-hidden rounded-t-2xl bg-gradient-to-br from-gray-50 to-gray-100">
+                  <a href={policy.file_path} target="_blank" rel="noopener noreferrer" class="block">
+                    <img
+                      src={policy.image}
+                      alt={policy.alt}
+                      class="w-full h-64 sm:h-80 object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </a>
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 text-white text-lg font-semibold bg-[#3DAA6F]/80 py-2 text-center translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  {policy.title}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- 4. White -->
+      <div class="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
+        <h5 class="text-xl sm:text-2xl font-semibold text-[#032A03] mb-6">
+          Anti-Corruption Policy
+        </h5>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {
+            anti_corruption.map((policy) => (
+              <div class="relative overflow-hidden rounded-2xl bg-white/40 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                <div class="relative overflow-hidden rounded-t-2xl bg-gradient-to-br from-gray-50 to-gray-100">
+                  <a href={policy.file_path} target="_blank" rel="noopener noreferrer" class="block">
+                    <img
+                      src={policy.image}
+                      alt={policy.alt}
+                      class="w-full h-64 sm:h-80 object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </a>
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 text-white text-lg font-semibold bg-[#3DAA6F]/80 py-2 text-center translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  {policy.title}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Ethics & Code of Conduct -->
+      <div class="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
+        <h5 class="text-xl sm:text-2xl font-semibold text-[#032A03] mb-6">
+          Ethics & Code of Conduct
+        </h5>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {
+            ethics.map((policy) => (
+              <div class="relative overflow-hidden rounded-2xl bg-white/40 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                <div class="relative overflow-hidden rounded-t-2xl bg-gradient-to-br from-gray-50 to-gray-100">
+                  <a href={policy.file_path} target="_blank" rel="noopener noreferrer" class="block">
+                    <img
+                      src={policy.image}
+                      alt={policy.alt}
+                      class="w-full h-64 sm:h-80 object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </a>
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 text-white text-lg font-semibold bg-[#3DAA6F]/80 py-2 text-center translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  {policy.title}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Carbon Footprint Report -->
+      <div class="bg-gradient-to-r from-[#064924] to-[#519335] rounded-lg border border-green-700/30 p-6 shadow-sm">
+        <h5 class="text-xl sm:text-2xl font-semibold text-white mb-6">
+          Carbon Footprint Report
+        </h5>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {
+            carbon.map((policy) => (
+              <div class="relative overflow-hidden rounded-2xl bg-white/40 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                <div class="relative overflow-hidden rounded-t-2xl bg-gradient-to-br from-gray-50 to-gray-100">
+                  <a href={policy.file_path} target="_blank" rel="noopener noreferrer" class="block">
+                    <img
+                      src={policy.image}
+                      alt={policy.alt}
+                      class="w-full h-64 sm:h-80 object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </a>
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 text-white text-lg font-semibold bg-[#3DAA6F]/80 py-2 text-center translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                  {policy.title}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <Newsletter />
+  <button
+  id="scrollToTop"
+  class="fixed bottom-6 right-6 z-50 bg-white border-2 border-green-600 text-green-600 p-3 rounded-full shadow-md transition-all duration-300 opacity-0 pointer-events-none"
+  aria-label="Scroll to top"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-5 h-5"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"
+    ></path>
+  </svg>
+</button>
+<script>
+  const scrollBtn = document.getElementById("scrollToTop");
+  if (scrollBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        scrollBtn.classList.remove("opacity-0", "pointer-events-none");
+      } else {
+        scrollBtn.classList.add("opacity-0", "pointer-events-none");
+      }
+    });
+
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+</script>
+  <Footer />
+</Layout>
+
+<style>
+  /* Apply Poppins font globally with fallbacks */
+  :global(body) {
+    font-family: "DM Sans", sans-serif;
+  }
+
+  /* Ensure smooth scrolling for anchor links */
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+</style>

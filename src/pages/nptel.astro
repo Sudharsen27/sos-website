@@ -1,0 +1,171 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import Newletter from "../components/Newletter.astro";
+import aboutcover from "../assets/About_images/banner5.png";
+---
+
+<Layout title="NPTEL Courses - School of Sustainability">
+  <!-- Banner -->
+  <section class="relative overflow-hidden">
+    <div class="relative w-full h-[60vh] sm:h-[50vh] md:h-[60vh] lg:h-[88vh] overflow-hidden">
+      <img
+        src={aboutcover.src}
+        alt="NPTEL Courses at School of Sustainability, IIT Madras"
+        class="absolute inset-0 w-full h-full object-cover object-center"
+        loading="eager"
+        decoding="async"
+        width="1920"
+        height="1080"
+      />
+      <div class="absolute inset-0 bg-black/30"></div>
+    </div>
+  </section>
+
+  <!-- Main Section -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div id="patent-tables">
+      <!-- Loader skeleton -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-semibold text-green-700 mb-4 text-center">
+          Loading NPTEL Courses...
+        </h2>
+      </section>
+    </div>
+  </main>
+
+  <!-- Scroll to top button -->
+  <button
+  id="scrollToTop"
+  class="fixed bottom-6 right-6 z-50 bg-white border-2 border-green-600 text-green-600 p-3 rounded-full shadow-md transition-all duration-300 opacity-0 pointer-events-none"
+  aria-label="Scroll to top"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-5 h-5"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"
+    ></path>
+  </svg>
+</button>
+
+  <Footer />
+  <Newletter />
+</Layout>
+
+<!-- JS Section -->
+<script type="module">
+const NPTEL_API_URL = "https://script.google.com/macros/s/AKfycbx3JNAku3aYEYRRyi30es6UMKkBuxprzR43a5Prh1D82j7RpfOu1UgOZRqgNiskgdFu/exec?type=program";
+
+async function fetchNPTELCourses() {
+  const container = document.getElementById("patent-tables");
+  if (!container) return;
+
+  try {
+    const res = await fetch(NPTEL_API_URL);
+    if (!res.ok) throw new Error("Failed to fetch NPTEL Courses");
+
+    const raw = await res.json();
+    if (raw && raw.error) throw new Error(raw.error);
+
+    const data = Array.isArray(raw.data) ? raw.data : [];
+    const count = raw.count != null ? raw.count : data.length;
+
+    // Clear loading skeleton
+    container.innerHTML = "";
+
+    const section = document.createElement("section");
+    section.className = "mb-16";
+
+    const header = document.createElement("h2");
+    header.className = "text-2xl font-semibold text-green-700 mb-4 text-center";
+    header.textContent = "NPTEL Courses";
+    section.appendChild(header);
+
+    if (data.length === 0) {
+      const empty = document.createElement("p");
+      empty.className = "text-center text-gray-600";
+      empty.textContent = "No NPTEL courses data found.";
+      section.appendChild(empty);
+      container.appendChild(section);
+      return;
+    }
+
+    const tableWrapper = document.createElement("div");
+    tableWrapper.className = "overflow-x-auto rounded-xl shadow-md border border-gray-200";
+
+    const table = document.createElement("table");
+    table.className = "min-w-full border border-gray-300 bg-white text-sm text-left";
+
+    table.innerHTML = `
+      <thead class="bg-green-100 text-green-900 font-medium">
+        <tr>
+          <th class="px-4 py-2 border-b">S.No</th>
+          <th class="px-4 py-2 border-b">Discipline</th>
+          <th class="px-4 py-2 border-b">Course Name</th>
+          <th class="px-4 py-2 border-b">Semester</th>
+          <th class="px-4 py-2 border-b">Year</th>
+          <th class="px-4 py-2 border-b">Faculty Name</th>
+          <th class="px-4 py-2 border-b">Institute</th>
+          <th class="px-4 py-2 border-b">NOC Course</th>
+          <th class="px-4 py-2 border-b">Course Run</th>
+          <th class="px-4 py-2 border-b">Duration</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    `;
+
+    const tbody = table.querySelector("tbody");
+    data.forEach((row, index) => {
+      const tr = document.createElement("tr");
+      tr.className = "hover:bg-green-50";
+      tr.innerHTML = `
+        <td class="px-4 py-2 border-b">${index + 1}</td>
+        <td class="px-4 py-2 border-b">${row["Discipline"] != null ? String(row["Discipline"]).trim() : "-"}</td>
+        <td class="px-4 py-2 border-b">${row["Course name"] != null ? String(row["Course name"]).trim() : "-"}</td>
+        <td class="px-4 py-2 border-b">${row["Semester"] != null ? String(row["Semester"]).trim() : "-"}</td>
+        <td class="px-4 py-2 border-b">${row["Year"] != null ? row["Year"] : "-"}</td>
+        <td class="px-4 py-2 border-b">${row["Faculty Name"] != null ? String(row["Faculty Name"]).trim() : "-"}</td>
+        <td class="px-4 py-2 border-b">${row["Institute"] != null ? String(row["Institute"]).trim() : "-"}</td>
+        <td class="px-4 py-2 border-b">${row["NOC Course"] != null ? String(row["NOC Course"]).trim() : "-"}</td>
+        <td class="px-4 py-2 border-b">${row["Course Run"] != null ? String(row["Course Run"]).trim() : "-"}</td>
+        <td class="px-4 py-2 border-b">${row["Duration"] != null ? String(row["Duration"]).trim() : "-"}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    tableWrapper.appendChild(table);
+    section.appendChild(tableWrapper);
+    container.appendChild(section);
+  } catch (err) {
+    container.innerHTML = `
+      <section class="mb-16">
+        <h2 class="text-red-600 text-center">Error loading NPTEL Courses.</h2>
+        <p class="text-center text-gray-600 mt-2">${err.message || "Unknown error"}</p>
+      </section>`;
+    console.error("Error fetching NPTEL courses:", err);
+  }
+}
+
+fetchNPTELCourses();
+
+// Scroll-to-Top Button logic
+const scrollBtn = document.getElementById("scrollToTop");
+if (scrollBtn) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      scrollBtn.classList.remove("opacity-0", "pointer-events-none");
+    } else {
+      scrollBtn.classList.add("opacity-0", "pointer-events-none");
+    }
+  });
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+</script>
